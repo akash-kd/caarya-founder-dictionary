@@ -1,0 +1,48 @@
+@import "./constants";
+
+.top-nav {
+  background: #d8f3d7;
+  box-shadow: 0px 10px 20px -13px rgba(0, 0, 0, 0.15);
+}
+
+.tapbar {
+  background: #ffffff;
+  mix-blend-mode: normal;
+  box-shadow: 0px -10px 20px -13px rgba(0, 0, 0, 0.15);
+}
+
+.side-nav {
+  background: #fff1eb;
+  background: linear-gradient(177deg, #fff1eb 0%, #ffe9e5 100%);
+  max-width: 224px;
+  width: 100%;
+}
+
+.menuitem {
+  font-family: $lato;
+  font-size: 16px;
+  color: $theme-gray-1000;
+  border-right: 5px solid transparent;
+  padding: 16px;
+  line-height: 24px;
+  // box-shadow: 0px 0px 1px #ccc, 0px 0px 2px #ccc;
+  &:hover {
+    background: rgba(48, 23, 9, 0.1);
+    color: $theme-green-900;
+    background: #fff;
+    border-radius: 16px 0px 0px 16px;
+  }
+
+  &.active {
+    font-weight: 600;
+    color: $theme-green-900;
+    background: #fff;
+    border-radius: 16px 0px 0px 16px;
+  }
+}
+
+.grad {
+  background: linear-gradient(93deg, #f7f4d4 0%, rgba(247, 247, 255, 0) 100%);
+  border-radius: 40px 0px 0px 96px;
+  border-left: 4px solid var(--fusion-300, #ffd844);
+}
