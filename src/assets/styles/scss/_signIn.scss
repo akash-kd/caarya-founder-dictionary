@@ -20,9 +20,10 @@
 
 /* Logo*/
 .otp-login-container .title-font {
-  font-family: Poppins;
+  font-family: karla;
   font-weight: 700;
-  color: rgb(242, 192, 242);
+  color: rgb(0, 0, 0);
+  border-bottom: 2px red;
 }
 
 .otp-login-container .caption-font {
@@ -38,7 +39,7 @@
   margin-right: auto;
   margin-left: auto;
   max-width: 23.75rem;
-  background-color: #d8f3d7;
+  background-color: #FFF1EB;
   border-radius: 3px;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   font-family: inter;
@@ -65,7 +66,7 @@
 .otp-login-container input:focus,
 .otp-login-container textarea:focus {
   outline: 0;
-  border-bottom-color: rgb(242, 192, 242);
+  border-bottom-color: rgb(58, 1, 58);
 }
 
 .otp-login-container textarea {
@@ -90,8 +91,8 @@
 .otp-login-container .btn:focus,
 .otp-login-container .btn:hover {
   /* box-shadow: 0 18px 35px rgba(50, 50, 93, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07); */
-  background-color: #08422f !important;
-  color: #d8f3d7 !important;
+  background-color: #b6011c !important;
+  color: #FFF1EB !important;
 }
 .otp-login-container .btn:focus {
   outline: 0;

@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import { laptopNav } from "../helpers/constants";
+import { laptopNav } from "../../helpers/constants";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Bell, SignOut, User } from "@phosphor-icons/react";
