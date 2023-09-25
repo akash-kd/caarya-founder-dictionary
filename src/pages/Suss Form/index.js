@@ -1,37 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import Overview from "./Overview";
 import { BsCheckCircle } from "react-icons/bs";
+import PageHeader from "../../components/Layout/PageHeader";
 import FounderInfo from "./FounderInfo";
 import CompanyInfo from "./CompanyInfo";
 import DigitalFootprint from "./DigitalFootprint";
+import Tabs from "../../components/SusForm/Tabs";
+
+import overview from "../../assets/svg/fi_3135791.svg";
+import founder from "../../assets/svg/founder.svg";
+import company from "../../assets/svg/company.svg";
+import web from "../../assets/svg/footprint.svg";
+import product from "../../assets/svg/product.svg";
 
 const SussForm = () => {
+  const tabs = [
+    {
+      label: "Overview",
+      icon: overview,
+      value: "overview",
+    },
+    {
+      label: "Founder Info",
+      icon: founder,
+      value: "founder",
+    },
+    {
+      label: "Company Info",
+      icon: company,
+      value: "company",
+    },
+    {
+      label: "Digital Footprint",
+      icon: web,
+      value: "footprint",
+    },
+    {
+      label: "Product Info",
+      icon: product,
+      value: "product",
+    },
+  ];
+
+  const [selectedTab, setSelectedTab] = useState("overview");
+
   return (
-    <div>
+    <div className="bg-[#F0F3F4]">
       {/* <PageHeader name="New Suss Form"/> */}
-      <div className="flex px-6 py-4 gap-4 items-center border-b-2 border-gray-200">
-        <div className="flex-[1_0_0] text-xl font-medium font-poppins">
-          New Suss Form
-        </div>
-        <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border border-primary-orange-500">
-          <h1 className="text-base font-inter font-semibold text-primary-orange-500">
-            Save as Draft
-          </h1>
-        </div>
-        <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border bg-primary-orange-500">
-          <h1 className="text-base font-inter font-semibold text-white">
-            Submit
-          </h1>
-        </div>
-      </div>
+      <PageHeader
+        name="New Suss Form"
+        ctaComponent={
+          <div className="flex px-6 py-4 gap-4 items-center">
+            <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border border-primary-orange-500 cursor-pointer">
+              <h1 className="text-base font-inter font-semibold text-primary-orange-500">
+                Save as Draft
+              </h1>
+            </div>
+            <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border bg-primary-orange-500 cursor-pointer">
+              <h1 className="text-base font-inter font-semibold text-white">
+                Submit
+              </h1>
+            </div>
+          </div>
+        }
+      />
 
-      <div className="flex flex-col px-8 py-4 gap-2">
-        {/* Add the toggle bar - Not Added Yet*/}
+      <div className="flex flex-col px-8 py-4 gap-2 bg-white">
+        {/* Add the toggle bar - Not Added Yet */}
+        <Tabs
+          tabs={tabs}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
 
-        {/* <Overview /> */}
-        {/* <FounderInfo /> */}
-        {/* <CompanyInfo /> */}
-        <DigitalFootprint />
+        {selectedTab === "overview" && <Overview />}
+        {selectedTab === "founder" && <FounderInfo />}
+        {selectedTab === "company" && <CompanyInfo />}
+        {selectedTab === "footprint" && <DigitalFootprint />}
       </div>
     </div>
   );

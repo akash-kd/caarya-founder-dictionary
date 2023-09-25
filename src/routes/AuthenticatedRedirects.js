@@ -1,4 +1,5 @@
-import AppWrapper from "./layout/AppWrapper";
+import AppWrapper from "layout/AppWrapper";
+import { checkAppAccess } from "helpers/utils/accessCheck";
 import { Route, Redirect, withRouter } from "react-router-dom";
 
 // Wrapper for Private Routes
@@ -9,20 +10,20 @@ const AuthenticatedRedirects = ({ component: Component, ...rest }) => {
       render={(props) => {
 
         // No Sign In Functionality Yet
-        // if (!localStorage.getItem("token")) {
-        //   return (
-        //     <Redirect
-        //       to={{
-        //         pathname: "/auth/signIn",
-        //         state: { from: props.location },
-        //       }}
-        //     />
-        //   );
-        // }
+        if (!localStorage.getItem("token")) {
+          return (
+            <Redirect
+              to={{
+                pathname: "/auth/signIn",
+                state: { from: props.location },
+              }}
+            />
+          );
+        }
 
-        // if (!checkAppAccess()) {
-        //   return <Redirect to="/accessDenied" />;
-        // }
+        if (!checkAppAccess()) {
+          return <Redirect to="/accessDenied" />;
+        }
 
         return (
           <AppWrapper>
