@@ -22,7 +22,7 @@ function Tabs({ tabs, selectedTab, setSelectedTab, radius }) {
   }, [activeTabIndex]);
 
   return (
-    <div className="flex py-2 px-14 flex-start justify-center gap-2 items-stretch">
+    <div className="flex max-md:flex-col py-2 px-14 flex-start justify-center gap-2 items-stretch">
       {tabs.map((item, idx) => {
         return (
           <div

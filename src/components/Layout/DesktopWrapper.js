@@ -30,7 +30,7 @@ function DesktopWrapper({ children }) {
       />
 
       {/* Remove hidden and changed lg:flex to flex - Doesnt support Mobile View Yet */}
-      <div className="flex-row items-stretch w-screen min-h-screen flex">
+      <div className="flex-row items-stretch w-screen min-h-screen hidden lg:flex">
         <div className="flex flex-col justify-between w-full py-6 side-nav">
           <div className="flex flex-col items-center gap-6">
             <div className="flex flex-row items-center justify-between w-full">

@@ -65,7 +65,7 @@ const SussForm = () => {
         }
       />
 
-      <div className="flex flex-col px-8 py-4 gap-2 bg-white">
+      <div className="flex flex-col lg:px-8 py-4 gap-2 bg-white">
         {/* Add the toggle bar - Not Added Yet */}
         <Tabs
           tabs={tabs}

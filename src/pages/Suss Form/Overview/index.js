@@ -23,33 +23,33 @@ const Overview = () => {
         </div>
       </div>
 
-      <div className="flex flex-col flex-start gap-6 px-6 pt-2 pb-20 gap-6">
+      <div className="flex flex-col flex-start gap-6 sm:px-6 pt-2 pb-20 gap-6">
         <div className="p-4 flex flex-col flex-start gap-3">
           <div className="font-inter text-lg font-semibold">Startup Name</div>
           <input
             type="text"
-            className="w-[483px] border border-neutral-300 px-4 py-3 rounded-lg"
+            className="max-w-[483px] border border-neutral-300 px-4 py-3 rounded-lg"
             placeholder="Add email address"
           />
         </div>
 
-        <div className="flex p-4 gap-3 items-center">
+        <div className="flex flex-col sm:flex-row p-4 gap-3 items-center">
           <div className="flex flex-1 flex-col gap-3">
             <div className="font-inter text-lg font-semibold">Company Logo</div>
-            <div className="flex w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
-              <div className="flex flex-col gap-2 px-6 items-center">
+            <div className="flex max-w-[420px] md:min-w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
+              <div className="flex flex-col gap-2 sm:px-6 items-center">
                 <RiUploadCloudLine size="32" color="#CFCDC9" />
-                <div className="text-sm font-semibold font-inter text-neutral-300">
+                <div className="text-sm font-semibold font-inter text-neutral-300 text-enter">
                   Upload Picture
                 </div>
-                <div className="text-[10px] font-semibold font-inter text-neutral-300">
+                <div className="text-[10px] font-semibold font-inter text-neutral-300 text-center">
                   Supported formats: .JPG, .JPEG, .PNG
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col flex-start justify-center px-6 py-4 w-[488px] h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
+          <div className="flex flex-col flex-start justify-center sm:px-6 py-4 max-w-[488px] max-h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
             <img src={idea} alt="" className="w-6 h-6" />
             <p className="font-inter text-sm font-light text-neutral-500 max-w-[640px]">
               Uploading company logo helps differentiate multiple companies that
@@ -58,19 +58,19 @@ const Overview = () => {
           </div>
         </div>
 
-        <div className="flex flex-start p-4 gap-3 items-center">
-          <div className="p-4 flex flex-1 flex-col flex-start gap-3">
+        <div className="flex flex-col sm:flex-row flex-start p-4 gap-3 items-center">
+          <div className="sm:p-4 flex flex-[1_0_0] max-sm:w-full flex-col flex-start gap-3">
             <div className="font-inter text-lg font-semibold">
               Startup Industry
             </div>
             <input
               type="text"
-              className="w-[483px] border border-neutral-300 px-4 py-3 rounded-lg"
+              className="max-w-[483px] md:min-w-[420px] border border-neutral-300 px-4 py-3 rounded-lg"
               placeholder="Add industry"
             />
           </div>
 
-          <div className="flex flex-col flex-start justify-center px-6 py-4 w-[488px] h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
+          <div className="flex flex-col flex-start justify-center sm:px-6 py-4 max-w-[488px] max-h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
             <img src={idea} alt="" className="w-6 h-6" />
             <p className="font-inter text-sm font-light text-neutral-500 max-w-[640px]">
               Uploading company logo helps differentiate multiple companies that
@@ -100,15 +100,15 @@ const Overview = () => {
             </h1>
           </div>
 
-          <div className="flex items-center gap-20">
-            <div className="flex flex-1 flex-col flex-start gap-10">
-              <div className="flex flex-col gap-3 flex-start">
+          <div className="flex flex-col sm:flex-row items-center sm:gap-20">
+            <div className="flex flex-[1_0_0] w-full flex-col flex-start gap-10">
+              <div className="flex max-sm:w-full flex-col w-full gap-3 flex-start">
                 <h1 className="font-inter text-sm font-semibold text-neutral-500">
                   Company Mission Statement
                 </h1>
                 <input
                   placeholder="Add mission statement"
-                  className="flex flex-start px-4 py-3 rounded-lg border border-neutral-300"
+                  className="flex flex-start md:min-w-[420px] px-4 py-3 rounded-lg border border-neutral-300"
                 />
               </div>
               <div className="flex flex-col gap-3 flex-start">
@@ -117,7 +117,7 @@ const Overview = () => {
                 </h1>
                 <input
                   placeholder="Add vision statement"
-                  className="flex flex-start px-4 py-3 rounded-lg border border-neutral-300"
+                  className="flex flex-start md:min-w-[420px] px-4 py-3 rounded-lg border border-neutral-300"
                 />
               </div>
               <div className="flex flex-col gap-3 flex-start">
@@ -126,12 +126,12 @@ const Overview = () => {
                 </h1>
                 <input
                   placeholder="Add values"
-                  className="flex flex-start px-4 py-3 rounded-lg border border-neutral-300 h-[120px]"
+                  className="flex flex-start md:min-w-[420px] px-4 py-3 rounded-lg border border-neutral-300 h-[120px]"
                 />
               </div>
             </div>
 
-            <div className="flex flex-col flex-start justify-center px-6 py-4 w-[488px] h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
+            <div className="flex flex-col flex-start justify-center sm:px-6 py-4 max-w-[488px] max-h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
               <img src={idea} alt="" className="w-6 h-6" />
               <p className="font-inter text-sm font-light text-neutral-500 max-w-[640px]">
                 Uploading company logo helps differentiate multiple companies

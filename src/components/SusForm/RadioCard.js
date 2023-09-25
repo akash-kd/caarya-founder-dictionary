@@ -4,7 +4,7 @@ import { BsFlagFill } from "react-icons/bs";
 
 const RadioCard = ({card1,card2,card3}) => {
   return (
-    <div className="flex flex-start gap-4">
+    <div className="flex max-sm:flex-col flex-start gap-4">
       <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
         <div className="flex flex-1 items-center justify-center gap-3">
           <BsFlagFill size="20px" color="#33A329" />

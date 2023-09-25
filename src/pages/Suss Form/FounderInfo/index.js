@@ -8,6 +8,8 @@ import cake from "../../../assets/svg/Cake.svg";
 import idea from "../../../assets/svg/Idea.svg";
 import brownie from "../../../assets/svg/Brownie.svg";
 import history from "../../../assets/svg/fi_11244276.svg";
+import RadioCard from "components/SusForm/RadioCard";
+import InsightsCard from "components/SusForm/InsightsCard";
 
 const FounderInfo = () => {
   return (
@@ -60,98 +62,16 @@ const FounderInfo = () => {
           </div>
 
           <div className="flex flex-col flex-start gap-16">
-            <div className="flex flex-start gap-4">
-              <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
-                <div className="flex flex-1 items-center justify-center gap-3">
-                  <BsFlagFill size="20px" color="#33A329" />
-                  <h1 className="font-inter text-sm font-semibold text-neutral-800">
-                    Age is less than 25 Years
-                  </h1>
-                </div>
-                <input
-                  type="radio"
-                  className="absolute right-[8.33px] top-[8px] w-4 h-4"
-                />
-              </div>
-              <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
-                <div className="flex flex-1 items-center justify-center gap-3">
-                  <BsFlagFill size="20px" color="#E7E6E5" />
-                  <h1 className="font-inter text-sm font-semibold text-neutral-800">
-                    Age is between 25-32 Years
-                  </h1>
-                </div>
-                <input
-                  type="radio"
-                  className="absolute right-[8.33px] top-[8px] w-4 h-4"
-                />
-              </div>
-              <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
-                <div className="flex flex-1 items-center justify-center gap-3">
-                  <BsFlagFill size="20px" color="#FB6F60" />
-                  <h1 className="font-inter text-sm font-semibold text-neutral-800">
-                    Age is More than 32 Years
-                  </h1>
-                </div>
-                <input
-                  type="radio"
-                  className="absolute right-[8.33px] top-[8px] w-4 h-4"
-                />
-              </div>
-            </div>
+            <RadioCard
+              card1="Age is less than 25 Years"
+              card2="Age is between 25-32 Years"
+              card3="Age is More than 32 Years"
+            />
 
-            <div className="flex items-center gap-20">
-              <div className="flex flex-1 flex-col flex-start gap-10">
-                <div className="flex flex-col items-center flex-start gap-4">
-                  <div className="flex items-center gap-4 self-stretch">
-                    <ImQuotesRight size="20px" color="#D8F3D7" />
-                    <h1 className="flex flex-1 text-sm font-inter font-semibold text-neutral-500">
-                      Cite Your Sources
-                    </h1>
-                    <div className="flex w-5 h-5 flex-col items-center justify-center rounded-full border border-neutral-300">
-                      <h1 className="text-neutral-400 font-inter text-xs font-semibold">
-                        ?
-                      </h1>
-                    </div>
-                  </div>
-                  <input
-                    placeholder="Add source link here"
-                    className="flex py-3 px-4 rounded-lg border border-neutral-300 self-stretch"
-                  />
-                </div>
-
-                <div className="flex flex-col items-center flex-start gap-4">
-                  <div className="flex items-center gap-4 self-stretch">
-                    <MdInsights size="20px" color="#8DA1FC" />
-                    <h1 className="flex text-sm font-inter font-semibold text-neutral-500">
-                      Researcher Insight
-                    </h1>
-                    <div className="flex flex-1 px-2 gap-1 items-center">
-                      <img src={brownie} alt="" className="w-4 h-4" />
-                      <h1 className="font-inter text-xs font-semibold text-[#FFBC00]">
-                        +1
-                      </h1>
-                    </div>
-                    <div className="flex w-5 h-5 flex-col items-center justify-center rounded-full border border-neutral-300">
-                      <h1 className="text-neutral-400 font-inter text-xs font-semibold">
-                        ?
-                      </h1>
-                    </div>
-                  </div>
-                  <input
-                    placeholder=" eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
-                    className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center placeholder:text-xs"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-1 flex-col flex-start gap-4 pl-10 pt-6 pr-6 pb-8 grad">
-                <img src={idea} alt="" className="w-6 h-6" />
-                <p className="font-inter text-sm font-light text-neutral-800 max-w-[640px] self-stretch grow">
-                  Age is an indicator of a person's risk taking tendencies.
-                  Younger founders tend to be more open to risks.
-                </p>
-              </div>
-            </div>
+            <InsightsCard
+              placeholder="eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
+              ideaText="Age is an indicator of a person's risk taking tendencies. Younger founders tend to be more open to risks."
+            />
           </div>
         </div>
 
@@ -166,99 +86,16 @@ const FounderInfo = () => {
           </div>
 
           <div className="flex flex-col flex-start gap-16">
-            <div className="flex flex-start gap-4">
-              <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
-                <div className="flex flex-1 items-center justify-center gap-3">
-                  <BsFlagFill size="20px" color="#33A329" />
-                  <h1 className="font-inter text-sm font-semibold text-neutral-800">
-                    0-1 Startups Founded
-                  </h1>
-                </div>
-                <input
-                  type="radio"
-                  className="absolute right-[8.33px] top-[8px] w-4 h-4"
-                />
-              </div>
-              <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
-                <div className="flex flex-1 items-center justify-center gap-3">
-                  <BsFlagFill size="20px" color="#E7E6E5" />
-                  <h1 className="font-inter text-sm font-semibold text-neutral-800">
-                    2-4 Startups Founded
-                  </h1>
-                </div>
-                <input
-                  type="radio"
-                  className="absolute right-[8.33px] top-[8px] w-4 h-4"
-                />
-              </div>
-              <div className="flex flex-1 px-6 py-8 h-[80px] items-center rounded-lg border border-neutral-300 relative">
-                <div className="flex flex-1 items-center justify-center gap-3">
-                  <BsFlagFill size="20px" color="#FB6F60" />
-                  <h1 className="font-inter text-sm font-semibold text-neutral-800">
-                    4+ Startups Founded
-                  </h1>
-                </div>
-                <input
-                  type="radio"
-                  className="absolute right-[8.33px] top-[8px] w-4 h-4"
-                />
-              </div>
-            </div>
+            <RadioCard
+              card1="0-1 Startups Founded"
+              card2="2-4 Startups Founded"
+              card3="4+ Startups Founded"
+            />
 
-            <div className="flex items-center gap-20">
-              <div className="flex flex-1 flex-col flex-start gap-10">
-                <div className="flex flex-col items-center flex-start gap-4">
-                  <div className="flex items-center gap-4 self-stretch">
-                    <ImQuotesRight size="20px" color="#D8F3D7" />
-                    <h1 className="flex flex-1 text-sm font-inter font-semibold text-neutral-500">
-                      Cite Your Sources
-                    </h1>
-                    <div className="flex w-5 h-5 flex-col items-center justify-center rounded-full border border-neutral-300">
-                      <h1 className="text-neutral-400 font-inter text-xs font-semibold">
-                        ?
-                      </h1>
-                    </div>
-                  </div>
-                  <input
-                    placeholder="Add source link here"
-                    className="flex py-3 px-4 rounded-lg border border-neutral-300 self-stretch"
-                  />
-                </div>
-
-                <div className="flex flex-col items-center flex-start gap-4">
-                  <div className="flex items-center gap-4 self-stretch">
-                    <MdInsights size="20px" color="#8DA1FC" />
-                    <h1 className="flex text-sm font-inter font-semibold text-neutral-500">
-                      Researcher Insight
-                    </h1>
-                    <div className="flex flex-1 px-2 gap-1 items-center">
-                      <img src={brownie} alt="" className="w-4 h-4" />
-                      <h1 className="font-inter text-xs font-semibold text-[#FFBC00]">
-                        +1
-                      </h1>
-                    </div>
-                    <div className="flex w-5 h-5 flex-col items-center justify-center rounded-full border border-neutral-300">
-                      <h1 className="text-neutral-400 font-inter text-xs font-semibold">
-                        ?
-                      </h1>
-                    </div>
-                  </div>
-                  <input
-                    placeholder="eg., the current status of their startups, their names and the links to each of them"
-                    className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center placeholder:text-xs"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-1 flex-col flex-start gap-4 pl-10 pt-6 pr-6 pb-8 grad">
-                <img src={idea} alt="" className="w-6 h-6" />
-                <p className="font-inter text-sm font-light text-neutral-800 max-w-[640px] self-stretch grow">
-                  Having little or no experience in building a company means
-                  that the founder could use some help and guidance in building
-                  their startup
-                </p>
-              </div>
-            </div>
+            <InsightsCard
+              placeholder="eg., the current status of their startups, their names and the links to each of them"
+              ideaText="Having little or no experience in building a company means that the founder could use some help and guidance in building their startup"
+            />
           </div>
         </div>
       </div>

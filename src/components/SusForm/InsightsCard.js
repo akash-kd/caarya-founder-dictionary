@@ -7,8 +7,8 @@ import brownie from "../../assets/svg/Brownie.svg";
 
 const InsightsCard = ({placeholder, ideaText}) => {
   return (
-    <div className="flex items-center gap-20">
-      <div className="flex flex-1 flex-col flex-start gap-10">
+    <div className="flex max-md:flex-col items-center gap-10 sm:gap-20">
+      <div className="flex flex-[1_0_0] w-full flex-col flex-start gap-10">
         <div className="flex flex-col items-center flex-start gap-4">
           <div className="flex items-center gap-4 self-stretch">
             <ImQuotesRight size="20px" color="#D8F3D7" />
