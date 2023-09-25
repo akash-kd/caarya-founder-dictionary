@@ -29,7 +29,10 @@
   },
   "scripts": {
     "start": "npm run compileSass && react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run compileSass && react-scripts build",
+    "build:dev": "REACT_APP_ENV=development npm run build",
+    "build:prod": "REACT_APP_ENV=production npm run build",
+    "deploy": "npm run build && firebase deploy",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "compileSass": "node-sass src/assets/styles/scss/index.scss src/assets/styles/css/index.css"
@@ -53,6 +56,13 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
     "tailwindcss": "^3.3.3"
   }
 }

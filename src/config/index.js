@@ -3,7 +3,8 @@ import config from "config/APIEndpoints";
 
 const BASE_API_URL = config.getEndpoint();
 const ADMIN_API_URL = BASE_API_URL + "/api/v1";
-const STARGAZE_ENDPOINT = BASE_API_URL + "/api/v1/app/stargaze/";
+const FOUNDER_DICTIONARY_ENDPOINT =
+  BASE_API_URL + "/api/v1/app/founderDictionary/";
 
 export { BASE_API_URL };
 
@@ -34,8 +35,8 @@ export const instance = axios.create({
   baseURL: ADMIN_API_URL,
 });
 
-export const stargazeInstance = axios.create({
-  baseURL: STARGAZE_ENDPOINT,
+export const founderDictionaryInstance = axios.create({
+  baseURL: FOUNDER_DICTIONARY_ENDPOINT,
 });
 
 export const refreshToken = () =>

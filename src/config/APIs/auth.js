@@ -1,4 +1,4 @@
-import { instance } from "../../config";
+import { instance } from "config";
 
 /**
  * To get token after number verification
