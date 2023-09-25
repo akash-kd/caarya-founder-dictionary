@@ -1,15 +1,11 @@
 import React from "react";
 
-import { BsCheckCircle, BsFlagFill } from "react-icons/bs";
-import { ImQuotesRight } from "react-icons/im";
-import { MdInsights } from "react-icons/md";
-import founder from "../../../assets/svg/fi_8677126.svg";
-import cake from "../../../assets/svg/Cake.svg";
-import idea from "../../../assets/svg/Idea.svg";
-import brownie from "../../../assets/svg/Brownie.svg";
-import history from "../../../assets/svg/fi_11244276.svg";
-import RadioCard from "components/SusForm/RadioCard";
-import InsightsCard from "components/SusForm/InsightsCard";
+import { BsCheckCircle } from "react-icons/bs";
+import founder from "assets/svg/fi_8677126.svg";
+import cake from "assets/svg/Cake.svg";
+import history from "assets/svg/fi_11244276.svg";
+import RadioCard from "components/SusForm/Common/RadioCard";
+import InsightsCard from "components/SusForm/Common/InsightsCard";
 
 const FounderInfo = () => {
   return (
