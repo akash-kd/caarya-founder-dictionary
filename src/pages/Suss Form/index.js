@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import Overview from "./Overview";
-import { BsCheckCircle } from "react-icons/bs";
-import PageHeader from "../../components/Layout/PageHeader";
-import FounderInfo from "./FounderInfo";
-import CompanyInfo from "./CompanyInfo";
-import DigitalFootprint from "./DigitalFootprint";
-import Tabs from "../../components/SusForm/Tabs";
+import Overview from "components/SusForm/Overview";
+import PageHeader from "components/Layout/PageHeader";
+import FounderInfo from "components/SusForm/FounderInfo";
+import CompanyInfo from "components/SusForm/CompanyInfo";
+import DigitalFootprint from "components/SusForm/DigitalFootprint";
+import Tabs from "components/SusForm/Common/Tabs";
 
-import overview from "../../assets/svg/fi_3135791.svg";
-import founder from "../../assets/svg/founder.svg";
-import company from "../../assets/svg/company.svg";
-import web from "../../assets/svg/footprint.svg";
-import product from "../../assets/svg/product.svg";
+import overview from "assets/svg/fi_3135791.svg";
+import founder from "assets/svg/founder.svg";
+import company from "assets/svg/company.svg";
+import web from "assets/svg/footprint.svg";
+import product from "assets/svg/product.svg";
 
 const SussForm = () => {
   const tabs = [

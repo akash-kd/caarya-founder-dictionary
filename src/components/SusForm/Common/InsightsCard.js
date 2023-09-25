@@ -1,11 +1,11 @@
 import React from "react";
 
-import idea from "../../assets/svg/Idea.svg";
+import idea from "assets/svg/Idea.svg";
 import { ImQuotesRight } from "react-icons/im";
 import { MdInsights } from "react-icons/md";
-import brownie from "../../assets/svg/Brownie.svg";
+import brownie from "assets/svg/Brownie.svg";
 
-const InsightsCard = ({placeholder, ideaText}) => {
+const InsightsCard = ({ placeholder, ideaText }) => {
   return (
     <div className="flex items-center gap-20">
       <div className="flex flex-1 flex-col flex-start gap-10">
