@@ -4,10 +4,10 @@ import { BsCheckCircle } from "react-icons/bs";
 import founder from "assets/svg/fi_8677126.svg";
 import cake from "assets/svg/Cake.svg";
 import history from "assets/svg/fi_11244276.svg";
-import RadioCard from "components/SusForm/Common/RadioCard";
+import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
 
-const FounderInfo = () => {
+const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">
@@ -32,7 +32,11 @@ const FounderInfo = () => {
             Founder Name
           </h1>
           <input
-            placeholder="Add Email Address"
+            value={founderData?.name}
+            onChange={(e) => {
+              setFounderData({ ...founderData, name: e.target.value });
+            }}
+            placeholder="Add Name"
             className="flex px-4 py-3 items-center w-[483px] rounded-lg border border-neutral-300"
           />
         </div>
@@ -42,6 +46,10 @@ const FounderInfo = () => {
             Founder Email
           </h1>
           <input
+            value={founderData?.email}
+            onChange={(e) => {
+              setFounderData({ ...founderData, email: e.target.value });
+            }}
             placeholder="Add Email Address"
             className="flex px-4 py-3 items-center w-[483px] rounded-lg border border-neutral-300"
           />
@@ -56,15 +64,39 @@ const FounderInfo = () => {
               Founder's Age
             </h1>
           </div>
-
+          {console.log(founderData)}
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="Age is less than 25 Years"
-              card2="Age is between 25-32 Years"
-              card3="Age is More than 32 Years"
+              list={[
+                {
+                  label: "Age is less than 25 Years",
+                  value: "Less than 25",
+                  flag: "green",
+                },
+                {
+                  label: "Age is between 25-32 Years",
+                  value: "Between 25-32",
+                  flag: "white",
+                },
+                {
+                  label: "Age is More than 32 Years",
+                  value: "More than 32",
+                  flag: "red",
+                },
+              ]}
+              data={founderData}
+              field="age"
+              onCheck={(val) => {
+                doSusCheck("founder", "age", val);
+              }}
             />
 
             <InsightsCard
+              data={founderData}
+              field="age"
+              setData={(val) => {
+                setFounderData(val);
+              }}
               placeholder="eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
               ideaText="Age is an indicator of a person's risk taking tendencies. Younger founders tend to be more open to risks."
             />
@@ -83,12 +115,36 @@ const FounderInfo = () => {
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="0-1 Startups Founded"
-              card2="2-4 Startups Founded"
-              card3="4+ Startups Founded"
+              list={[
+                {
+                  label: "0-1 Startups Founded",
+                  value: "0-1",
+                  flag: "green",
+                },
+                {
+                  label: "2-4 Startups Founded",
+                  value: "2-4",
+                  flag: "white",
+                },
+                {
+                  label: "4+ Startups Founded",
+                  value: "4+",
+                  flag: "red",
+                },
+              ]}
+              data={founderData}
+              field="startupFounded"
+              onCheck={(val) => {
+                doSusCheck("founder", "startupFounded", val);
+              }}
             />
 
             <InsightsCard
+              data={founderData}
+              field="startupFounded"
+              setData={(val) => {
+                setFounderData(val);
+              }}
               placeholder="eg., the current status of their startups, their names and the links to each of them"
               ideaText="Having little or no experience in building a company means that the founder could use some help and guidance in building their startup"
             />
