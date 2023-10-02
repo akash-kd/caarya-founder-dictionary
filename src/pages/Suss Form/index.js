@@ -4,6 +4,7 @@ import PageHeader from "components/Layout/PageHeader";
 import FounderInfo from "components/SusForm/FounderInfo";
 import CompanyInfo from "components/SusForm/CompanyInfo";
 import DigitalFootprint from "components/SusForm/DigitalFootprint";
+import ProductInfo from "components/SusForm/ProductInfo";
 import Tabs from "components/SusForm/Common/Tabs";
 
 import overview from "assets/svg/fi_3135791.svg";
@@ -76,6 +77,7 @@ const SussForm = () => {
         {selectedTab === "founder" && <FounderInfo />}
         {selectedTab === "company" && <CompanyInfo />}
         {selectedTab === "footprint" && <DigitalFootprint />}
+        {selectedTab === "product" && <ProductInfo />}
       </div>
     </div>
   );

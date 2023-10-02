@@ -5,7 +5,7 @@ import { ImQuotesRight } from "react-icons/im";
 import { MdInsights } from "react-icons/md";
 import brownie from "assets/svg/Brownie.svg";
 
-const InsightsCard = ({ placeholder, ideaText }) => {
+const InsightsCard = ({ placeholder, ideaText, vis = true }) => {
   return (
     <div className="flex max-md:flex-col items-center gap-10 sm:gap-20">
       <div className="flex flex-[1_0_0] w-full flex-col flex-start gap-10">
@@ -26,7 +26,6 @@ const InsightsCard = ({ placeholder, ideaText }) => {
             className="flex py-3 px-4 rounded-lg border border-neutral-300 self-stretch"
           />
         </div>
-
         <div className="flex flex-col items-center flex-start gap-4">
           <div className="flex items-center gap-4 self-stretch">
             <MdInsights size="20px" color="#8DA1FC" />
@@ -47,7 +46,7 @@ const InsightsCard = ({ placeholder, ideaText }) => {
           </div>
           <input
             placeholder={placeholder}
-            className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center placeholder:text-xs"
+            className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center"
           />
         </div>
       </div>
