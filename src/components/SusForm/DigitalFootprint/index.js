@@ -7,10 +7,15 @@ import instagram from "assets/svg/instagram.svg";
 import linkedin from "assets/svg/linkedin.svg";
 import twitter from "assets/svg/twitter.svg";
 import CardTitle from "components/SusForm/Common/CardTitle";
-import RadioCard from "components/SusForm/Common/RadioCard";
+import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
 
-const DigitalFootprint = () => {
+const DigitalFootprint = ({
+  companyData,
+  setCompanyData,
+  founderData,
+  setFounderData,
+}) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">

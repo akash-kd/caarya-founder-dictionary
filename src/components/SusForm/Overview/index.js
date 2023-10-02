@@ -4,12 +4,17 @@ import { RiUploadCloudLine } from "react-icons/ri";
 import { BsCheckCircle } from "react-icons/bs";
 
 // SVG Icons
-import scroll from "../../../assets/svg/fi_10237168.svg";
-import idea from "../../../assets/svg/Idea.svg";
-import web from "../../../assets/svg/fi_10218756.svg";
-import about from "../../../assets/svg/fi_10166120.svg";
+import scroll from "assets/svg/fi_10237168.svg";
+import idea from "assets/svg/Idea.svg";
+import web from "assets/svg/fi_10218756.svg";
+import about from "assets/svg/fi_10166120.svg";
 
-const Overview = () => {
+const Overview = ({
+  companyData,
+  setCompanyData,
+  founderData,
+  setFounderData,
+}) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">
@@ -18,18 +23,24 @@ const Overview = () => {
           Overview
         </div>
         <div className="flex flex-end gap-2 items-center">
-          <BsCheckCircle color="#33A329" size="20px"/>
-          <h1 className="font-inter text-base text-right font-light text-neutral-500">(0/5)</h1>
+          <BsCheckCircle color="#33A329" size="20px" />
+          <h1 className="font-inter text-base text-right font-light text-neutral-500">
+            (0/5)
+          </h1>
         </div>
       </div>
 
-      <div className="flex flex-col flex-start gap-6 sm:px-6 pt-2 pb-20 gap-6">
+      <div className="flex flex-col flex-start gap-6 sm:px-6 pt-2 pb-20">
         <div className="p-4 flex flex-col flex-start gap-3">
           <div className="font-inter text-lg font-semibold">Startup Name</div>
           <input
+            value={companyData?.name}
+            onChange={(e) => {
+              setCompanyData({ ...companyData, name: e.target.value });
+            }}
             type="text"
             className="max-w-[483px] border border-neutral-300 px-4 py-3 rounded-lg"
-            placeholder="Add email address"
+            placeholder="Add name"
           />
         </div>
 
@@ -64,6 +75,10 @@ const Overview = () => {
               Startup Industry
             </div>
             <input
+              value={companyData?.industry}
+              onChange={(e) => {
+                setCompanyData({ ...companyData, industry: e.target.value });
+              }}
               type="text"
               className="max-w-[483px] md:min-w-[420px] border border-neutral-300 px-4 py-3 rounded-lg"
               placeholder="Add industry"
@@ -107,6 +122,13 @@ const Overview = () => {
                   Company Mission Statement
                 </h1>
                 <input
+                  value={companyData?.mission}
+                  onChange={(e) => {
+                    setCompanyData({
+                      ...companyData,
+                      mission: e.target.value,
+                    });
+                  }}
                   placeholder="Add mission statement"
                   className="flex flex-start md:min-w-[420px] px-4 py-3 rounded-lg border border-neutral-300"
                 />
@@ -116,6 +138,13 @@ const Overview = () => {
                   Company Vision Statement
                 </h1>
                 <input
+                  value={companyData?.vision}
+                  onChange={(e) => {
+                    setCompanyData({
+                      ...companyData,
+                      vision: e.target.value,
+                    });
+                  }}
                   placeholder="Add vision statement"
                   className="flex flex-start md:min-w-[420px] px-4 py-3 rounded-lg border border-neutral-300"
                 />
@@ -125,6 +154,13 @@ const Overview = () => {
                   Company Values
                 </h1>
                 <input
+                  value={companyData?.values}
+                  onChange={(e) => {
+                    setCompanyData({
+                      ...companyData,
+                      values: e.target.value,
+                    });
+                  }}
                   placeholder="Add values"
                   className="flex flex-start md:min-w-[420px] px-4 py-3 rounded-lg border border-neutral-300 h-[120px]"
                 />
