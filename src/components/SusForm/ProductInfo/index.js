@@ -1,12 +1,11 @@
 import React from "react";
 
-import { BsCheckCircle, BsFlagFill } from "react-icons/bs";
-import { CgRadioChecked, CgRadioCheck } from "react-icons/cg";
+import { BsCheckCircle } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
-import product from "../../../assets/svg/product.svg";
-import nature from "../../../assets/svg/fi_1474613.svg";
-import productfeatures from "../../../assets/svg/fi_2261136.svg";
-import customer from "../../../assets/svg/fi_10218024.svg";
+import product from "assets/svg/product.svg";
+import nature from "assets/svg/fi_1474613.svg";
+import productfeatures from "assets/svg/fi_2261136.svg";
+import customer from "assets/svg/fi_10218024.svg";
 import idea from "assets/svg/Idea.svg";
 
 // import InsightsCard from "components/SusForm/Common/InsightsCard";

@@ -11,7 +11,6 @@ function TabBar() {
       >
         <div className=" w-full bottom-0 p-2  max-w-sm mx-auto">
           <div className="grid grid-cols-5 gap-2">
-            Mobile Nav
             {/* {mobileBottomNav.map((item, idx) => {
               const centerNavIdx = Math.floor(mobileBottomNav.length / 2);
 

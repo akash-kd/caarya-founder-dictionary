@@ -191,7 +191,7 @@ function SignIn() {
                   }}
                 >
                   <h1 className="text-xl text-primary-green-darker font-karla font-medium mb-4 border-neutral-300 title-font border-b pb-2">
-                    Connect To Dictionary
+                    connect to chronos
                   </h1>
                   <fieldset className="form-group">
                     <label className="text-primary-green-darker text-xs font-medium">
@@ -216,7 +216,7 @@ function SignIn() {
                       <button
                         id="send-otp-button"
                         type="button"
-                        className="btn font-lato bg-primary-green-darker text-primary-green-lightest rounded text-xs mt-3 font-bold capitalize"
+                        className="btn font-lato bg-primary-orange-500 text-white rounded text-xs mt-3 font-bold capitalize"
                         onClick={handleClick}
                         disabled={buttonState.disabled}
                       >
@@ -264,7 +264,7 @@ function SignIn() {
                         <button
                           id="send-otp-button"
                           type="button"
-                          className="btn font-lato bg-primary-green-darker text-primary-green-lightest rounded text-xs mt-3 font-bold capitalize"
+                          className="btn font-lato bg-primary-orange-500 text-white rounded text-xs mt-3 font-bold capitalize"
                           placeholder=""
                           onClick={() => otpSubmit()}
                           disabled={buttonState.disabled}
