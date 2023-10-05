@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BsCheckCircle, BsFlagFill } from "react-icons/bs";
+import { BsCheckCircle } from "react-icons/bs";
 import company from "assets/svg/fi_4300058.svg";
 import location from "assets/svg/fi_819865.svg";
 import funding from "assets/svg/fi_2163226.svg";
@@ -8,10 +8,10 @@ import rocket from "assets/svg/fi_10273288.svg";
 import employee from "assets/svg/fi_10216679.svg";
 import revenue from "assets/svg/fi_10693560.svg";
 import CardTitle from "components/SusForm/Common/CardTitle";
-import RadioCard from "components/SusForm/Common/RadioCard";
+import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
 
-const CompanyInfo = () => {
+const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">
@@ -38,11 +38,35 @@ const CompanyInfo = () => {
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="Remote Work"
-              card2="Hybrid Work"
-              card3="On-Site Work"
+              list={[
+                {
+                  label: "Remote Work",
+                  value: "Remote Work",
+                  flag: "green",
+                },
+                {
+                  label: "Hybrid Work",
+                  value: "Hybrid Work",
+                  flag: "white",
+                },
+                {
+                  label: "On-Site Work",
+                  value: "On-Site Work",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="workLocation"
+              onCheck={(val) => {
+                doSusCheck("company", "workLocation", val);
+              }}
             />
             <InsightsCard
+              data={companyData}
+              field="workLocation"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
               placeholder=" eg., the founder's exact age"
               ideaText="Age is an indicator of a person's risk taking tendencies. Younger founders tend to be more open to risks"
             />
@@ -59,11 +83,35 @@ const CompanyInfo = () => {
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="0-5 Years Old"
-              card2="6-10 Years Old"
-              card3="10+ Years Old"
+              list={[
+                {
+                  label: "0-5 Years Old",
+                  value: "0-5",
+                  flag: "green",
+                },
+                {
+                  label: "6-10 Years Old",
+                  value: "6-10",
+                  flag: "white",
+                },
+                {
+                  label: "10+ Years Old",
+                  value: "10+",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="companyAge"
+              onCheck={(val) => {
+                doSusCheck("company", "companyAge", val);
+              }}
             />
             <InsightsCard
+              data={companyData}
+              field="companyAge"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
               placeholder=" eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
               ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
             />
@@ -80,11 +128,35 @@ const CompanyInfo = () => {
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="Bootstrapped / Pre-Seed"
-              card2="Seed Funding"
-              card3="Series A, B, C"
+              list={[
+                {
+                  label: "Bootstrapped/Pre-Seed",
+                  value: "Bootstrapped/Pre-Seed",
+                  flag: "green",
+                },
+                {
+                  label: "Seed Funding",
+                  value: "Seed Funding",
+                  flag: "white",
+                },
+                {
+                  label: "Series A,B,C",
+                  value: "Series A,B,C",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="fundingRounds"
+              onCheck={(val) => {
+                doSusCheck("company", "fundingRounds", val);
+              }}
             />
             <InsightsCard
+              data={companyData}
+              field="fundingRounds"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
               placeholder="eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
               ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
             />
@@ -101,11 +173,35 @@ const CompanyInfo = () => {
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="1-10 Employees"
-              card2="11-30 Employees"
-              card3="30+ Employees"
+              list={[
+                {
+                  label: "1-10 Employees",
+                  value: "1-10",
+                  flag: "green",
+                },
+                {
+                  label: "11-30 Employees",
+                  value: "11-30",
+                  flag: "white",
+                },
+                {
+                  label: "30+ Employees",
+                  value: "30+",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="numOfEmployees"
+              onCheck={(val) => {
+                doSusCheck("company", "numOfEmployees", val);
+              }}
             />
             <InsightsCard
+              data={companyData}
+              field="numOfEmployees"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
               placeholder="eg., the current status of their startups, their names and the links to each of them"
               ideaText="Having little or no experience in building a company means that the founder could use some  help and guidance in building their startup"
             />
@@ -122,11 +218,35 @@ const CompanyInfo = () => {
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="₹ 0-5 Cr."
-              card2="₹ 6-10 Cr."
-              card3="+ ₹ 10 Cr."
+              list={[
+                {
+                  label: "₹ 0-5 Cr.",
+                  value: "0-5 Cr.",
+                  flag: "green",
+                },
+                {
+                  label: "₹ 6-10 Cr.",
+                  value: "6-10 Cr.",
+                  flag: "white",
+                },
+                {
+                  label: "+ ₹ 10 Cr.",
+                  value: "10+ Cr.",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="revenue"
+              onCheck={(val) => {
+                doSusCheck("company", "revenue", val);
+              }}
             />
             <InsightsCard
+              data={companyData}
+              field="revenue"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
               placeholder="eg., the current status of their startups, their names and the links to each of them"
               ideaText="Having little or no experience in building a company means that the founder could use some  help and guidance in building their startup"
             />

@@ -12,41 +12,87 @@ import founder from "assets/svg/founder.svg";
 import company from "assets/svg/company.svg";
 import web from "assets/svg/footprint.svg";
 import product from "assets/svg/product.svg";
+import { createEntity, getSusFlag } from "config/APIs/startup";
+import { useDispatch } from "react-redux";
+import { showToast } from "redux/toaster";
+const tabs = [
+  {
+    label: "Overview",
+    icon: overview,
+    value: "overview",
+  },
+  {
+    label: "Founder Info",
+    icon: founder,
+    value: "founder",
+  },
+  {
+    label: "Company Info",
+    icon: company,
+    value: "company",
+  },
+  {
+    label: "Digital Footprint",
+    icon: web,
+    value: "footprint",
+  },
+  {
+    label: "Product Info",
+    icon: product,
+    value: "product",
+  },
+];
 
 const SussForm = () => {
-  const tabs = [
-    {
-      label: "Overview",
-      icon: overview,
-      value: "overview",
-    },
-    {
-      label: "Founder Info",
-      icon: founder,
-      value: "founder",
-    },
-    {
-      label: "Company Info",
-      icon: company,
-      value: "company",
-    },
-    {
-      label: "Digital Footprint",
-      icon: web,
-      value: "footprint",
-    },
-    {
-      label: "Product Info",
-      icon: product,
-      value: "product",
-    },
-  ];
-
+  const dispatch = useDispatch();
   const [selectedTab, setSelectedTab] = useState("overview");
+  const [companyData, setCompanyData] = useState({});
+  const [founderData, setFounderData] = useState({});
+
+  const doSusCheck = async (type, field, value) => {
+    try {
+      let res = await getSusFlag({ type, field, value });
+      let data = res?.data;
+      if (type == "founder") {
+        setFounderData({
+          ...founderData,
+          [field]: {
+            value: value,
+            susCheck: data?.susCheck,
+          },
+        });
+      } else {
+        setCompanyData({
+          ...companyData,
+          [field]: {
+            value: value,
+            susCheck: data?.susCheck,
+          },
+        });
+      }
+      dispatch(showToast({ message: data?.message }));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const submit = async () => {
+    try {
+      let res = await createEntity({
+        ...companyData,
+        values: [companyData?.values],
+        founder: founderData,
+      });
+      let data = res?.data;
+
+      dispatch(showToast({ message: data?.message }));
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <div className="bg-[#F0F3F4]">
-      {/* <PageHeader name="New Suss Form"/> */}
       <PageHeader
         name="New Suss Form"
         ctaComponent={
@@ -56,7 +102,12 @@ const SussForm = () => {
                 Save as Draft
               </h1>
             </div>
-            <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border bg-primary-orange-500 cursor-pointer">
+            <div
+              onClick={() => {
+                submit();
+              }}
+              className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border bg-primary-orange-500 cursor-pointer"
+            >
               <h1 className="text-base font-inter font-semibold text-white">
                 Submit
               </h1>
@@ -73,11 +124,50 @@ const SussForm = () => {
           setSelectedTab={setSelectedTab}
         />
 
-        {selectedTab === "overview" && <Overview />}
-        {selectedTab === "founder" && <FounderInfo />}
-        {selectedTab === "company" && <CompanyInfo />}
-        {selectedTab === "footprint" && <DigitalFootprint />}
-        {selectedTab === "product" && <ProductInfo />}
+        {selectedTab === "overview" && (
+          <Overview
+            companyData={companyData}
+            setCompanyData={setCompanyData}
+            founderData={founderData}
+            setFounderData={setFounderData}
+          />
+        )}
+        {selectedTab === "founder" && (
+          <FounderInfo
+            companyData={companyData}
+            setCompanyData={setCompanyData}
+            founderData={founderData}
+            setFounderData={setFounderData}
+            doSusCheck={doSusCheck}
+          />
+        )}
+        {selectedTab === "company" && (
+          <CompanyInfo
+            companyData={companyData}
+            setCompanyData={setCompanyData}
+            founderData={founderData}
+            setFounderData={setFounderData}
+            doSusCheck={doSusCheck}
+          />
+        )}
+        {selectedTab === "footprint" && (
+          <DigitalFootprint
+            companyData={companyData}
+            setCompanyData={setCompanyData}
+            founderData={founderData}
+            setFounderData={setFounderData}
+            doSusCheck={doSusCheck}
+          />
+        )}
+        {selectedTab === "product" && (
+          <ProductInfo
+            companyData={companyData}
+            setCompanyData={setCompanyData}
+            founderData={founderData}
+            setFounderData={setFounderData}
+            doSusCheck={doSusCheck}
+          />
+        )}
       </div>
     </div>
   );
