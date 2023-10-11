@@ -217,9 +217,13 @@ label {
     border-radius: 16px 0px 0px 16px; }
 
 .grad {
-  background: linear-gradient(93deg, #f7f4d4 0%, rgba(247, 247, 255, 0) 100%);
-  border-radius: 40px 0px 0px 96px;
+  background: linear-gradient(93deg, #f7f4d4 0%, rgba(247, 247, 255, 0) 40%);
   border-left: 4px solid var(--fusion-300, #ffd844); }
+
+@media screen and (min-width: 700px) {
+  .grad {
+    background: linear-gradient(93deg, #f7f4d4 0%, rgba(247, 247, 255, 0) 100%);
+    border-radius: 40px 0px 0px 96px; } }
 
 /*Theme Colors*/
 /*Borders*/

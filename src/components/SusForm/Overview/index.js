@@ -8,6 +8,7 @@ import scroll from "assets/svg/fi_10237168.svg";
 import idea from "assets/svg/Idea.svg";
 import web from "assets/svg/fi_10218756.svg";
 import about from "assets/svg/fi_10166120.svg";
+import OnlinePresence from "./OnlinePresence";
 
 const Overview = ({
   companyData,
@@ -102,8 +103,42 @@ const Overview = ({
             </h1>
           </div>
 
-          <div className="flex flex-col flex-start gap-4">
-            <div className="flex "></div>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-20">
+            <div className="flex flex-[1_0_0] flex-col flex-start gap-10">
+              <OnlinePresence
+                title="Website"
+                placeholder="Add website link"
+                presence="website"
+              />
+              <OnlinePresence
+                title="Instagram"
+                placeholder="Paste link to profile"
+                presence="Instagram Profile"
+              />
+              <OnlinePresence
+                title="Facebook"
+                placeholder="Paste link to profile"
+                presence="Facebook Profile"
+              />
+              <OnlinePresence
+                title="Linkedin"
+                placeholder="Paste link to profile"
+                presence="Linkedin Profile"
+              />
+              <OnlinePresence
+                title="Twitter"
+                placeholder="Paste link to profile"
+                presence="Twitter Profile"
+              />
+            </div>
+
+            <div className="flex flex-col flex-start justify-center sm:px-6 py-4 max-w-[488px] max-h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
+              <img src={idea} alt="" className="w-6 h-6" />
+              <p className="font-inter text-sm font-light text-neutral-500 max-w-[640px]">
+                Uploading company logo helps differentiate multiple companies
+                that might have the same name
+              </p>
+            </div>
           </div>
         </div>
 

@@ -8,6 +8,7 @@ import productfeatures from "assets/svg/fi_2261136.svg";
 import customer from "assets/svg/fi_10218024.svg";
 import idea from "assets/svg/Idea.svg";
 
+// import InsightsCard from "components/SusForm/Common/InsightsCard";
 import TextCard from "../Common/TextCard";
 
 const ProductInfo = () => {

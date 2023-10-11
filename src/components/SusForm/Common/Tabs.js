@@ -22,7 +22,7 @@ function Tabs({ tabs, selectedTab, setSelectedTab, radius }) {
   }, [activeTabIndex]);
 
   return (
-    <div className="flex max-md:flex-col py-2 px-14 flex-start justify-center gap-2 items-stretch">
+    <div className="flex py-2 md:px-14 snap-x max-md:overflow-x-scroll md:justify-center gap-2 items-stretch">
       {tabs.map((item, idx) => {
         return (
           <div
@@ -32,7 +32,7 @@ function Tabs({ tabs, selectedTab, setSelectedTab, radius }) {
               setSelectedTab(item?.value);
               setActiveTabIndex(idx);
             }}
-            className={`flex flex-[1_0_0] px-10 py-3 cursor-pointer items-center justify-center ${
+            className={`flex flex-[1_0_0] px-20 md:px-10 py-3 cursor-pointer items-center justify-center snap-center ${
               selectedTab === item?.value
                 ? "bg-neutral-50 text-sm border-b-2 border-neutral-800 font-light text-neutral-800"
                 : "font-medium text-neutral-400 text-sm"
