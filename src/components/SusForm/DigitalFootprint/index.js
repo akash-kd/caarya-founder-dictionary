@@ -15,6 +15,7 @@ const DigitalFootprint = ({
   setCompanyData,
   founderData,
   setFounderData,
+  doSusCheck,
 }) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
@@ -38,45 +39,46 @@ const DigitalFootprint = ({
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={linkedin} imgSize={8} title="LinkedIn Activity" />
-
-          <div className="flex flex-col flex-start gap-16">
-            <RadioCard
-              card1="Remote Work"
-              card2="Hybrid Work"
-              card3="On-Site Work"
-            />
-            <InsightsCard
-              placeholder=" eg., the founder's exact age"
-              ideaText="Age is an indicator of a person's risk taking tendencies. Younger founders tend to be more open to risks"
-            />
-          </div>
-        </div>
-
-        <div className="flex p-4 flex-col flex-start gap-10 relative">
-          <BsCheckCircle
-            size="32px"
-            color="#CFCDC9"
-            className="absolute top-2 right-2"
-          />
           <CardTitle
-            title="LinkedIn Followers"
-            icon={
-              <div className="flex p-1 flex-col items-center justify-center gap-2 rounded bg-[#1E79C3]">
-                <MdPeopleAlt size="24px" color="white" />
-              </div>
-            }
+            img={linkedin}
+            imgSize={8}
+            title="Last 3 Months Social Media Activity"
           />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="0-5 Years Old"
-              card2="6-10 Years Old"
-              card3="10+ Years Old"
+              list={[
+                {
+                  label: "15+ posts across all social accounts",
+                  value: "15+",
+                  flag: "green",
+                },
+                {
+                  label: "2-15 posts across all social accounts",
+                  value: "2-15",
+                  flag: "white",
+                },
+                {
+                  label: ">2 posts across all social accounts",
+                  value: "0-2",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="socialsActivity"
+              onCheck={(val) => {
+                doSusCheck("company", "socialsActivity", val);
+              }}
             />
+
             <InsightsCard
-              placeholder=" eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
-              ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
+              data={companyData}
+              field="socialsActivity"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
+              placeholder=" eg., the current status of their startups, their names and the links to each of them"
+              ideaText="Brands that are relative active on social media are.........."
             />
           </div>
         </div>
@@ -87,94 +89,42 @@ const DigitalFootprint = ({
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={instagram} imgSize={8} title="Instagram Activity" />
+          <CardTitle img={linkedin} imgSize={8} title="Social Media Presence" />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
-              card1="Bootstrapped / Pre-Seed"
-              card2="Seed Funding"
-              card3="Series A, B, C"
+              list={[
+                {
+                  label: "<200 followers across all platforms",
+                  value: "200+",
+                  flag: "green",
+                },
+                {
+                  label: "50-200 followers across all platforms",
+                  value: "50-200",
+                  flag: "white",
+                },
+                {
+                  label: ">50 followers across all platforms",
+                  value: "0-50",
+                  flag: "red",
+                },
+              ]}
+              data={companyData}
+              field="socialsPresence"
+              onCheck={(val) => {
+                doSusCheck("company", "socialsPresence", val);
+              }}
             />
+
             <InsightsCard
-              placeholder="eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
-              ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
-            />
-          </div>
-        </div>
-
-        <div className="flex p-4 flex-col flex-start gap-10 relative">
-          <BsCheckCircle
-            size="32px"
-            color="#CFCDC9"
-            className="absolute top-2 right-2"
-          />
-          <CardTitle
-            title="Instagram Followers"
-            icon={
-              <div className="flex p-1 flex-col items-center justify-center gap-2 rounded bg-[#FB6F60]">
-                <MdPeopleAlt size="24px" color="white" />
-              </div>
-            }
-          />
-
-          <div className="flex flex-col flex-start gap-16">
-            <RadioCard
-              card1="1-10 Employees"
-              card2="11-30 Employees"
-              card3="30+ Employees"
-            />
-            <InsightsCard
-              placeholder="eg., the current status of their startups, their names and the links to each of them"
-              ideaText="Having little or no experience in building a company means that the founder could use some  help and guidance in building their startup"
-            />
-          </div>
-        </div>
-
-        <div className="flex p-4 flex-col flex-start gap-10 relative">
-          <BsCheckCircle
-            size="32px"
-            color="#CFCDC9"
-            className="absolute top-2 right-2"
-          />
-          <CardTitle img={twitter} imgSize={8} title="Twitter Activity" />
-
-          <div className="flex flex-col flex-start gap-16">
-            <RadioCard
-              card1="₹ 0-5 Cr."
-              card2="₹ 6-10 Cr."
-              card3="+ ₹ 10 Cr."
-            />
-            <InsightsCard
-              placeholder="eg., the current status of their startups, their names and the links to each of them"
-              ideaText="Having little or no experience in building a company means that the founder could use some  help and guidance in building their startup"
-            />
-          </div>
-        </div>
-
-        <div className="flex p-4 flex-col flex-start gap-10 relative">
-          <BsCheckCircle
-            size="32px"
-            color="#CFCDC9"
-            className="absolute top-2 right-2"
-          />
-          <CardTitle
-            title="Twitter Followers"
-            icon={
-              <div className="flex p-1 flex-col items-center justify-center gap-2 rounded bg-[#282724]">
-                <MdPeopleAlt size="24px" color="white" />
-              </div>
-            }
-          />
-
-          <div className="flex flex-col flex-start gap-16">
-            <RadioCard
-              card1="₹ 0-5 Cr."
-              card2="₹ 6-10 Cr."
-              card3="+ ₹ 10 Cr."
-            />
-            <InsightsCard
-              placeholder="eg., the current status of their startups, their names and the links to each of them"
-              ideaText="Having little or no experience in building a company means that the founder could use some  help and guidance in building their startup"
+              data={companyData}
+              field="socialsPresence"
+              setData={(val) => {
+                setCompanyData(val);
+              }}
+              placeholder=" eg., the current status of their startups, their names and the links to each of them"
+              ideaText="Brands that are relative active on social media are.........."
             />
           </div>
         </div>

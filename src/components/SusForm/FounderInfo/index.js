@@ -4,6 +4,7 @@ import { BsCheckCircle } from "react-icons/bs";
 import founder from "assets/svg/fi_8677126.svg";
 import cake from "assets/svg/Cake.svg";
 import history from "assets/svg/fi_11244276.svg";
+import history1 from "assets/svg/1.svg";
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
 
@@ -102,7 +103,53 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
             />
           </div>
         </div>
+        <div className="flex p-4 flex-col flex-start gap-10">
+          <div className="flex flex-col flex-start gap-2">
+            <div className="flex items-center p-1">
+              <img src={history1} alt="" className="w-6 h-6" />
+            </div>
+            <h1 className="font-inter text-lg font-semibold text-neutral-800">
+              Work History
+            </h1>
+          </div>
 
+          <div className="flex flex-col flex-start gap-16">
+            <RadioCard
+              list={[
+                {
+                  label: "Has less than 2 years of work ex.",
+                  value: "0-1",
+                  flag: "green",
+                },
+                {
+                  label: "Has 2-6 years of work ex.",
+                  value: "2-6",
+                  flag: "white",
+                },
+                {
+                  label: "Has more than 6 years of work ex.",
+                  value: "6+",
+                  flag: "red",
+                },
+              ]}
+              data={founderData}
+              field="workHistory"
+              onCheck={(val) => {
+                doSusCheck("founder", "workHistory", val);
+              }}
+            />
+
+            <InsightsCard
+              data={founderData}
+              field="workHistory"
+              setData={(val) => {
+                setFounderData(val);
+              }}
+              placeholder=" eg., pointing out if the founder has any experience in the industry they are building their startup or any other experience that might be relevant to their current venture"
+              ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
+            />
+          </div>
+        </div>
         <div className="flex p-4 flex-col flex-start gap-10">
           <div className="flex flex-col flex-start gap-2">
             <div className="flex items-center p-1">
