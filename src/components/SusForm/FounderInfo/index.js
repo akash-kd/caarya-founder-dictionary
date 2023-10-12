@@ -1,12 +1,17 @@
 import React from "react";
 
 import { BsCheckCircle } from "react-icons/bs";
-import founder from "assets/svg/fi_8677126.svg";
-import cake from "assets/svg/Cake.svg";
-import history from "assets/svg/fi_11244276.svg";
-import history1 from "assets/svg/1.svg";
+import { RiAddFill } from "react-icons/ri";
+
+const founder = "assets/svg/pages/founderInfo/fi_8677126.svg";
+const cake = "assets/svg/pages/founderInfo/Cake.svg";
+const history = "assets/svg/pages/founderInfo/fi_11244276.svg";
+const history1 = "assets/svg/pages/founderInfo/1.svg";
+
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
+import CardTitle from "../Common/CardTitle";
+import ReferencesCard from "../Common/ReferencesCard";
 
 const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
   return (
@@ -25,7 +30,12 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
       </div>
 
       {/* Add Co-Founder */}
-      <div></div>
+      <div className="flex px-6 flex-end items-center gap-2 cursor-pointer">
+        <RiAddFill color="#CE5511" size="24px"/>
+        <h1 className="font-inter text-base font-semibold text-dawn-primary-700 underline underline-offset-2">
+          Add Co-Founder
+        </h1>
+      </div>
 
       <div className="flex flex-col flex-start px-6 pt-4 pb-20 gap-6">
         <div className="flex flex-col flex-start p-4 gap-3">
@@ -38,7 +48,7 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
               setFounderData({ ...founderData, name: e.target.value });
             }}
             placeholder="Add Name"
-            className="flex px-4 py-3 items-center w-[483px] rounded-lg border border-neutral-300"
+            className="flex px-4 py-3 items-center max-w:[483px] rounded-lg border border-neutral-300"
           />
         </div>
 
@@ -52,20 +62,17 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
               setFounderData({ ...founderData, email: e.target.value });
             }}
             placeholder="Add Email Address"
-            className="flex px-4 py-3 items-center w-[483px] rounded-lg border border-neutral-300"
+            className="flex px-4 py-3 items-center max-w:[483px] rounded-lg border border-neutral-300"
           />
         </div>
 
-        <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <div className="flex items-center p-1">
-              <img src={cake} alt="" className="w-6 h-6" />
-            </div>
-            <h1 className="font-inter text-lg font-semibold text-neutral-800">
-              Founder's Age
-            </h1>
-          </div>
-          {console.log(founderData)}
+        <ReferencesCard>
+          <CardTitle
+            img={cake}
+            title="Founder's Age"
+            color="bg-fusion-primary-30"
+          />
+
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
               list={[
@@ -102,16 +109,14 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
               ideaText="Age is an indicator of a person's risk taking tendencies. Younger founders tend to be more open to risks."
             />
           </div>
-        </div>
-        <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <div className="flex items-center p-1">
-              <img src={history1} alt="" className="w-6 h-6" />
-            </div>
-            <h1 className="font-inter text-lg font-semibold text-neutral-800">
-              Work History
-            </h1>
-          </div>
+        </ReferencesCard>
+
+        <ReferencesCard>
+          <CardTitle
+            img={history1}
+            title="Work History"
+            color="bg-fusion-secondary-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -149,16 +154,14 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
               ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
             />
           </div>
-        </div>
-        <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <div className="flex items-center p-1">
-              <img src={history} alt="" className="w-6 h-6" />
-            </div>
-            <h1 className="font-inter text-lg font-semibold text-neutral-800">
-              Founding History
-            </h1>
-          </div>
+        </ReferencesCard>
+
+        <ReferencesCard>
+          <CardTitle
+            img={history}
+            title="Founding History"
+            color="bg-caarya-blue-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -196,7 +199,7 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
               ideaText="Having little or no experience in building a company means that the founder could use some help and guidance in building their startup"
             />
           </div>
-        </div>
+        </ReferencesCard>
       </div>
     </div>
   );

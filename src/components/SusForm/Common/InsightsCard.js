@@ -1,9 +1,11 @@
 import React from "react";
 
-import idea from "assets/svg/Idea.svg";
+const idea = "assets/svg/pages/Idea.svg";
+
 import { ImQuotesRight } from "react-icons/im";
 import { MdInsights } from "react-icons/md";
-import brownie from "assets/svg/Brownie.svg";
+
+const brownie = "assets/svg/pages/Brownie.svg";
 
 const InsightsCard = ({ placeholder, ideaText, data, setData, field }) => {
   return (

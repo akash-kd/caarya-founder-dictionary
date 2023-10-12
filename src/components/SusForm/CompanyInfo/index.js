@@ -1,12 +1,14 @@
 import React from "react";
 
 import { BsCheckCircle } from "react-icons/bs";
-import company from "assets/svg/fi_4300058.svg";
-import location from "assets/svg/fi_819865.svg";
-import funding from "assets/svg/fi_2163226.svg";
-import rocket from "assets/svg/fi_10273288.svg";
-import employee from "assets/svg/fi_10216679.svg";
-import revenue from "assets/svg/fi_10693560.svg";
+
+const company = "assets/svg/pages/companyInfo/fi_4300058.svg";
+const location = "assets/svg/pages/companyInfo/fi_819865.svg";
+const funding = "assets/svg/pages/companyInfo/fi_2163226.svg";
+const rocket = "assets/svg/pages/companyInfo/fi_10273288.svg";
+const employee = "assets/svg/pages/companyInfo/fi_10216679.svg";
+const revenue = "assets/svg/pages/companyInfo/fi_10693560.svg";
+
 import CardTitle from "components/SusForm/Common/CardTitle";
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
@@ -34,7 +36,11 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={location} title="Company Work Location" />
+          <CardTitle
+            img={location}
+            title="Company Work Location"
+            color="bg-dawn-primary-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -79,7 +85,11 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={rocket} title="Company Age" />
+          <CardTitle
+            img={rocket}
+            title="Company Age"
+            color="bg-caarya-blue-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -124,7 +134,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={funding} title="Funding" />
+          <CardTitle img={funding} title="Funding" color="bg-[#F3FFF2]" />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -169,7 +179,11 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={employee} title="No. of Employees" />
+          <CardTitle
+            img={employee}
+            title="No. of Employees"
+            color="bg-labs-primary-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -214,7 +228,11 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
             color="#CFCDC9"
             className="absolute top-2 right-2"
           />
-          <CardTitle img={revenue} title="Company Revenue" />
+          <CardTitle
+            img={revenue}
+            title="Company Revenue"
+            color="bg-fusion-primary-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard

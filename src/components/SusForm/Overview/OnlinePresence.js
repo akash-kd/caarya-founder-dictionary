@@ -9,14 +9,20 @@ const OnlinePresence = ({ title, presence, placeholder }) => {
 
       <div className="flex flex-start justify-between">
         <div className="flex items-center gap-2">
-          <input type="radio" className="w-4 h-4" />
+          <input
+            type="radio"
+            className="text-[#F57D34] focus:ring-[#F57D34] w-4 h-4"
+          />
           <p className="text-xs font-inter font-light text-neutral-800">
             Has a {presence}
           </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <input type="radio" className="w-4 h-4" />
+          <input
+            type="radio"
+            className="text-[#F57D34] focus:ring-[#F57D34] w-4 h-4"
+          />
           <p className="text-xs font-inter font-light text-neutral-800">
             Does not have a {presence}
           </p>

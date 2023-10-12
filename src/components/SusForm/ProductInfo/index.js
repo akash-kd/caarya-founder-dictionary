@@ -2,14 +2,16 @@ import React from "react";
 
 import { BsCheckCircle } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
-import product from "assets/svg/product.svg";
-import nature from "assets/svg/fi_1474613.svg";
-import productfeatures from "assets/svg/fi_2261136.svg";
-import customer from "assets/svg/fi_10218024.svg";
-import idea from "assets/svg/Idea.svg";
+
+const product = "assets/svg/pages/productInfo/product.svg";
+const nature = "assets/svg/pages/productInfo/fi_1474613.svg";
+const productfeatures = "assets/svg/pages/productInfo/fi_2261136.svg";
+const customer = "assets/svg/pages/productInfo/fi_10218024.svg";
+const idea = "assets/svg/pages/Idea.svg";
 
 // import InsightsCard from "components/SusForm/Common/InsightsCard";
 import TextCard from "../Common/TextCard";
+import CardTitle from "../Common/CardTitle";
 
 const ProductInfo = () => {
   return (
@@ -29,13 +31,19 @@ const ProductInfo = () => {
 
       <div className="flex flex-col sm:flex-row px-6 flex-end sm:items-center gap-16">
         <div className="flex items-center gap-4">
-          <input type="radio" className="h-6 w-6" />
+          <input
+            type="radio"
+            className="text-[#F57D34] focus:ring-[#F57D34] h-6 w-6"
+          />
           <h1 className="font-inter text-base font-light text-neutral-800">
             Company has a product
           </h1>
         </div>
         <div className="flex items-center gap-4">
-          <input type="radio" className="h-6 w-6" />
+          <input
+            type="radio"
+            className="text-[#F57D34] focus:ring-[#F57D34] h-6 w-6"
+          />
           <h1 className="font-inter text-base font-light text-neutral-800">
             Company does not have any product yet
           </h1>
@@ -65,18 +73,14 @@ const ProductInfo = () => {
         </div>
 
         <div className="flex p-4 flex-col flex-start gap-10 items-stretch">
-          <div className="flex flex-col flex-start gap-2">
-            <div className="flex p-2 flex-col rounded">
-              <img src={nature} alt="" className="w-6 h-6" />
-            </div>
-
-            <h1 className="text-neutral-800 font-inter text-lg font-semibold">
-              Nature of the Product
-            </h1>
-          </div>
+          <CardTitle
+            img={nature}
+            title="Nature of the Product"
+            color="bg-peddle-primary-30"
+          />
 
           <div className="flex flex-col flex-start gap-16">
-            <div className="flex flex-start gap-4">
+            <div className="flex flex-col sm:flex-row flex-start gap-4">
               <div className="flex px-10 py-5 items-center gap-4 rounded-lg border border-neutral-300">
                 <h1 className="text-neutral-800 font-inter text-sm font-semibold">
                   Digital Product
@@ -104,13 +108,19 @@ const ProductInfo = () => {
 
                 <div className="flex flex-col md:flex-row flex-start gap-4 md:gap-20">
                   <div className="flex items-center gap-2">
-                    <input type="radio" className="w-4 h-4" />
+                    <input
+                      type="radio"
+                      className="text-[#F57D34] focus:ring-[#F57D34] w-4 h-4"
+                    />
                     <h1 className="text-sm font-light font-inter text-neutral-800">
                       Product has a link
                     </h1>
                   </div>
                   <div className="flex items-center gap-2">
-                    <input type="radio" className="w-4 h-4" />
+                    <input
+                      type="radio"
+                      className="text-[#F57D34] focus:ring-[#F57D34] w-4 h-4"
+                    />
                     <h1 className="text-sm font-light font-inter text-neutral-800">
                       Product does not has a link
                     </h1>
@@ -135,32 +145,25 @@ const ProductInfo = () => {
         </div>
 
         <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <div className="flex p-2 flex-col rounded">
-              <img src={productfeatures} alt="" className="w-6 h-6" />
-            </div>
-
-            <h1 className="text-neutral-800 font-inter text-lg font-semibold">
-              Product Features
-            </h1>
-          </div>
+          <CardTitle
+            img={productfeatures}
+            title="Product Features"
+            color="bg-fusion-primary-30"
+          />
           <TextCard
             titleText="Add features here"
             ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
             placeholder="Add values"
+            height="120"
           />
         </div>
 
         <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <div className="flex p-2 flex-col rounded">
-              <img src={customer} alt="" className="w-6 h-6" />
-            </div>
-
-            <h1 className="text-neutral-800 font-inter text-lg font-semibold">
-              Customer Segments
-            </h1>
-          </div>
+          <CardTitle
+            img={customer}
+            title="Customer Segments"
+            color="bg-labs-primary-30"
+          />
           <TextCard
             titleText="Add features here"
             ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"

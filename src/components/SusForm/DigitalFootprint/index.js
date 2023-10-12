@@ -2,13 +2,17 @@ import React from "react";
 
 import { BsCheckCircle } from "react-icons/bs";
 import { MdPeopleAlt } from "react-icons/md";
-import web from "assets/svg/fi_2600295.svg";
-import instagram from "assets/svg/instagram.svg";
-import linkedin from "assets/svg/linkedin.svg";
-import twitter from "assets/svg/twitter.svg";
+import { FiActivity } from "react-icons/fi";
+
+const web = "assets/svg/pages/digitalFootprint/fi_2600295.svg";
+const instagram = "assets/svg/pages/digitalFootprint/instagram.svg";
+const linkedin = "assets/svg/pages/digitalFootprint/linkedin.svg";
+const twitter = "assets/svg/pages/digitalFootprint/twitter.svg";
+
 import CardTitle from "components/SusForm/Common/CardTitle";
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
+import ReferencesCard from "../Common/ReferencesCard";
 
 const DigitalFootprint = ({
   companyData,
@@ -33,16 +37,11 @@ const DigitalFootprint = ({
       </div>
 
       <div className="flex flex-col flex-start px-6 pt-4 pb-20 gap-6">
-        <div className="flex p-4 flex-col flex-start gap-10 relative">
-          <BsCheckCircle
-            size="32px"
-            color="#CFCDC9"
-            className="absolute top-2 right-2"
-          />
+        <ReferencesCard>
           <CardTitle
-            img={linkedin}
-            imgSize={8}
+            icon={<FiActivity color="#FFFFFF" size="24px" />}
             title="Last 3 Months Social Media Activity"
+            color="bg-error-500"
           />
 
           <div className="flex flex-col flex-start gap-16">
@@ -81,15 +80,14 @@ const DigitalFootprint = ({
               ideaText="Brands that are relative active on social media are.........."
             />
           </div>
-        </div>
+        </ReferencesCard>
 
-        <div className="flex p-4 flex-col flex-start gap-10 relative">
-          <BsCheckCircle
-            size="32px"
-            color="#CFCDC9"
-            className="absolute top-2 right-2"
+        <ReferencesCard>
+          <CardTitle
+            icon={<MdPeopleAlt color="#FFFFFF" size="24px" />}
+            title="Social Media Presence"
+            color="bg-neutral-900"
           />
-          <CardTitle img={linkedin} imgSize={8} title="Social Media Presence" />
 
           <div className="flex flex-col flex-start gap-16">
             <RadioCard
@@ -127,7 +125,7 @@ const DigitalFootprint = ({
               ideaText="Brands that are relative active on social media are.........."
             />
           </div>
-        </div>
+        </ReferencesCard>
       </div>
     </div>
   );
