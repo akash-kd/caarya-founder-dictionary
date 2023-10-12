@@ -58,7 +58,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="workLocation"
               onCheck={(val) => {
-                doSusCheck("company", "workLocation", val);
+                doSusCheck("startup", "workLocation", val);
               }}
             />
             <InsightsCard
@@ -103,7 +103,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="companyAge"
               onCheck={(val) => {
-                doSusCheck("company", "companyAge", val);
+                doSusCheck("startup", "companyAge", val);
               }}
             />
             <InsightsCard
@@ -148,7 +148,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="fundingRounds"
               onCheck={(val) => {
-                doSusCheck("company", "fundingRounds", val);
+                doSusCheck("startup", "fundingRounds", val);
               }}
             />
             <InsightsCard
@@ -193,7 +193,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="numOfEmployees"
               onCheck={(val) => {
-                doSusCheck("company", "numOfEmployees", val);
+                doSusCheck("startup", "numOfEmployees", val);
               }}
             />
             <InsightsCard
@@ -238,7 +238,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="revenue"
               onCheck={(val) => {
-                doSusCheck("company", "revenue", val);
+                doSusCheck("startup", "revenue", val);
               }}
             />
             <InsightsCard
