@@ -66,7 +66,7 @@ const DigitalFootprint = ({
               data={companyData}
               field="socialsActivity"
               onCheck={(val) => {
-                doSusCheck("company", "socialsActivity", val);
+                doSusCheck("startup", "socialsActivity", val);
               }}
             />
 
@@ -111,7 +111,7 @@ const DigitalFootprint = ({
               data={companyData}
               field="socialsPresence"
               onCheck={(val) => {
-                doSusCheck("company", "socialsPresence", val);
+                doSusCheck("startup", "socialsPresence", val);
               }}
             />
 
