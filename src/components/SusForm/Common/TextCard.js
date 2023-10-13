@@ -6,7 +6,16 @@ import { MdInsights } from "react-icons/md";
 const brownie = "assets/svg/pages/Brownie.svg";
 const idea = "assets/svg/pages/Idea.svg";
 
-const TextCard = ({ placeholder, titleText, ideaText }) => {
+const TextCard = ({
+  placeholder,
+  titleText,
+  ideaText,
+  setData,
+  data,
+  field,
+  products,
+  productId,
+}) => {
   return (
     <div className="flex max-md:flex-col items-center gap-10 sm:gap-20">
       <div className="flex flex-[1_0_0] w-full flex-col flex-start gap-10">
@@ -19,6 +28,18 @@ const TextCard = ({ placeholder, titleText, ideaText }) => {
           <input
             placeholder={placeholder}
             className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center"
+            value={productId && products[productId - 1][field]}
+            onChange={(e) => {
+              {
+                productId
+                  ? (products[productId - 1][field] = e.target.value)
+                  : "";
+              }
+              setData({
+                ...data,
+                [field]: e.target.value,
+              });
+            }}
           />
         </div>
       </div>
