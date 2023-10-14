@@ -61,6 +61,15 @@ label {
 :focus {
   outline: none !important;
 }
+
+.sticky-thc {
+  #tabs {
+    position: sticky;
+    top: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
 @import "./loaders";
 @import "./signIn";
 @import "./appWrapper.scss";
