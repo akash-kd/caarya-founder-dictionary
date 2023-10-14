@@ -109,9 +109,9 @@ const SussForm = () => {
   };
 
   return (
-    <div className="bg-[#F0F3F4]">
+    <div className="bg-[#F0F3F4] sticky-thc h-[90vh]">
       <PageHeader
-        name="New Suss Form"
+        name="Startup Story"
         ctaComponent={
           <div className="flex px-6 py-4 gap-4 items-center">
             <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border border-primary-orange-500 cursor-pointer">
@@ -133,13 +133,15 @@ const SussForm = () => {
         }
       />
 
-      <div className="flex flex-col lg:px-8 py-4 gap-2 bg-white">
-        {/* Add the toggle bar - Not Added Yet */}
-        <Tabs
-          tabs={tabs}
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-        />
+      <div className="flex flex-col lg:px-8 py-4 gap-2 bg-white relative">
+        <div id="tabs" className="bg-white z-40">
+          {/* Add the toggle bar - Not Added Yet */}
+          <Tabs
+            tabs={tabs}
+            selectedTab={selectedTab}
+            setSelectedTab={setSelectedTab}
+          />
+        </div>
 
         {selectedTab === "overview" && (
           <Overview
