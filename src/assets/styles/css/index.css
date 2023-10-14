@@ -44,6 +44,12 @@ label {
 :focus {
   outline: none !important; }
 
+.sticky-thc #tabs {
+  position: sticky;
+  top: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px; }
+
 .yoda-animation {
   transform: translateY(0px);
   animation: float 6s ease-in-out infinite; }

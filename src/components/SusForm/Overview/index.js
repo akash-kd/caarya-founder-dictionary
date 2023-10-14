@@ -4,18 +4,15 @@ import { RiUploadCloudLine } from "react-icons/ri";
 import { BsCheckCircle } from "react-icons/bs";
 
 // SVG Icons
-import scroll from "assets/svg/fi_10237168.svg";
-import idea from "assets/svg/Idea.svg";
-import web from "assets/svg/fi_10218756.svg";
-import about from "assets/svg/fi_10166120.svg";
-import OnlinePresence from "./OnlinePresence";
+const scroll = "assets/svg/pages/overview/fi_10237168.svg";
+const idea = "assets/svg/pages/Idea.svg";
+const web = "assets/svg/pages/overview/fi_10218756.svg";
+const about = "assets/svg/pages/overview/fi_10166120.svg";
 
-const Overview = ({
-  companyData,
-  setCompanyData,
-  founderData,
-  setFounderData,
-}) => {
+import OnlinePresence from "./OnlinePresence";
+import CardTitle from "../Common/CardTitle";
+
+const Overview = ({ companyData, setCompanyData }) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">
@@ -31,8 +28,13 @@ const Overview = ({
         </div>
       </div>
 
-      <div className="flex flex-col flex-start gap-6 sm:px-6 pt-2 pb-20">
-        <div className="p-4 flex flex-col flex-start gap-3">
+      <div className="flex flex-col flex-start gap-6 sm:px-6 pt-2 pb-20 ">
+        <div className="p-4 flex flex-col flex-start gap-3 relative">
+          <BsCheckCircle
+            size="32px"
+            color="#CFCDC9"
+            className="absolute top-2 right-2"
+          />
           <div className="font-inter text-lg font-semibold">Startup Name</div>
           <input
             value={companyData?.name}
@@ -45,8 +47,13 @@ const Overview = ({
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row p-4 gap-3 items-center">
+        <div className="flex flex-col sm:flex-row p-4 gap-3 items-center relative">
           <div className="flex flex-1 flex-col gap-3">
+            <BsCheckCircle
+              size="32px"
+              color="#CFCDC9"
+              className="absolute top-2 right-2"
+            />
             <div className="font-inter text-lg font-semibold">Company Logo</div>
             <div className="flex max-w-[420px] md:min-w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
               <div className="flex flex-col gap-2 sm:px-6 items-center">
@@ -70,7 +77,12 @@ const Overview = ({
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row flex-start p-4 gap-3 items-center">
+        <div className="flex flex-col sm:flex-row flex-start p-4 gap-3 items-center relative">
+          <BsCheckCircle
+            size="32px"
+            color="#CFCDC9"
+            className="absolute top-2 right-2"
+          />
           <div className="sm:p-4 flex flex-[1_0_0] max-sm:w-full flex-col flex-start gap-3">
             <div className="font-inter text-lg font-semibold">
               Startup Industry
@@ -95,13 +107,17 @@ const Overview = ({
           </div>
         </div>
 
-        <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <img src={web} alt="" className="w-6 h-6" />
-            <h1 className="font-inter text-neutral-800 font-semibold text-lg">
-              Online Presence
-            </h1>
-          </div>
+        <div className="flex p-4 flex-col flex-start gap-10 relative">
+          <BsCheckCircle
+            size="32px"
+            color="#CFCDC9"
+            className="absolute top-2 right-2"
+          />
+          <CardTitle
+            img={web}
+            title="Online Presence"
+            color="bg-accent-primary-50"
+          />
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-20">
             <div className="flex flex-[1_0_0] flex-col flex-start gap-10">
@@ -109,26 +125,41 @@ const Overview = ({
                 title="Website"
                 placeholder="Add website link"
                 presence="website"
+                field="website"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Instagram"
                 placeholder="Paste link to profile"
                 presence="Instagram Profile"
+                field="instagram"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Facebook"
                 placeholder="Paste link to profile"
                 presence="Facebook Profile"
+                field="facebook"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Linkedin"
                 placeholder="Paste link to profile"
                 presence="Linkedin Profile"
+                field="linkedIn"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Twitter"
                 placeholder="Paste link to profile"
                 presence="Twitter Profile"
+                field="twitter"
+                data={companyData}
+                setData={setCompanyData}
               />
             </div>
 
@@ -142,13 +173,17 @@ const Overview = ({
           </div>
         </div>
 
-        <div className="flex p-4 flex-col flex-start gap-10">
-          <div className="flex flex-col flex-start gap-2">
-            <img src={about} alt="" className="w-6 h-6" />
-            <h1 className="font-inter text-neutral-800 font-semibold text-lg">
-              About Company
-            </h1>
-          </div>
+        <div className="flex p-4 flex-col flex-start gap-10 relative">
+          <BsCheckCircle
+            size="32px"
+            color="#CFCDC9"
+            className="absolute top-2 right-2"
+          />
+          <CardTitle
+            img={about}
+            title="About Company"
+            color="bg-chronos-primary-50"
+          />
 
           <div className="flex flex-col sm:flex-row items-center sm:gap-20">
             <div className="flex flex-[1_0_0] w-full flex-col flex-start gap-10">

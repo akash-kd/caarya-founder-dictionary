@@ -1,11 +1,14 @@
 import React from "react";
+const idea = "assets/svg/pages/Idea.svg";
 
-import idea from "assets/svg/Idea.svg";
-import { ImQuotesRight } from "react-icons/im";
-import { MdInsights } from "react-icons/md";
-import brownie from "assets/svg/Brownie.svg";
-
-const TextCard = ({ placeholder, titleText, ideaText }) => {
+const TextCard = ({
+  placeholder,
+  titleText,
+  ideaText,
+  setData,
+  data,
+  field,
+}) => {
   return (
     <div className="flex max-md:flex-col items-center gap-10 sm:gap-20">
       <div className="flex flex-[1_0_0] w-full flex-col flex-start gap-10">
@@ -18,6 +21,10 @@ const TextCard = ({ placeholder, titleText, ideaText }) => {
           <input
             placeholder={placeholder}
             className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center"
+            value={data[field] || ""}
+            onChange={(e) => {
+              setData({ ...data, [field]: e.target.value });
+            }}
           />
         </div>
       </div>

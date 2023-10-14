@@ -29,7 +29,7 @@ function TopBar() {
       </a>
 
       <div className="flex flex-row items-center justify-between space-x-4">
-        {window.location.pathname.includes("/home/wishlist") ? (
+        {/* {window.location.pathname.includes("/home/wishlist") ? (
           <HeartIcon
             onClick={() => {
               window.location.pathname.includes("/home/wishlist");
@@ -45,11 +45,11 @@ function TopBar() {
             }}
             className="h-6 w-6 text-primary-green-dark"
           />
-        )}
-        <UserGroupIcon
+        )} */}
+        {/* <UserGroupIcon
           onClick={() => {}}
           className="h-5 w-5 text-primary-green-darker"
-        />
+        /> */}
         <LogoutIcon
           onClick={() => {
             onLogout();
