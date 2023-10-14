@@ -1,9 +1,4 @@
 import React from "react";
-
-import { ImQuotesRight } from "react-icons/im";
-import { MdInsights } from "react-icons/md";
-
-const brownie = "assets/svg/pages/Brownie.svg";
 const idea = "assets/svg/pages/Idea.svg";
 
 const TextCard = ({
@@ -13,8 +8,6 @@ const TextCard = ({
   setData,
   data,
   field,
-  products,
-  productId,
 }) => {
   return (
     <div className="flex max-md:flex-col items-center gap-10 sm:gap-20">
@@ -28,17 +21,9 @@ const TextCard = ({
           <input
             placeholder={placeholder}
             className="flex items-start py-3 px-4 rounded border border-neutral-300 self-stretch h-[88px] placeholder:text-sm placeholder:flex placeholder:items-center"
-            value={productId && products[productId - 1][field]}
+            value={data[field] || ""}
             onChange={(e) => {
-              {
-                productId
-                  ? (products[productId - 1][field] = e.target.value)
-                  : "";
-              }
-              setData({
-                ...data,
-                [field]: e.target.value,
-              });
+              setData({ ...data, [field]: e.target.value });
             }}
           />
         </div>

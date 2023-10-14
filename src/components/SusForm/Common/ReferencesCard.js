@@ -3,7 +3,7 @@ import { BsCheckCircle } from "react-icons/bs";
 
 const ReferencesCard = ({ children }) => {
   return (
-    <div className="flex p-4 flex-col flex-start gap-10 relative ">
+    <div className="flex lg:p-4 flex-col flex-start gap-10 relative ">
       <BsCheckCircle
         size="32px"
         color="#CFCDC9"

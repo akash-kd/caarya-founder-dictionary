@@ -14,13 +14,7 @@ import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
 import ReferencesCard from "../Common/ReferencesCard";
 
-const DigitalFootprint = ({
-  companyData,
-  setCompanyData,
-  founderData,
-  setFounderData,
-  doSusCheck,
-}) => {
+const DigitalFootprint = ({ companyData, setCompanyData, doSusCheck }) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">
@@ -36,7 +30,7 @@ const DigitalFootprint = ({
         </div>
       </div>
 
-      <div className="flex flex-col flex-start px-6 pt-4 pb-20 gap-6">
+      <div className="flex flex-col flex-start px-4 pt-4 pb-20 gap-6">
         <ReferencesCard>
           <CardTitle
             icon={<FiActivity color="#FFFFFF" size="24px" />}

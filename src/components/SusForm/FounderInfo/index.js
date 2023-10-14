@@ -30,15 +30,15 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
       </div>
 
       {/* Add Co-Founder */}
-      <div className="flex px-6 flex-end items-center gap-2 cursor-pointer">
-        <RiAddFill color="#CE5511" size="24px"/>
+      <div className="flex px-4 flex-end items-center gap-2 cursor-pointer">
+        <RiAddFill color="#CE5511" size="24px" />
         <h1 className="font-inter text-base font-semibold text-dawn-primary-700 underline underline-offset-2">
           Add Co-Founder
         </h1>
       </div>
 
-      <div className="flex flex-col flex-start px-6 pt-4 pb-20 gap-6">
-        <div className="flex flex-col flex-start p-4 gap-3">
+      <div className="flex flex-col flex-start px-4 pt-4 pb-20 gap-6">
+        <div className="flex flex-col flex-start lg:p-4 gap-3">
           <h1 className="font-inter text-lg font-semibold text-neutral-800">
             Founder Name
           </h1>
@@ -52,7 +52,7 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
           />
         </div>
 
-        <div className="flex flex-col flex-start p-4 gap-3">
+        <div className="flex flex-col flex-start lg:p-4 gap-3">
           <h1 className="font-inter text-lg font-semibold text-neutral-800">
             Founder Email
           </h1>
@@ -185,7 +185,12 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
               data={founderData}
               field="startupFounded"
               onCheck={(val) => {
-                doSusCheck("founder", "startupFounded", val);
+                doSusCheck(
+                  "founder",
+                  "startupFounded",
+                  val,
+                  "startupFoundedCount"
+                );
               }}
             />
 

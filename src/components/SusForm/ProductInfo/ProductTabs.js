@@ -1,23 +1,17 @@
 import React from "react";
 import { BsCheckCircle } from "react-icons/bs";
 
-const ProductTabs = ({
-  list,
-  setProductData,
-  productData,
-  setProductId,
-  productId,
-}) => {
+const ProductTabs = ({ list, setIndex, selectedIndex }) => {
   return (
     <div className="flex px-6 py-3 items-center gap-4">
       {list.map((item, id) => {
         return (
           <div
             className={`flex px-2 py-4 gap-4 items-center cursor-pointer ${
-              id + 1 === productId && "border-b-2 border-orange-500"
+              id === selectedIndex && "border-b-2 border-orange-500"
             }`}
             onClick={() => {
-              setProductId(id + 1);
+              setIndex(id);
             }}
           >
             <h1>Product {id + 1} </h1>

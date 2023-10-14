@@ -15,6 +15,9 @@ const product = "assets/svg/pages/product.svg";
 
 const selectedOverview = "assets/svg/pages/tabs/fi_3135791.svg";
 const selectedFounder = "assets/svg/pages/tabs/fi_8677126.svg";
+const selectedCompany = "assets/svg/pages/selectedCompany.svg";
+const selectedWeb = "assets/svg/pages/selectedFootprint.svg";
+const selectedProduct = "assets/svg/pages/selectedProduct.svg";
 
 import { createEntity, getSusFlag } from "config/APIs/startup";
 import { useDispatch } from "react-redux";
@@ -35,16 +38,19 @@ const tabs = [
   {
     label: "Company Info",
     icon: company,
+    selectedIcon: selectedCompany,
     value: "company",
   },
   {
     label: "Digital Footprint",
     icon: web,
+    selectedIcon: selectedWeb,
     value: "footprint",
   },
   {
     label: "Product Info",
     icon: product,
+    selectedIcon: selectedProduct,
     value: "product",
   },
 ];
@@ -55,25 +61,28 @@ const SussForm = () => {
   const [companyData, setCompanyData] = useState({});
   const [founderData, setFounderData] = useState({});
 
-  const doSusCheck = async (type, field, value) => {
+  const doSusCheck = async (type, field, value, alternateField) => {
     try {
       let res = await getSusFlag({ type, field, value });
       let data = res?.data;
+      let val = {
+        [field]: {
+          value: value,
+          susCheck: data?.susCheck,
+        },
+      };
+      if (alternateField) {
+        val[alternateField] = value;
+      }
       if (type == "founder") {
         setFounderData({
           ...founderData,
-          [field]: {
-            value: value,
-            susCheck: data?.susCheck,
-          },
+          ...val,
         });
       } else {
         setCompanyData({
           ...companyData,
-          [field]: {
-            value: value,
-            susCheck: data?.susCheck,
-          },
+          ...val,
         });
       }
       dispatch(showToast({ message: data?.message }));
@@ -87,7 +96,7 @@ const SussForm = () => {
       let res = await createEntity({
         ...companyData,
         values: [companyData?.values],
-        founder: founderData,
+        founders: [founderData],
       });
       let data = res?.data;
 

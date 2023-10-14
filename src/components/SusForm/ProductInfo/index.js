@@ -1,24 +1,14 @@
-import React, { useEffect, useState } from "react";
-
 import { BsCheckCircle } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
 
 const icon = "assets/svg/pages/productInfo/product.svg";
 
-// import InsightsCard from "components/SusForm/Common/InsightsCard";
-
 import ProductData from "../Common/ProductData";
 import ProductTabs from "./ProductTabs";
+import { useState } from "react";
 
-const ProductInfo = ({ companyData, setCompanyData, doSusCheck }) => {
-  const [product, setProduct] = useState({});
-  const [products, setProducts] = useState([]);
-  const [hasProduct, sethasProduct] = useState(false);
-  const [productId, setProductId] = useState(null);
-
-  useEffect(() => {
-    setCompanyData({ ...companyData, hasProduct: hasProduct });
-  }, [hasProduct]);
+const ProductInfo = ({ companyData, setCompanyData }) => {
+  const [selectedIndex, setIndex] = useState(0);
 
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
@@ -34,18 +24,21 @@ const ProductInfo = ({ companyData, setCompanyData, doSusCheck }) => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-col sm:flex-row px-6 flex-end sm:items-center gap-16">
+      <div className="flex flex-col sm:flex-row px-4 flex-end sm:items-center gap-16">
         <div
           className="flex items-center gap-4"
           onClick={() => {
-            sethasProduct(true);
-            setCompanyData({ ...companyData, hasProduct: true });
+            setCompanyData({
+              ...companyData,
+              hasProduct: true,
+              products: [{}],
+            });
           }}
         >
           <input
             type="radio"
             className="text-[#F57D34] focus:ring-[#F57D34] h-6 w-6"
-            checked={hasProduct}
+            checked={companyData?.hasProduct}
           />
           <h1 className="font-inter text-base font-light text-neutral-800">
             Company has a product
@@ -54,7 +47,6 @@ const ProductInfo = ({ companyData, setCompanyData, doSusCheck }) => {
         <div
           className="flex items-center gap-4"
           onClick={() => {
-            sethasProduct(false);
             setCompanyData({
               ...companyData,
               hasProduct: false,
@@ -65,24 +57,21 @@ const ProductInfo = ({ companyData, setCompanyData, doSusCheck }) => {
           <input
             type="radio"
             className="text-[#F57D34] focus:ring-[#F57D34] h-6 w-6"
-            checked={!hasProduct}
+            checked={!companyData?.hasProduct}
           />
           <h1 className="font-inter text-base font-light text-neutral-800">
             Company does not have any product yet
           </h1>
         </div>
       </div>
-      {hasProduct && (
+      {companyData?.hasProduct && (
         <div
-          className="flex px-6 flex-end items-center gap-2 cursor-pointer"
+          className="flex px-4 flex-end items-center gap-2 cursor-pointer"
           onClick={() => {
-            setProducts([...products, product]);
             setCompanyData({
               ...companyData,
-              products: [...products, product],
+              products: [...companyData.products, {}],
             });
-            setProduct([]);
-            setProductId(null);
           }}
         >
           <RiAddFill
@@ -96,22 +85,22 @@ const ProductInfo = ({ companyData, setCompanyData, doSusCheck }) => {
         </div>
       )}
 
-      {hasProduct && products && (
+      {companyData?.hasProduct && companyData?.products?.length > 0 && (
         <ProductTabs
-          list={products}
-          productData={product}
-          setProductData={setProduct}
-          setProductId={setProductId}
-          productId={productId}
+          list={companyData?.products}
+          selectedIndex={selectedIndex}
+          setIndex={setIndex}
         />
       )}
-
-      {hasProduct && (
+      {console.log(companyData)}
+      {companyData?.hasProduct && (
         <ProductData
-          products={products}
-          productData={product}
-          setProductData={setProduct}
-          productId={productId}
+          data={companyData?.products[selectedIndex] || {}}
+          setData={(val) => {
+            let temp = [...companyData.products] || [];
+            temp[selectedIndex] = val;
+            setCompanyData({ ...companyData, products: temp });
+          }}
         />
       )}
     </div>

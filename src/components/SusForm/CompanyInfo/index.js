@@ -29,7 +29,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
         </div>
       </div>
 
-      <div className="flex flex-col flex-start px-6 pt-4 pb-20 gap-6">
+      <div className="flex flex-col flex-start lg:px-4 pt-4 pb-20 gap-6">
         <div className="flex p-4 flex-col flex-start gap-10 relative">
           <BsCheckCircle
             size="32px"
@@ -64,7 +64,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="workLocation"
               onCheck={(val) => {
-                doSusCheck("startup", "workLocation", val);
+                doSusCheck("startup", "workLocation", val, "workLocationType");
               }}
             />
             <InsightsCard
@@ -113,7 +113,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="companyAge"
               onCheck={(val) => {
-                doSusCheck("startup", "companyAge", val);
+                doSusCheck("startup", "companyAge", val, "ageOfCompany");
               }}
             />
             <InsightsCard
@@ -158,7 +158,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="fundingRounds"
               onCheck={(val) => {
-                doSusCheck("startup", "fundingRounds", val);
+                doSusCheck("startup", "fundingRounds", val, "funding");
               }}
             />
             <InsightsCard
@@ -256,7 +256,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
               data={companyData}
               field="revenue"
               onCheck={(val) => {
-                doSusCheck("startup", "revenue", val);
+                doSusCheck("startup", "revenue", val, "currentRevenue");
               }}
             />
             <InsightsCard

@@ -7,34 +7,17 @@ const productfeatures = "assets/svg/pages/productInfo/fi_2261136.svg";
 const customer = "assets/svg/pages/productInfo/fi_10218024.svg";
 const idea = "assets/svg/pages/Idea.svg";
 
-const ProductData = ({ productData, setProductData, products, productId }) => {
-  const [link, setLink] = useState(false);
-  const [type, setType] = useState("");
-  const [name, setName] = useState("");
-  const [val, setVal] = useState("");
-
-  useEffect(() => {
-    setName("");
-    setType("");
-    setLink(false);
-  }, [products]);
-
+const ProductData = ({ data, setData }) => {
   return (
-    <div className="flex flex-col flex-start px-6 pt-4 pb-20 gap-6">
+    <div className="flex flex-col flex-start lg:px-6 pt-4 pb-20 gap-6">
       <div className="flex flex-col flex-start p-4 gap-3">
         <h1 className="font-inter text-lg font-semibold text-neutral-800">
           Product Name
         </h1>
         <input
-          value={productId ? products[productId - 1].productName : name}
+          value={data?.name || ""}
           onChange={(e) => {
-            setName(e.target.value);
-            {
-              productId
-                ? (products[productId - 1].productName = e.target.value)
-                : "";
-            }
-            setProductData({ ...productData, productName: e.target.value });
+            setData({ ...data, name: e.target.value });
           }}
           placeholder="Add Product Name"
           className="flex px-4 py-3 items-center sm:w-[483px] rounded-lg border border-neutral-300"
@@ -52,18 +35,10 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
           <div className="flex flex-col sm:flex-row flex-start gap-4">
             <div
               className={`flex px-10 py-5 items-center gap-4 rounded-lg border border-neutral-300 cursor-pointer ${
-                (productId
-                  ? products[productId - 1].productNature === "digital"
-                  : type === "digital") && "border-2 border-primary-orange-500"
+                data?.type == "digital" && "border-2 border-primary-orange-500"
               }`}
               onClick={() => {
-                setType("digital");
-                setProductData({ ...productData, productNature: "digital" });
-                {
-                  productId
-                    ? (products[productId - 1].productNature = "digital")
-                    : "";
-                }
+                setData({ ...data, type: "digital" });
               }}
             >
               <h1 className="text-neutral-800 font-inter text-sm font-semibold">
@@ -72,18 +47,10 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
             </div>
             <div
               className={`flex px-10 py-5 items-center gap-4 rounded-lg border border-neutral-300 cursor-pointer ${
-                (productId
-                  ? products[productId - 1].productNature === "physical"
-                  : type === "physical") && "border-2 border-primary-orange-500"
+                data?.type == "physical" && "border-2 border-primary-orange-500"
               }`}
               onClick={() => {
-                setType("physical");
-                setProductData({ ...productData, productNature: "physical" });
-                {
-                  productId
-                    ? (products[productId - 1].productNature = "physical")
-                    : "";
-                }
+                setData({ ...data, type: "physical" });
               }}
             >
               <h1 className="text-neutral-800 font-inter text-sm font-semibold">
@@ -111,17 +78,12 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
                     type="radio"
                     className="text-[#F57D34] focus:ring-[#F57D34] w-4 h-4"
                     onClick={() => {
-                      setLink(true);
-                      setProductData({ ...productData, hasLink: !link });
-                      {
-                        productId
-                          ? (products[productId - 1].hasLink = true)
-                          : "";
-                      }
+                      setData({
+                        ...data,
+                        hasLink: true,
+                      });
                     }}
-                    checked={
-                      productId ? products[productId - 1]?.hasLink : link
-                    }
+                    checked={data?.hasLink}
                   />
                   <h1 className="text-sm font-light font-inter text-neutral-800">
                     Product has a link
@@ -132,17 +94,12 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
                     type="radio"
                     className="text-[#F57D34] focus:ring-[#F57D34] w-4 h-4"
                     onClick={() => {
-                      setLink(false);
-                      setProductData({ ...productData, hasLink: !link });
-                      {
-                        productId
-                          ? (products[productId - 1].hasLink = false)
-                          : "";
-                      }
+                      setData({
+                        ...data,
+                        hasLink: false,
+                      });
                     }}
-                    checked={
-                      productId ? !products[productId - 1]?.hasLink : !link
-                    }
+                    checked={!data?.hasLink}
                   />
                   <h1 className="text-sm font-light font-inter text-neutral-800">
                     Product does not has a link
@@ -150,20 +107,11 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
                 </div>
               </div>
 
-              {(productId ? products[productId - 1].hasLink : link) && (
+              {data?.hasLink && (
                 <input
-                  value={productId ? products[productId - 1].productLink : val}
+                  value={data?.link || ""}
                   onChange={(e) => {
-                    setVal(e.target.value)
-                    {
-                      products
-                        ? (products[productId - 1].productLink = e.target.value)
-                        : "";
-                    }
-                    setProductData({
-                      ...productData,
-                      productLink: e.target.value,
-                    });
+                    setData({ ...data, link: e.target.value });
                   }}
                   placeholder="Paste link"
                   className="flex px-4 py-3 items-center rounded-lg border border-neutral-300"
@@ -193,13 +141,9 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
           ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
           placeholder="Add values"
           height="120"
-          field="productFeatures"
-          data={productData}
-          products={products}
-          productId={productId}
-          setData={(val) => {
-            setProductData(val);
-          }}
+          field="features"
+          data={data}
+          setData={setData}
         />
       </div>
 
@@ -213,13 +157,9 @@ const ProductData = ({ productData, setProductData, products, productId }) => {
           titleText="Add features here"
           ideaText="Having some work experience is indicative of industry knowledge ......... lorem ipsum some copy here"
           placeholder="Start Typing..."
-          field="customerSegments"
-          data={productData}
-          products={products}
-          productId={productId}
-          setData={(val) => {
-            setProductData(val);
-          }}
+          field="customer"
+          data={data}
+          setData={setData}
         />
       </div>
     </div>

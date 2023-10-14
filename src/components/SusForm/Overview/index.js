@@ -12,12 +12,7 @@ const about = "assets/svg/pages/overview/fi_10166120.svg";
 import OnlinePresence from "./OnlinePresence";
 import CardTitle from "../Common/CardTitle";
 
-const Overview = ({
-  companyData,
-  setCompanyData,
-  founderData,
-  setFounderData,
-}) => {
+const Overview = ({ companyData, setCompanyData }) => {
   return (
     <div className="flex flex-col flex-start gap-6 px-2 py-6">
       <div className="flex flex-end items-center gap-2 px-2 py-3">
@@ -130,26 +125,41 @@ const Overview = ({
                 title="Website"
                 placeholder="Add website link"
                 presence="website"
+                field="website"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Instagram"
                 placeholder="Paste link to profile"
                 presence="Instagram Profile"
+                field="instagram"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Facebook"
                 placeholder="Paste link to profile"
                 presence="Facebook Profile"
+                field="facebook"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Linkedin"
                 placeholder="Paste link to profile"
                 presence="Linkedin Profile"
+                field="linkedIn"
+                data={companyData}
+                setData={setCompanyData}
               />
               <OnlinePresence
                 title="Twitter"
                 placeholder="Paste link to profile"
                 presence="Twitter Profile"
+                field="twitter"
+                data={companyData}
+                setData={setCompanyData}
               />
             </div>
 
