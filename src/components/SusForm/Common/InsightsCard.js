@@ -24,7 +24,7 @@ const InsightsCard = ({ placeholder, ideaText, data, setData, field }) => {
             </div>
           </div>
           <input
-            value={data && data[field] ? data[field]?.source : null}
+            value={data && data[field] ? data[field]?.source : ""}
             onChange={(e) => {
               setData({
                 ...data,
@@ -57,7 +57,7 @@ const InsightsCard = ({ placeholder, ideaText, data, setData, field }) => {
             </div>
           </div>
           <input
-            value={data && data[field] ? data[field]?.insights : null}
+            value={data && data[field] ? data[field]?.insights : ""}
             onChange={(e) => {
               setData({
                 ...data,

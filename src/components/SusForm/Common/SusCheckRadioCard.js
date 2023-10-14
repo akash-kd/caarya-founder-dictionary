@@ -28,8 +28,9 @@ const SusCheckRadioCard = ({ list, data, onCheck, field }) => {
                 {item?.label}
               </h1>
             </div>
+            {console.log(item.value, data[field]?.value)}
             <input
-              checked={item?.value == (data && data[field]?.value)}
+              checked={item?.value === (data && data[field]?.value)}
               type="radio"
               className="text-[#F57D34] focus:ring-[#F57D34] absolute right-[8.33px] top-[8px] w-4 h-4"
             />

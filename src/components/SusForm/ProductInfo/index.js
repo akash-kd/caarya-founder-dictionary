@@ -92,6 +92,7 @@ const ProductInfo = ({ companyData, setCompanyData }) => {
           setIndex={setIndex}
         />
       )}
+
       {console.log(companyData)}
       {companyData?.hasProduct && (
         <ProductData

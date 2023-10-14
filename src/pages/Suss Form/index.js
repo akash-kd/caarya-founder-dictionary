@@ -59,7 +59,9 @@ const SussForm = () => {
   const dispatch = useDispatch();
   const [selectedTab, setSelectedTab] = useState("overview");
   const [companyData, setCompanyData] = useState({});
-  const [founderData, setFounderData] = useState({});
+  const [founderData, setFounderData] = useState({
+    founders: [{}],
+  });
 
   const doSusCheck = async (type, field, value, alternateField) => {
     try {
