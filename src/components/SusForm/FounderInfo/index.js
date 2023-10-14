@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { BsCheckCircle } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
@@ -8,7 +8,7 @@ const founder = "assets/svg/pages/founderInfo/fi_8677126.svg";
 import FounderTabs from "./FoundersTabs";
 import FounderData from "../Common/FounderData";
 
-const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
+const FounderInfo = ({ founderData, setFounderData }) => {
   const [selectedIndex, setIndex] = useState(0);
 
   return (
@@ -30,10 +30,7 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
       <div
         className="flex px-4 flex-end items-center gap-2 cursor-pointer"
         onClick={() => {
-          setFounderData({
-            ...founderData,
-            founders: [...founderData.founders, {}],
-          });
+          setFounderData([...founderData, {}]);
         }}
       >
         <RiAddFill color="#CE5511" size="24px" />
@@ -44,22 +41,21 @@ const FounderInfo = ({ founderData, setFounderData, doSusCheck }) => {
 
       {console.log(founderData)}
 
-      {founderData?.founders?.length > 0 && (
+      {founderData?.length > 0 && (
         <FounderTabs
-          list={founderData.founders}
+          list={founderData}
           selectedIndex={selectedIndex}
           setIndex={setIndex}
         />
       )}
 
       <FounderData
-        data={founderData?.founders[selectedIndex] || {}}
+        data={founderData[selectedIndex] || {}}
         setData={(val) => {
-          let temp = [...founderData.founders] || [];
+          let temp = [...founderData] || [];
           temp[selectedIndex] = val;
-          setFounderData({ ...founderData, founders: temp });
+          setFounderData(temp);
         }}
-        doSusCheck={doSusCheck}
       />
     </div>
   );

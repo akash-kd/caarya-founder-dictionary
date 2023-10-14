@@ -8,8 +8,37 @@ import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
 import CardTitle from "../Common/CardTitle";
 import ReferencesCard from "../Common/ReferencesCard";
+import { getSusFlag } from "config/APIs/startup";
+import { useDispatch } from "react-redux";
+import { showToast } from "redux/toaster";
 
-const FounderData = ({ data, setData, doSusCheck }) => {
+const FounderData = ({ data, setData }) => {
+  const dispatch = useDispatch();
+  const doSusCheck = async (field, value, alternateField) => {
+    try {
+      let res = await getSusFlag({ type: "founder", field, value });
+      let resData = res?.data;
+      let val = {
+        [field]: {
+          value: value,
+          susCheck: resData?.susCheck,
+        },
+      };
+      if (alternateField) {
+        val[alternateField] = value;
+      }
+
+      setData({
+        ...data,
+        ...val,
+      });
+
+      dispatch(showToast({ message: data?.message }));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <div className="flex flex-col flex-start px-4 pt-4 pb-20 gap-6">
       <div className="flex flex-col flex-start lg:p-4 gap-3">
@@ -69,7 +98,7 @@ const FounderData = ({ data, setData, doSusCheck }) => {
             data={data}
             field="age"
             onCheck={(val) => {
-              doSusCheck("founder", "age", val);
+              doSusCheck("age", val);
             }}
           />
 
@@ -114,7 +143,7 @@ const FounderData = ({ data, setData, doSusCheck }) => {
             data={data}
             field="workHistory"
             onCheck={(val) => {
-              doSusCheck("founder", "workHistory", val);
+              doSusCheck("workHistory", val);
             }}
           />
 
@@ -159,12 +188,7 @@ const FounderData = ({ data, setData, doSusCheck }) => {
             data={data}
             field="startupFounded"
             onCheck={(val) => {
-              doSusCheck(
-                "founder",
-                "startupFounded",
-                val,
-                "startupFoundedCount"
-              );
+              doSusCheck("startupFounded", val, "startupFoundedCount");
             }}
           />
 

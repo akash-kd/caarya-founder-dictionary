@@ -59,9 +59,7 @@ const SussForm = () => {
   const dispatch = useDispatch();
   const [selectedTab, setSelectedTab] = useState("overview");
   const [companyData, setCompanyData] = useState({});
-  const [founderData, setFounderData] = useState({
-    founders: [{}],
-  });
+  const [founders, setFounders] = useState([{}]);
 
   const doSusCheck = async (type, field, value, alternateField) => {
     try {
@@ -76,17 +74,14 @@ const SussForm = () => {
       if (alternateField) {
         val[alternateField] = value;
       }
-      if (type == "founder") {
-        setFounderData({
-          ...founderData,
-          ...val,
-        });
-      } else {
+
+      if (type == "startup") {
         setCompanyData({
           ...companyData,
           ...val,
         });
       }
+
       dispatch(showToast({ message: data?.message }));
     } catch (e) {
       console.log(e);
@@ -98,7 +93,7 @@ const SussForm = () => {
       let res = await createEntity({
         ...companyData,
         values: [companyData?.values],
-        founders: [founderData],
+        founders: founders,
       });
       let data = res?.data;
 
@@ -109,9 +104,9 @@ const SussForm = () => {
   };
 
   return (
-    <div className="bg-[#F0F3F4] sticky-thc h-[90vh]">
+    <div className="bg-[#F0F3F4] sticky-thc h-[90vh] lg:h-auto">
       <PageHeader
-        name="Startup Story"
+        name="Enter Your Startup Story"
         ctaComponent={
           <div className="flex px-6 py-4 gap-4 items-center">
             <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border border-primary-orange-500 cursor-pointer">
@@ -144,28 +139,17 @@ const SussForm = () => {
         </div>
 
         {selectedTab === "overview" && (
-          <Overview
-            companyData={companyData}
-            setCompanyData={setCompanyData}
-            founderData={founderData}
-            setFounderData={setFounderData}
-          />
+          <Overview companyData={companyData} setCompanyData={setCompanyData} />
         )}
         {selectedTab === "founder" && (
-          <FounderInfo
-            companyData={companyData}
-            setCompanyData={setCompanyData}
-            founderData={founderData}
-            setFounderData={setFounderData}
-            doSusCheck={doSusCheck}
-          />
+          <FounderInfo founderData={founders} setFounderData={setFounders} />
         )}
         {selectedTab === "company" && (
           <CompanyInfo
             companyData={companyData}
             setCompanyData={setCompanyData}
-            founderData={founderData}
-            setFounderData={setFounderData}
+            founderData={founders}
+            setFounderData={setFounders}
             doSusCheck={doSusCheck}
           />
         )}
@@ -173,8 +157,6 @@ const SussForm = () => {
           <DigitalFootprint
             companyData={companyData}
             setCompanyData={setCompanyData}
-            founderData={founderData}
-            setFounderData={setFounderData}
             doSusCheck={doSusCheck}
           />
         )}
@@ -182,9 +164,6 @@ const SussForm = () => {
           <ProductInfo
             companyData={companyData}
             setCompanyData={setCompanyData}
-            founderData={founderData}
-            setFounderData={setFounderData}
-            doSusCheck={doSusCheck}
           />
         )}
       </div>
