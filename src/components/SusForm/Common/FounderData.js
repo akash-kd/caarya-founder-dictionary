@@ -73,7 +73,7 @@ const FounderData = ({ data, setData }) => {
         <CardTitle
           img={cake}
           title="Founder's Age"
-          color="bg-fusion-primary-30"
+          color="bg-primary-fusion-30"
         />
 
         <div className="flex flex-col flex-start gap-16">

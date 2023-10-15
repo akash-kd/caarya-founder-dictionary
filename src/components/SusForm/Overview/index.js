@@ -116,7 +116,7 @@ const Overview = ({ companyData, setCompanyData }) => {
           <CardTitle
             img={web}
             title="Online Presence"
-            color="bg-accent-primary-50"
+            color="bg-primary-accent-50"
           />
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-20">
@@ -182,7 +182,7 @@ const Overview = ({ companyData, setCompanyData }) => {
           <CardTitle
             img={about}
             title="About Company"
-            color="bg-chronos-primary-50"
+            color="bg-primary-chronos-50"
           />
 
           <div className="flex flex-col sm:flex-row items-center sm:gap-20">

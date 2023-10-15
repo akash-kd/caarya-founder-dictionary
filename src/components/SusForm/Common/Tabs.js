@@ -45,7 +45,7 @@ function Tabs({ tabs, selectedTab, setSelectedTab, radius }) {
             />
             <div
               ref={(el) => (tabsRef.current[idx] = el)}
-              className="font-poppins text-sm"
+              className="font-poppins text-sm text-center"
             ></div>
             {item?.label}
           </div>

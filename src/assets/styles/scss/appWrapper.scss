@@ -1,7 +1,7 @@
 @import "./constants";
 
 .top-nav {
-  background: #FFF1EB;
+  background: #fff2f9;
   box-shadow: 0px 10px 20px -13px rgba(0, 0, 0, 0.15);
 }
 
@@ -12,8 +12,8 @@
 }
 
 .side-nav {
-  background: #fff1eb;
-  background: linear-gradient(177deg, #fff1eb 0%, #ffe9e5 100%);
+  border-right: 1px solid var(--neutral-200, #e7e6e5);
+  background: linear-gradient(177deg, #fdf2ff 0%, #fff2f9 100%);
   max-width: 224px;
   width: 100%;
 }
@@ -21,21 +21,19 @@
 .menuitem {
   font-family: $lato;
   font-size: 16px;
-  color: $theme-gray-1000;
+  color: $theme-gray-800;
   border-right: 5px solid transparent;
   padding: 16px;
   line-height: 24px;
-  // box-shadow: 0px 0px 1px #ccc, 0px 0px 2px #ccc;
+  font-weight: 300;
   &:hover {
     background: rgba(48, 23, 9, 0.1);
-    color: $theme-green-900;
     background: #fff;
     border-radius: 16px 0px 0px 16px;
   }
 
   &.active {
     font-weight: 600;
-    color: $theme-green-900;
     background: #fff;
     border-radius: 16px 0px 0px 16px;
   }

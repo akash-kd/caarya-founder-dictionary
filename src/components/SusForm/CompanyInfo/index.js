@@ -39,7 +39,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
           <CardTitle
             img={location}
             title="Company Work Location"
-            color="bg-dawn-primary-30"
+            color="bg-primary-dawn-30"
           />
 
           <div className="flex flex-col flex-start gap-16">
@@ -182,7 +182,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
           <CardTitle
             img={employee}
             title="No. of Employees"
-            color="bg-labs-primary-30"
+            color="bg-primary-labs-30"
           />
 
           <div className="flex flex-col flex-start gap-16">
@@ -231,7 +231,7 @@ const CompanyInfo = ({ companyData, setCompanyData, doSusCheck }) => {
           <CardTitle
             img={revenue}
             title="Company Revenue"
-            color="bg-fusion-primary-30"
+            color="bg-primary-fusion-30"
           />
 
           <div className="flex flex-col flex-start gap-16">

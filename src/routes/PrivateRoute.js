@@ -8,12 +8,12 @@ import SussForm from "pages/Suss Form";
 // Array of routes only a logged in user can access
 const privateRoutes = [
   {
-    path: "/sussform",
+    path: "/home/sus",
     component: SussForm,
     name: "New Suss Form",
-    tab: "Suss Form"
+    tab: "Suss Form",
   },
-  
+
   {
     path: "/",
     exact: true,
@@ -21,9 +21,9 @@ const privateRoutes = [
       localStorage.getItem("token") ? (
         checkAppAccess() ? (
           window.innerWidth < 1024 ? (
-            <Redirect to="/sussform" />
+            <Redirect to="/home/sus" />
           ) : (
-            <Redirect to="/sussform" />
+            <Redirect to="/home/sus" />
           )
         ) : (
           <Redirect to="/accessDenied" />

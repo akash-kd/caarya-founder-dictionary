@@ -176,8 +176,8 @@ function SignIn() {
             />
           </div>
           <div className="block w-full py-2.5">
-            <p className="font-karla font-medium text-xl text-center text-primary-green-light">
-              <span className="rounded-full text-primary-green-darker"></span>
+            <p className="font-karla font-medium text-xl text-center text-primary-magenta-light">
+              <span className="rounded-full text-primary-magenta-darker"></span>
             </p>
           </div>
           <div className="w-full md:py-6 z-20">
@@ -190,16 +190,16 @@ function SignIn() {
                     handleClick();
                   }}
                 >
-                  <h1 className="text-xl text-primary-green-darker font-karla font-medium mb-4 border-neutral-300 title-font border-b pb-2">
+                  <h1 className="text-xl text-primary-magenta-darker font-karla font-medium mb-4 border-neutral-300 title-font border-b pb-2">
                     connect to chronos
                   </h1>
                   <fieldset className="form-group">
-                    <label className="text-primary-green-darker text-xs font-medium">
+                    <label className="text-primary-magenta-darker text-xs font-medium">
                       Phone Number
                     </label>
                     <input
                       id="formName"
-                      className="form-input p-3 font-lato mt-1 bg-white border-b border-primary-green-lightest"
+                      className="form-input p-3 font-lato mt-1 bg-white border-b border-primary-magenta-lightest"
                       type="phone"
                       required
                       onChange={(e) => {
@@ -216,7 +216,7 @@ function SignIn() {
                       <button
                         id="send-otp-button"
                         type="button"
-                        className="btn font-lato bg-primary-orange-500 text-white rounded text-xs mt-3 font-bold capitalize"
+                        className="btn font-lato bg-primary-magenta-darker text-white rounded text-xs mt-3 font-bold capitalize"
                         onClick={handleClick}
                         disabled={buttonState.disabled}
                       >
@@ -234,7 +234,7 @@ function SignIn() {
                       otpSubmit();
                     }}
                   >
-                    <h1 className="login-caption font-medium text-primary-green-darker font-lato mb-4">
+                    <h1 className="login-caption font-medium text-primary-magenta-darker font-lato mb-4">
                       Enter the OTP sent to your phone
                     </h1>
                     <fieldset className="form-group">
@@ -264,7 +264,7 @@ function SignIn() {
                         <button
                           id="send-otp-button"
                           type="button"
-                          className="btn font-lato bg-primary-orange-500 text-white rounded text-xs mt-3 font-bold capitalize"
+                          className="btn font-lato bg-primary-magenta-darker text-white rounded text-xs mt-3 font-bold capitalize"
                           placeholder=""
                           onClick={() => otpSubmit()}
                           disabled={buttonState.disabled}

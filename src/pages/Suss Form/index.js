@@ -22,6 +22,7 @@ const selectedProduct = "assets/svg/pages/selectedProduct.svg";
 import { createEntity, getSusFlag } from "config/APIs/startup";
 import { useDispatch } from "react-redux";
 import { showToast } from "redux/toaster";
+import ChronosButton from "components/Comman/Buttons";
 const tabs = [
   {
     label: "Overview",
@@ -104,26 +105,19 @@ const SussForm = () => {
   };
 
   return (
-    <div className="bg-[#F0F3F4] sticky-thc h-[90vh] lg:h-auto">
+    <div className="sticky-thc h-[90vh] lg:h-auto">
       <PageHeader
         name="Enter Your Startup Story"
         ctaComponent={
-          <div className="flex px-6 py-4 gap-4 items-center">
-            <div className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border border-primary-orange-500 cursor-pointer">
-              <h1 className="text-base font-inter font-semibold text-primary-orange-500">
-                Save as Draft
-              </h1>
-            </div>
-            <div
+          <div className="flex gap-4 items-center">
+            <ChronosButton text="Save as Draft" secondary onClick={() => {}} />
+            <ChronosButton
+              text="Submit"
+              primary
               onClick={() => {
                 submit();
               }}
-              className="flex px-6 py-3 items-center justify-center gap-2 rounded-lg border bg-primary-orange-500 cursor-pointer"
-            >
-              <h1 className="text-base font-inter font-semibold text-white">
-                Submit
-              </h1>
-            </div>
+            />
           </div>
         }
       />

@@ -28,7 +28,7 @@ const ProductData = ({ data, setData }) => {
         <CardTitle
           img={nature}
           title="Nature of the Product"
-          color="bg-peddle-primary-30"
+          color="bg-primary-peddle-30"
         />
 
         <div className="flex flex-col flex-start gap-16">
@@ -134,7 +134,7 @@ const ProductData = ({ data, setData }) => {
         <CardTitle
           img={productfeatures}
           title="Product Features"
-          color="bg-fusion-primary-30"
+          color="bg-primary-fusion-30"
         />
         <TextCard
           titleText="Add features here"
@@ -151,7 +151,7 @@ const ProductData = ({ data, setData }) => {
         <CardTitle
           img={customer}
           title="Customer Segments"
-          color="bg-labs-primary-30"
+          color="bg-primary-labs-30"
         />
         <TextCard
           titleText="Add features here"

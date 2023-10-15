@@ -34,7 +34,7 @@ const FounderInfo = ({ founderData, setFounderData }) => {
         }}
       >
         <RiAddFill color="#CE5511" size="24px" />
-        <h1 className="font-inter text-base font-semibold text-dawn-primary-700 underline underline-offset-2">
+        <h1 className="font-inter text-base font-semibold text-primary-dawn-700 underline underline-offset-2">
           Add Co-Founder
         </h1>
       </div>

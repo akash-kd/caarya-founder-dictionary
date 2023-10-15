@@ -1,13 +1,12 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { laptopNav } from "../../helpers/constants";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { Bell, SignOut, User } from "@phosphor-icons/react";
 import WideModalsWrapper from "../Modals/ModalsWrapper/WideModalWrapper";
 import LogoutModal from "./LogoutModal";
 
 function DesktopWrapper({ children }) {
-  // const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.user.user);
   const history = useHistory();
   const [logOut, setLogOut] = useState(false);
 
@@ -18,7 +17,7 @@ function DesktopWrapper({ children }) {
     localStorage.removeItem("selectedTab");
     window.location.href = window.location.origin + "/";
   };
-  
+
   return (
     <>
       <WideModalsWrapper
@@ -36,8 +35,12 @@ function DesktopWrapper({ children }) {
             <div className="flex flex-row items-center justify-between w-full">
               <a href="/">
                 <div className="flex flex-row items-center gap-4 px-6">
-                  <div className="bg-gray-300 w-8 h-8 rounded-full"/>
-                  <h1 className="flex-[1_0_0] text-lg font-medium font-poppins">
+                  <img
+                    src="/assets/caaryaLogos/logo.png"
+                    className="h-8 w-8 object-fill"
+                    alt="logo"
+                  />
+                  <h1 className="flex-[1_0_0] text-lg font-medium font-poppins leading-5">
                     Founders Dictionary
                   </h1>
                 </div>
@@ -46,7 +49,9 @@ function DesktopWrapper({ children }) {
             <div className="px-6 py-2 flex items-start w-full justify-between border-b border-gray-200">
               <div className="flex flex-col items-start w-full">
                 <h2 className="text-base font-lato font-light">Hello,</h2>
-                <h1 className="text-xl font-lato font-medium">Mr. Chronos</h1>
+                <h1 className="text-xl font-lato font-medium">
+                  Mr. {user?.first_name}
+                </h1>
               </div>
             </div>
             <div className="flex flex-col items-start w-full pl-4 pt-4 pb-4 gap-4">

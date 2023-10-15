@@ -16,48 +16,57 @@ module.exports = {
           orange: {
             500: "#f57d34",
           },
-        },
-        accent: {
-          primary: {
+          accent: {
             50: "#E7F9FD",
           },
-        },
-        chronos: {
-          primary: {
+          chronos: {
             50: "#F5F6FF",
           },
-        },
-        fusion: {
-          primary: {
+          fusion: {
             30: "#FDF7E9",
+            700: "#BA7507",
           },
-          secondary: {
-            30: "#F7F7FF",
+          dawn: {
+            30: "#FFF1EB",
+            700: "#CE5511",
+          },
+          labs: {
+            30: "#FFF2F9",
+          },
+          peddle: {
+            30: "#EDFFFF",
+          },
+          magenta: {
+            lightest: "#F9E3FC",
+            lighter: "#F4C4F7",
+            light: "#F282F5",
+            medium: "#C44EB9",
+            dark: "#903795",
+            darker: "#451451",
+            darkest: "#2A192D",
+          },
+          neutral: {
+            50: "#FAFAFA",
+            100: "#F3F2F2",
+            500: "#696763",
+            800: "#363430",
           },
         },
+        secondary: {
+          fusion: { 30: "#F7F7FF", 500: "#816FE9" },
+          accent: {
+            500: "#FBC920",
+          },
+        },
+
         caarya: {
           blue: {
             30: "#F5FBFF",
           },
         },
-        dawn: {
-          primary: {
-            30: "#FFF1EB",
-            700: "#CE5511",
-          },
-        },
-        labs: {
-          primary: {
-            30: "#FFF2F9",
-          },
-        },
+
         error: {
           500: "#E72113",
-        },
-        peddle: {
-          primary: {
-            30: "#EDFFFF",
-          },
         },
       },
     },
