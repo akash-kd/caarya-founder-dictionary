@@ -7,17 +7,17 @@ import DigitalFootprint from "components/SusForm/DigitalFootprint";
 import ProductInfo from "components/SusForm/ProductInfo";
 import Tabs from "components/SusForm/Common/Tabs";
 
-const overview = "assets/svg/pages/fi_3135791.svg";
-const founder = "assets/svg/pages/founder.svg";
-const company = "assets/svg/pages/company.svg";
-const web = "assets/svg/pages/footprint.svg";
-const product = "assets/svg/pages/product.svg";
+const overview = "/assets/svg/pages/fi_3135791.svg";
+const founder = "/assets/svg/pages/founder.svg";
+const company = "/assets/svg/pages/company.svg";
+const web = "/assets/svg/pages/footprint.svg";
+const product = "/assets/svg/pages/product.svg";
 
-const selectedOverview = "assets/svg/pages/tabs/fi_3135791.svg";
-const selectedFounder = "assets/svg/pages/tabs/fi_8677126.svg";
-const selectedCompany = "assets/svg/pages/selectedCompany.svg";
-const selectedWeb = "assets/svg/pages/selectedFootprint.svg";
-const selectedProduct = "assets/svg/pages/selectedProduct.svg";
+const selectedOverview = "/assets/svg/pages/tabs/fi_3135791.svg";
+const selectedFounder = "/assets/svg/pages/tabs/fi_8677126.svg";
+const selectedCompany = "/assets/svg/pages/selectedCompany.svg";
+const selectedWeb = "/assets/svg/pages/selectedFootprint.svg";
+const selectedProduct = "/assets/svg/pages/selectedProduct.svg";
 
 import { createEntity, getSusFlag } from "config/APIs/startup";
 import { useDispatch } from "react-redux";

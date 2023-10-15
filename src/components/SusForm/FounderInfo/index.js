@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { BsCheckCircle } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
 
-const founder = "assets/svg/pages/founderInfo/fi_8677126.svg";
+const founder = "/assets/svg/pages/founderInfo/fi_8677126.svg";
 
-import FounderTabs from "./FoundersTabs";
 import FounderData from "../Common/FounderData";
+import { SusTabs } from "../Common/Tabs";
 
 const FounderInfo = ({ founderData, setFounderData }) => {
   const [selectedIndex, setIndex] = useState(0);
@@ -30,6 +30,7 @@ const FounderInfo = ({ founderData, setFounderData }) => {
       <div
         className="flex px-4 flex-end items-center gap-2 cursor-pointer"
         onClick={() => {
+          // setIndex(founderData?.length);
           setFounderData([...founderData, {}]);
         }}
       >
@@ -39,13 +40,12 @@ const FounderInfo = ({ founderData, setFounderData }) => {
         </h1>
       </div>
 
-      {console.log(founderData)}
-
       {founderData?.length > 0 && (
-        <FounderTabs
+        <SusTabs
           list={founderData}
           selectedIndex={selectedIndex}
           setIndex={setIndex}
+          name="Founder"
         />
       )}
 

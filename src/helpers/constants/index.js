@@ -5,11 +5,12 @@ import {
   GraduationCap,
   LinkedinLogo,
   StackSimple,
+  MagnifyingGlass,
 } from "@phosphor-icons/react";
 
-import StyleIcon from '@mui/icons-material/Style';
+import StyleIcon from "@mui/icons-material/Style";
 
-import EventIcon from '@mui/icons-material/Event';
+import EventIcon from "@mui/icons-material/Event";
 
 const mobileBottomNav = [
   {
@@ -56,14 +57,9 @@ const laptopNav = [
   },
 
   {
-    name: "Dictionary",
-    path: "/home/drives",
-    icon: <EventIcon />,
-  },
-  {
-    name: "Leads",
-    path: "/home/community/count",
-    icon: <EventIcon />,
+    name: "Research Bank",
+    path: "/home/researchBank",
+    icon: <MagnifyingGlass />,
   },
 ];
 

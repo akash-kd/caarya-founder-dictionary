@@ -3,7 +3,7 @@ import Drawer from "@mui/material/Drawer";
 import { UserCircleIcon, XIcon } from "@heroicons/react/solid";
 import { Fade } from "react-awesome-reveal";
 
-import Arrow from "assets/icons/Arrow.svg";
+import Arrow from "/assets/icons/Arrow.svg";
 import { useSelector } from "react-redux";
 
 function AddMembers({

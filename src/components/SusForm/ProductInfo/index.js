@@ -1,11 +1,11 @@
 import { BsCheckCircle } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
 
-const icon = "assets/svg/pages/productInfo/product.svg";
+const icon = "/assets/svg/pages/productInfo/product.svg";
 
 import ProductData from "../Common/ProductData";
-import ProductTabs from "./ProductTabs";
 import { useState } from "react";
+import { SusTabs } from "../Common/Tabs";
 
 const ProductInfo = ({ companyData, setCompanyData }) => {
   const [selectedIndex, setIndex] = useState(0);
@@ -86,10 +86,11 @@ const ProductInfo = ({ companyData, setCompanyData }) => {
       )}
 
       {companyData?.hasProduct && companyData?.products?.length > 0 && (
-        <ProductTabs
+        <SusTabs
           list={companyData?.products}
           selectedIndex={selectedIndex}
           setIndex={setIndex}
+          name="Product"
         />
       )}
 

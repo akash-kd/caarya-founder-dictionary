@@ -7,9 +7,8 @@ const AuthenticatedRedirects = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
+      exact
       render={(props) => {
-
-        // No Sign In Functionality Yet
         if (!localStorage.getItem("token")) {
           return (
             <Redirect

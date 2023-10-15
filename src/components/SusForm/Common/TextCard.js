@@ -1,5 +1,5 @@
 import React from "react";
-const idea = "assets/svg/pages/Idea.svg";
+const idea = "/assets/svg/pages/Idea.svg";
 
 const TextCard = ({
   placeholder,

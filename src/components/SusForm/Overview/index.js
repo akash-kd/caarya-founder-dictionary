@@ -4,10 +4,10 @@ import { RiUploadCloudLine } from "react-icons/ri";
 import { BsCheckCircle } from "react-icons/bs";
 
 // SVG Icons
-const scroll = "assets/svg/pages/overview/fi_10237168.svg";
-const idea = "assets/svg/pages/Idea.svg";
-const web = "assets/svg/pages/overview/fi_10218756.svg";
-const about = "assets/svg/pages/overview/fi_10166120.svg";
+const scroll = "/assets/svg/pages/overview/fi_10237168.svg";
+const idea = "/assets/svg/pages/Idea.svg";
+const web = "/assets/svg/pages/overview/fi_10218756.svg";
+const about = "/assets/svg/pages/overview/fi_10166120.svg";
 
 import OnlinePresence from "./OnlinePresence";
 import CardTitle from "../Common/CardTitle";

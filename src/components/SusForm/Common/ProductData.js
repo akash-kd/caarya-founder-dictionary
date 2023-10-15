@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import CardTitle from "./CardTitle";
 import TextCard from "./TextCard";
 
-const nature = "assets/svg/pages/productInfo/fi_1474613.svg";
-const productfeatures = "assets/svg/pages/productInfo/fi_2261136.svg";
-const customer = "assets/svg/pages/productInfo/fi_10218024.svg";
-const idea = "assets/svg/pages/Idea.svg";
+const nature = "/assets/svg/pages/productInfo/fi_1474613.svg";
+const productfeatures = "/assets/svg/pages/productInfo/fi_2261136.svg";
+const customer = "/assets/svg/pages/productInfo/fi_10218024.svg";
+const idea = "/assets/svg/pages/Idea.svg";
 
 const ProductData = ({ data, setData }) => {
   return (

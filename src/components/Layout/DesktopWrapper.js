@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { laptopNav } from "../../helpers/constants";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import WideModalsWrapper from "../Modals/ModalsWrapper/WideModalWrapper";
 import LogoutModal from "./LogoutModal";
 
@@ -57,11 +57,9 @@ function DesktopWrapper({ children }) {
             <div className="flex flex-col items-start w-full pl-4 pt-4 pb-4 gap-4">
               {laptopNav?.map((item, idx) => {
                 return (
-                  <div
+                  <a
+                    href={item?.path}
                     key={idx}
-                    onClick={() => {
-                      history.push(item?.path);
-                    }}
                     className={`w-full cursor-pointer flex flex-row items-center gap-4 menuitem ${
                       window.location.pathname.includes(item?.path)
                         ? "active"
@@ -82,7 +80,7 @@ function DesktopWrapper({ children }) {
                       item?.icon
                     )}
                     <p className="">{item?.name}</p>
-                  </div>
+                  </a>
                 );
               })}
             </div>

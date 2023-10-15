@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { XIcon, SearchIcon, CheckCircleIcon } from "@heroicons/react/solid";
 import EmptyState from "components/Comman/EmptyState";
 import ChronosButton from "components/Comman/Buttons";
-import DefaultAvatar from "assets/icons/avatar.png";
+import DefaultAvatar from "/assets/icons/avatar.png";
 
 //Components
 

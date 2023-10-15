@@ -4,6 +4,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      fontSize: { "3xs": "8px", "2xs": "10px" },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         inter: ["Inter", "sans-serif"],
@@ -37,6 +38,7 @@ module.exports = {
             30: "#EDFFFF",
           },
           magenta: {
+            30: "#FDF2FF",
             lightest: "#F9E3FC",
             lighter: "#F4C4F7",
             light: "#F282F5",
@@ -48,6 +50,7 @@ module.exports = {
           neutral: {
             50: "#FAFAFA",
             100: "#F3F2F2",
+            400: "#9C9A96",
             500: "#696763",
             800: "#363430",
           },

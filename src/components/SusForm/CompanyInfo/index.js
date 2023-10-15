@@ -2,12 +2,12 @@ import React from "react";
 
 import { BsCheckCircle } from "react-icons/bs";
 
-const company = "assets/svg/pages/companyInfo/fi_4300058.svg";
-const location = "assets/svg/pages/companyInfo/fi_819865.svg";
-const funding = "assets/svg/pages/companyInfo/fi_2163226.svg";
-const rocket = "assets/svg/pages/companyInfo/fi_10273288.svg";
-const employee = "assets/svg/pages/companyInfo/fi_10216679.svg";
-const revenue = "assets/svg/pages/companyInfo/fi_10693560.svg";
+const company = "/assets/svg/pages/companyInfo/fi_4300058.svg";
+const location = "/assets/svg/pages/companyInfo/fi_819865.svg";
+const funding = "/assets/svg/pages/companyInfo/fi_2163226.svg";
+const rocket = "/assets/svg/pages/companyInfo/fi_10273288.svg";
+const employee = "/assets/svg/pages/companyInfo/fi_10216679.svg";
+const revenue = "/assets/svg/pages/companyInfo/fi_10693560.svg";
 
 import CardTitle from "components/SusForm/Common/CardTitle";
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";

@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { checkAppAccess } from "helpers/utils/accessCheck";
 import SussForm from "pages/Suss Form";
+import ResearchBank from "pages/ResearchBank";
 
 // Authenticated Paths
 
@@ -12,6 +13,12 @@ const privateRoutes = [
     component: SussForm,
     name: "New Suss Form",
     tab: "Suss Form",
+  },
+  {
+    path: "/home/researchBank",
+    component: ResearchBank,
+    name: "Research Bank",
+    tab: "Research Bank",
   },
 
   {
