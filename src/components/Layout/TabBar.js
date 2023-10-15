@@ -7,7 +7,7 @@ function TabBar() {
   return (
     <div>
       <div
-        className={`w-full fixed z-30 bottom-0 right-0 tapbar left-0 lg:hidden transform transition-all ease-in-out duration-300 font-karla`}
+        className={`w-full fixed z-30 bottom-0 right-0 tapbar left-0 lg:hidden transform transition-all ease-in-out duration-300 font-poppins`}
       >
         <div className=" w-full bottom-0 p-2  max-w-sm mx-auto">
           <div className="grid grid-cols-5 gap-2">

@@ -3,11 +3,18 @@ import { Redirect } from "react-router-dom";
 import { checkAppAccess } from "helpers/utils/accessCheck";
 import SussForm from "pages/Suss Form";
 import ResearchBank from "pages/ResearchBank";
+import Dashboard from "pages/Dashboard";
 
 // Authenticated Paths
 
 // Array of routes only a logged in user can access
 const privateRoutes = [
+  {
+    path: "/dashboard",
+    component: Dashboard,
+    name: "Dashboard",
+    tab: "Dashboard",
+  },
   {
     path: "/home/sus",
     component: SussForm,
@@ -28,9 +35,9 @@ const privateRoutes = [
       localStorage.getItem("token") ? (
         checkAppAccess() ? (
           window.innerWidth < 1024 ? (
-            <Redirect to="/home/sus" />
+            <Redirect to="/dashboard" />
           ) : (
-            <Redirect to="/home/sus" />
+            <Redirect to="/dashboard" />
           )
         ) : (
           <Redirect to="/accessDenied" />

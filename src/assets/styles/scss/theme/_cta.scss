@@ -20,7 +20,7 @@
 }
 
 .tertiary-cta {
-  @include buttonFont($color: $theme-magenta-700, $weight: 600);
+  @include buttonFont($color: $theme-magenta-550, $weight: 600);
 
   &:hover {
     text-decoration: underline;

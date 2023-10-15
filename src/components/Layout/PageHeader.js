@@ -7,7 +7,7 @@ function PageHeader({ name, ctaComponent = <></>, back, showMobile }) {
   return (
     <div className="flex flex-row items-center justify-between px-6 py-4 bg-white border-b-2 border-neutral-200 mb-2">
       <h1
-        className={`text-sm lg:text-xl h-full flex flex-row items-center text-left font-semibold lg:font-medium font-karla tracking-tight text-primary-magenta-dark`}
+        className={`text-sm lg:text-xl h-full flex flex-row items-center text-left font-semibold lg:font-medium font-poppins tracking-tight text-primary-magenta-dark`}
       >
         {back && (
           <ArrowLeft

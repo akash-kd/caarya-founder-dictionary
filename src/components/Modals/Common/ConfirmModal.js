@@ -23,7 +23,7 @@ function ConfirmModal({ isOpen, closeModal, onAccept, text, loader }) {
       <div className="md:max-w-xl lg:h-screen lg:pt-20 mx-auto w-full transform transition-all ease-in-out duration-150">
         <div className="flex flex-row items-end justify-between px-5 pt-5 rounded-t-20px">
           <h5
-            className="font-lato font-bold text-sm text-primary-gray-1000 flex flex-col items-start"
+            className="font-inter font-bold text-sm text-primary-gray-1000 flex flex-col items-start"
             id="exampleModalLiveLabel"
           >
             Confirmation!
@@ -40,7 +40,7 @@ function ConfirmModal({ isOpen, closeModal, onAccept, text, loader }) {
           </button>
         </div>
 
-        <div className="text-left text-sm font-karla text-primary-gray-1000 mt-3 px-5">
+        <div className="text-left text-sm font-poppins text-primary-gray-1000 mt-3 px-5">
           {React.cloneElement(text, {})}
         </div>
         <div className="mt-8 flex w-full flex-row items-center justify-end space-x-5 px-5 pb-5">

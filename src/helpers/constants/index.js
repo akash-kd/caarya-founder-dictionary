@@ -6,6 +6,7 @@ import {
   LinkedinLogo,
   StackSimple,
   MagnifyingGlass,
+  Layout,
 } from "@phosphor-icons/react";
 
 import StyleIcon from "@mui/icons-material/Style";
@@ -51,15 +52,20 @@ const mobileBottomNav = [
 ];
 const laptopNav = [
   {
+    name: "Dashboard",
+    path: "/dashboard",
+    icon: <Layout weight="fill" size={20} />,
+  },
+  {
     name: "Sus Forms",
     path: "/home/sus",
-    icon: <StyleIcon />,
+    icon: <StyleIcon weight="fill" size={20} />,
   },
 
   {
     name: "Research Bank",
     path: "/home/researchBank",
-    icon: <MagnifyingGlass />,
+    icon: <MagnifyingGlass weight="fill" size={20} />,
   },
 ];
 

@@ -7,7 +7,7 @@ function SearchBox({ setSearchbool, placeholder, search, setSearch }) {
           placeholder={placeholder}
           value={search?.searchText}
           name="search"
-          className="text-xs font-lato bg-transparent placeholder:text-primary-gray-250 w-11/12 focus:outline-none border-0 border-primary-gray-250"
+          className="text-xs font-inter bg-transparent placeholder:text-primary-gray-250 w-11/12 focus:outline-none border-0 border-primary-gray-250"
           onChange={(e) => {
             e.target.value = e.target.value.trimStart();
             setSearch({

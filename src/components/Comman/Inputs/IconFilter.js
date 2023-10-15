@@ -40,7 +40,7 @@ export default function IconFilter(props) {
                         props.selected?.value == item?.value
                           ? "font-bold"
                           : "font-normal",
-                        "block px-4 py-2 text-2xs cursor-pointer text-black font-lato"
+                        "block px-4 py-2 text-2xs cursor-pointer text-black font-inter"
                       )}
                     >
                       {item.label}

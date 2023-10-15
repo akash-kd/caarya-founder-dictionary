@@ -78,7 +78,7 @@ export default function SimpleRadioBoxesForObject({
                           : "input-field-box-selected font-bold"
                       }`
                     : "input-field-box",
-                  "hover-on-card p-2 flex items-center justify-center font-lato text-primary-gray-1000 text-sm sm:flex-1"
+                  "hover-on-card p-2 flex items-center justify-center font-inter text-primary-gray-1000 text-sm sm:flex-1"
                 )
               }
             >

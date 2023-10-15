@@ -8,7 +8,7 @@ function YodaLoader({ text }) {
         alt=""
         className="w-1/2 yoda-animation"
       />
-      <p className="text-sm font-lato text-primary-gray-900 font-bold w-9/12 text-center">
+      <p className="text-sm font-inter text-primary-gray-900 font-bold w-9/12 text-center">
         {text}
       </p>
     </div>

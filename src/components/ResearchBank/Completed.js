@@ -5,40 +5,40 @@ import "react-circular-progressbar/dist/styles.css";
 function Completed() {
   return (
     <div className="max-7xl mx-auto p-4 w-full flex flex-col space-y-10">
-      <h1 className="text-primary-neutral-500 font-lato text-base font-light leading-6">
+      <h1 className="text-primary-neutral-500 font-inter text-base font-light leading-6">
         Here you will find all the startups that you have completed research on.
       </h1>
       <div className="flex flex-col lg:flex-row items-stretch justify-between lg:px-5 lg:space-x-8">
-        <div className="w-full lg:w-1/12 flex flex-row items-center justify-center text-primary-neutral-500 font-lato text-lg font-semibold leading-6">
+        <div className="w-full lg:w-1/12 flex flex-row items-center justify-center text-primary-neutral-500 font-inter text-lg font-semibold leading-6">
           This Week
         </div>
         <div className="grid grid-cols-2 gp-8 w-full lg:w-11/12">
           <div className="py-4 flex flex-col items-center">
-            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-lato text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
+            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
               <span>00</span>{" "}
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 /
               </span>
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 00
               </span>
             </h1>
-            <p className="text-primary-neutral-500 font-lato text-xs font-light left-5 text-center">
+            <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
               Lead Assists
             </p>
           </div>
 
           <div className="py-4 flex flex-col items-center">
-            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-lato text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
+            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
               <span>00</span>{" "}
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 /
               </span>
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 00
               </span>
             </h1>
-            <p className="text-primary-neutral-500 font-lato text-xs font-light left-5 text-center">
+            <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
               Submissions
             </p>
           </div>
@@ -66,10 +66,10 @@ function Completed() {
                 <div className="flex flex-col space-y-6 w-11/12">
                   <div className="flex flex-row items-start justify-between space-x-2">
                     <div className="flex flex-col items-start">
-                      <h1 className="text-primary-neutral-800 font-karla text-lg font-medium leading-7">
+                      <h1 className="text-primary-neutral-800 font-poppins text-lg font-medium leading-7">
                         Founder Name
                       </h1>
-                      <h2 className="text-primary-neutral-800 font-lato text-xs font-light leading-7">
+                      <h2 className="text-primary-neutral-800 font-inter text-xs font-light leading-7">
                         Founder Name+2
                       </h2>
                     </div>
@@ -400,19 +400,19 @@ function Completed() {
                                 })}
                               />
                             </div>
-                            <h1 className="flex flex-row items-baseline space-x-0.5 text-primary-neutral-500 font-lato text-lg font-semibold lg:leading-[60px] text-center">
+                            <h1 className="flex flex-row items-baseline space-x-0.5 text-primary-neutral-500 font-inter text-lg font-semibold lg:leading-[60px] text-center">
                               <span>00</span>{" "}
-                              <span className="text-primary-neutral-500 text-xs font-lato font-light leading-4">
+                              <span className="text-primary-neutral-500 text-xs font-inter font-light leading-4">
                                 /
                               </span>
-                              <span className="text-primary-neutral-500 text-xs font-lato font-light leading-4">
+                              <span className="text-primary-neutral-500 text-xs font-inter font-light leading-4">
                                 00
                               </span>
                             </h1>
                           </div>
                           <div className="flex flex-row items-center space-x-2">
                             {React.cloneElement(item?.icon, {})}
-                            <p className="text-primary-neutral-500 font-lato text-xs font-light leading-5">
+                            <p className="text-primary-neutral-500 font-inter text-xs font-light leading-5">
                               {item?.name}
                             </p>
                           </div>
@@ -420,14 +420,14 @@ function Completed() {
                       );
                     })}
                   </div>
-                  <div className="flex flex-row text-primary-neutral-400 font-lato text-xs font-light items-center justify-between space-x-2">
+                  <div className="flex flex-row text-primary-neutral-400 font-inter text-xs font-light items-center justify-between space-x-2">
                     <p>Submitted On • Oct 12, 2023</p>
                     <p>Last Edited • 8h Ago</p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-row items-center space-x-8 justify-center w-full lg:w-2/12">
-                <div className="rounded-full px-6 py-3 bg-primary-magenta-30 text-primary-magenta-dark flex flex-row items-center space-x-2 text-sm font-lato font-semibold leading-5">
+                <div className="rounded-full px-6 py-3 bg-primary-magenta-30 text-primary-magenta-dark flex flex-row items-center space-x-2 text-sm font-inter font-semibold leading-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

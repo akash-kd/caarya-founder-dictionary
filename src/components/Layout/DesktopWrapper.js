@@ -48,8 +48,8 @@ function DesktopWrapper({ children }) {
             </div>
             <div className="px-6 py-2 flex items-start w-full justify-between border-b border-gray-200">
               <div className="flex flex-col items-start w-full">
-                <h2 className="text-base font-lato font-light">Hello,</h2>
-                <h1 className="text-xl font-lato font-medium">
+                <h2 className="text-base font-inter font-light">Hello,</h2>
+                <h1 className="text-xl font-inter font-medium">
                   Mr. {user?.first_name}
                 </h1>
               </div>

@@ -4,48 +4,48 @@ import React from "react";
 function Drafts() {
   return (
     <div className="max-7xl mx-auto p-4 w-full flex flex-col space-y-10">
-      <h1 className="text-primary-neutral-500 font-lato text-base font-light leading-6">
+      <h1 className="text-primary-neutral-500 font-inter text-base font-light leading-6">
         Here you will find all the startups that you are currently researching
         on. You can have at most 5 drafts at a time
       </h1>
       <div className="flex flex-col lg:flex-row items-stretch justify-between lg:px-5 lg:space-x-8">
-        <div className="w-full lg:w-1/12 flex flex-row items-center justify-center text-primary-neutral-500 font-lato text-lg font-semibold leading-6">
+        <div className="w-full lg:w-1/12 flex flex-row items-center justify-center text-primary-neutral-500 font-inter text-lg font-semibold leading-6">
           This Week
         </div>
         <div className="grid grid-cols-3 gp-8 w-full lg:w-11/12">
           <div className="py-4 flex flex-col items-center">
-            <h1 className="text-primary-magenta-medium font-lato text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
+            <h1 className="text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
               00
             </h1>
-            <p className="text-primary-neutral-500 font-lato text-xs font-light left-5 text-center">
+            <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
               New Drafts
             </p>
           </div>
           <div className="py-4 flex flex-col items-center">
-            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-lato text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
+            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
               <span>00</span>{" "}
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 /
               </span>
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 00
               </span>
             </h1>
-            <p className="text-primary-neutral-500 font-lato text-xs font-light left-5 text-center">
+            <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
               Research Requests
             </p>
           </div>
           <div className="py-4 flex flex-col items-center">
-            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-lato text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
+            <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
               <span>00</span>{" "}
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 /
               </span>
-              <span className="text-primary-neutral-500 text-base font-lato font-light leading-4">
+              <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 00
               </span>
             </h1>
-            <p className="text-primary-neutral-500 font-lato text-xs font-light left-5 text-center">
+            <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
               Submissions
             </p>
           </div>
@@ -64,20 +64,20 @@ function Drafts() {
                 <div className="flex flex-col space-y-6 w-11/12">
                   <div className="flex flex-row items-start justify-between space-x-2">
                     <div className="flex flex-col items-start">
-                      <h1 className="text-primary-neutral-800 font-karla text-lg font-medium leading-7">
+                      <h1 className="text-primary-neutral-800 font-poppins text-lg font-medium leading-7">
                         Founder Name
                       </h1>
-                      <h2 className="text-primary-neutral-800 font-lato text-xs font-light leading-7">
+                      <h2 className="text-primary-neutral-800 font-inter text-xs font-light leading-7">
                         Founder Name+2
                       </h2>
                     </div>
                     <div className="flex flex-row items-stretch space-x-2 absolute top-6 right-6">
-                      <div className="flex flex-row items-center space-x-2 text-secondary-fusion-500 bg-secondary-fusion-30 py-1 px-2 font-lato text-2xs font-semibold leading-4">
+                      <div className="flex flex-row items-center space-x-2 text-secondary-fusion-500 bg-secondary-fusion-30 py-1 px-2 font-inter text-2xs font-semibold leading-4">
                         <Timer size={16} />
                         <p>2 Days</p>
                       </div>
 
-                      <div className="flex flex-row items-center space-x-2 text-primary-fusion-700 bg-primary-fusion-30 py-1 px-2 font-lato text-2xs font-semibold leading-4">
+                      <div className="flex flex-row items-center space-x-2 text-primary-fusion-700 bg-primary-fusion-30 py-1 px-2 font-inter text-2xs font-semibold leading-4">
                         <p>In Progress</p>
                       </div>
                     </div>
@@ -86,11 +86,11 @@ function Drafts() {
                     <div className="w-11/12 bg-primary-neutral-100 rounded-full h-2">
                       <div className="bg-primary-magenta-lighter rounded-full h-2 w-1/2" />
                     </div>
-                    <p className="text-black font-lato text-sm font-semibold leading-6">
+                    <p className="text-black font-inter text-sm font-semibold leading-6">
                       50%
                     </p>
                   </div>
-                  <div className="flex flex-row text-primary-neutral-400 font-lato text-xs font-light items-center justify-between space-x-2">
+                  <div className="flex flex-row text-primary-neutral-400 font-inter text-xs font-light items-center justify-between space-x-2">
                     <p>Created On • Oct 12, 2023</p>
                     <p>Last Edited • 8h Ago</p>
                   </div>

@@ -51,7 +51,7 @@ function AddMembers({
         <div className="h-screen relative">
           <div className="bg-primary-green-light text-primary-green-darkest">
             <div className="flex flex-row w-full items-center justify-between p-3 rounded-t-lg">
-              <h5 className="font-karla">Add {type}</h5>
+              <h5 className="font-poppins">Add {type}</h5>
               <button
                 aria-label="Close"
                 type="button"
@@ -122,7 +122,7 @@ function AddMembers({
                   <div className="w-full flex flex-div items-center justify-end">
                     <div className="bg-primary-green-light rounded-lg">
                       <button
-                        className="text-primary-green-darkest font-karla text-sm cursor-pointer flex flex-div items-center justify-center hover-on-card px-3 py-1"
+                        className="text-primary-green-darkest font-poppins text-sm cursor-pointer flex flex-div items-center justify-center hover-on-card px-3 py-1"
                         type="button"
                         onClick={addMembers}
                       >

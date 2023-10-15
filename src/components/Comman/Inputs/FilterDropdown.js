@@ -104,7 +104,7 @@ function FilterDropdown({ value, setValue, list = [], label }) {
               onChange={(e) => {
                 setValue(e.target.value);
               }}
-              className="block truncate text-primary-neutral-800 border-none outline-none font-lato font-semibold text-sm w-full bg-transparent leading-6 "
+              className="block truncate text-primary-neutral-800 border-none outline-none font-inter font-semibold text-sm w-full bg-transparent leading-6 "
             >
               <option>
                 {list?.find((e) => e?.value == value)?.label ||

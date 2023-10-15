@@ -49,7 +49,7 @@ function ImageRadioInput({
                 value === option
                   ? "bg-gray-100  text-gray-700 inter hover:bg-theme-indigo-500"
                   : "bg-white  text-gray-900 hover:bg-gray-50",
-                "border rounded-md p-2 cursor-pointer flex items-center justify-center text-2xs font-lato font-medium sm:flex-1 hover-on-card"
+                "border rounded-md p-2 cursor-pointer flex items-center justify-center text-2xs font-inter font-medium sm:flex-1 hover-on-card"
               )
             }
           >

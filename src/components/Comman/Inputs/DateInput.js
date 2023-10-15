@@ -27,13 +27,13 @@ function DateInput({ date, onChange }) {
               {date ? (
                 <input
                   {...props}
-                  className="text-primary-gray-450 font-lato p-1 font-normal focus:border-0 focus:ring-0 focus:outline-none bg-transparent  text-sm"
+                  className="text-primary-gray-450 font-inter p-1 font-normal focus:border-0 focus:ring-0 focus:outline-none bg-transparent  text-sm"
                 />
               ) : (
                 <input
                   {...props}
                   placeholder="Add Due Date"
-                  className="text-primary-gray-450 focus:border-0 p-1 focus:ring-0 focus:outline-none bg-transparent  font-lato text-sm"
+                  className="text-primary-gray-450 focus:border-0 p-1 focus:ring-0 focus:outline-none bg-transparent  font-inter text-sm"
                 />
               )}
             </div>

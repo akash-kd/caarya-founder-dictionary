@@ -93,7 +93,7 @@ const ImageSelector = ({
               <>
                 {
                   deleting ? (
-                    <div className="red text-2xs font-lato">Deleting...</div>
+                    <div className="red text-2xs font-inter">Deleting...</div>
                   ) : (
                     //  showName ? (
                     //   <div style={{ margin: 5 }}>

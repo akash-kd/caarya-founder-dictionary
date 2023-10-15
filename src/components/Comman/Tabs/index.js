@@ -43,7 +43,7 @@ function Tabs({ tabs, selectedTab, setSelectedTab }) {
               className="min-w-max"
             >
               <div
-                className={`flex px-3 pb-1 flex-row cursor-pointer text-xs lg:text-sm items-end justify-center text-primary-neutral-800 font-lato text-center hover:font-bold ${
+                className={`flex px-3 pb-1 flex-row cursor-pointer text-xs lg:text-sm items-end justify-center text-primary-neutral-800 font-inter text-center hover:font-bold ${
                   selectedTab == item?.value ? "font-bold" : "font-normal"
                 }`}
               >
@@ -96,7 +96,7 @@ function BoxedTabs({ tabs, selectedTab, setSelectedTab }) {
               className="min-w-max"
             >
               <div
-                className={`flex px-4 text-sm py-2 flex-row cursor-pointer font-karla hover:font-semibold text-center ${
+                className={`flex px-4 text-sm py-2 flex-row cursor-pointer font-poppins hover:font-semibold text-center ${
                   selectedTab == item?.value
                     ? "font-medium text-primary-magenta-medium bg-primary-green-30 rounded-lg border border-primary-magenta-medium"
                     : "text-primary-neutral-800 font-light"
@@ -199,7 +199,7 @@ function RadioTabs({ tabs, selectedTab, setSelectedTab }) {
                   option?.value == selectedTab
                     ? "bg-primary-green-lightest font-semibold border-primary-magenta-medium text-primary-magenta-medium "
                     : "bg-primary-gray-50 border-gray-200 text-primary-gray-400 font-light hover:bg-primary-green-lightest",
-                  "m-3 min-w-max cursor-pointer border rounded-full px-3 lg:px-6 py-1 lg:py-2 flex items-center justify-center text-xs lg:text-sm font-lato"
+                  "m-3 min-w-max cursor-pointer border rounded-full px-3 lg:px-6 py-1 lg:py-2 flex items-center justify-center text-xs lg:text-sm font-inter"
                 )
               }
             >
