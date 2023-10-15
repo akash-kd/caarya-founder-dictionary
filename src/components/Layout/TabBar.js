@@ -1,5 +1,5 @@
 import { useHistory } from "react-router";
-// import { mobileBottomNav } from "helpers/constants";
+import { mobileBottomNav } from "helpers/constants";
 
 import React from "react";
 function TabBar() {
@@ -10,8 +10,8 @@ function TabBar() {
         className={`w-full fixed z-30 bottom-0 right-0 tapbar left-0 lg:hidden transform transition-all ease-in-out duration-300 font-poppins`}
       >
         <div className=" w-full bottom-0 p-2  max-w-sm mx-auto">
-          <div className="grid grid-cols-5 gap-2">
-            {/* {mobileBottomNav.map((item, idx) => {
+          <div className="grid grid-cols-3 gap-2">
+            {mobileBottomNav.map((item, idx) => {
               const centerNavIdx = Math.floor(mobileBottomNav.length / 2);
 
               return (
@@ -28,10 +28,10 @@ function TabBar() {
                       "absolute inset-x-0 -translate-y-3"
                     } ${
                       idx === centerNavIdx
-                        ? "text-primary-orange-medium font-bold"
+                        ? "text-primary-magenta-medium font-bold"
                         : window.location.pathname.includes(item?.path)
-                        ? "text-primary-orange-medium font-bold"
-                        : "text-primary-gray-280 font-normal"
+                        ? "text-primary-magenta-medium font-bold"
+                        : "text-primary-neutral-800 font-normal"
                     }`}
                   >
                     {item?.image ? (
@@ -59,7 +59,7 @@ function TabBar() {
                   </div>
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

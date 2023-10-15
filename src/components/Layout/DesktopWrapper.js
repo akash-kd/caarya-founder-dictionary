@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { laptopNav } from "../../helpers/constants";
 import { useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import WideModalsWrapper from "../Modals/ModalsWrapper/WideModalWrapper";
 import LogoutModal from "./LogoutModal";
+import { Bell, Fire } from "@phosphor-icons/react";
 
 function DesktopWrapper({ children }) {
   const user = useSelector((state) => state.user.user);
-  const history = useHistory();
   const [logOut, setLogOut] = useState(false);
 
   const onLogout = () => {
@@ -45,6 +45,16 @@ function DesktopWrapper({ children }) {
                   </h1>
                 </div>
               </a>
+            </div>
+            <div className="flex flex-row items-stretch justify-end space-x-2 w-full px-4">
+              <div className="rounded-full bg-white px-4 py-1 flex flex-row items-center space-x-1 text-primary-neutral-800 font-lato text-base font-semibold leading-6">
+                <Fire size={20} color="#FBA804" />
+                <p>0</p>
+              </div>
+              <div className="rounded-full bg-white px-4 py-1 flex flex-row items-center space-x-1 text-primary-neutral-800 font-lato text-base font-semibold leading-6">
+                <Bell size={20} color="#FBC920" />
+                <p>0</p>
+              </div>
             </div>
             <div className="px-6 py-2 flex items-start w-full justify-between border-b border-gray-200">
               <div className="flex flex-col items-start w-full">
