@@ -127,3 +127,10 @@ button:focus {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
   }
 }
+
+.filter-dropdown-box {
+  border-radius: 8px;
+  background: var(--shades-50, #fff);
+  box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    -1px 1px 2px -1px rgba(0, 0, 0, 0.1), 0px -1px 2px 0px rgba(0, 0, 0, 0.04);
+}

@@ -1,3 +1,4 @@
+import FilterDropdown from "components/Comman/Inputs/FilterDropdown";
 import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -41,6 +42,15 @@ function Completed() {
               Submissions
             </p>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-start space-y-6">
+        <div className="flex flex-row items-stretch space-x-4 max-w-full overflow-x-auto py-2 px-1">
+          <FilterDropdown label="Industry" />
+          <FilterDropdown label="Status" />
+          <FilterDropdown label="Project" />
+          <FilterDropdown label="Track" />
+          <FilterDropdown label="Assigned by" />
         </div>
       </div>
       <div className="py-2 lg:px-2 flex flex-col space-y-8 w-full">
