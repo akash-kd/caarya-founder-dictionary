@@ -19,7 +19,12 @@ const selectedCompany = "/assets/svg/pages/selectedCompany.svg";
 const selectedWeb = "/assets/svg/pages/selectedFootprint.svg";
 const selectedProduct = "/assets/svg/pages/selectedProduct.svg";
 
-import { createEntity, getSusFlag } from "config/APIs/startup";
+import {
+  createEntity,
+  getOneEntity,
+  getSusFlag,
+  updateEntity,
+} from "config/APIs/startup";
 import { useDispatch } from "react-redux";
 import { showToast } from "redux/toaster";
 import ChronosButton from "components/Comman/Buttons";
@@ -65,7 +70,7 @@ const SussForm = () => {
   const doSusCheck = async (type, field, value, alternateField) => {
     try {
       let res = await getSusFlag({ type, field, value });
-      let data = res?.data;
+      let data = res?.data?.data;
       let val = {
         [field]: {
           value: value,
@@ -89,18 +94,92 @@ const SussForm = () => {
     }
   };
 
-  const submit = async () => {
-    try {
-      let res = await createEntity({
-        ...companyData,
-        values: [companyData?.values],
-        founders: founders,
-      });
-      let data = res?.data;
+  // const getOne = async (id) => {
+  //   try {
+  //     let res = await getOneEntity(id);
+  //     let data = res?.data?.data;
+  //     let { founders: f, ...c } = data;
+  //     setCompanyData(c);
+  //     setFounders(f);
+  //     dispatch(showToast({ message: data?.message }));
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
-      dispatch(showToast({ message: data?.message }));
-    } catch (e) {
-      console.log(e);
+  const saveAsDraft = async () => {
+    if (companyData?.id) {
+      try {
+        let res = await updateEntity(companyData?.id, {
+          ...companyData,
+          values: [companyData?.values],
+          founders: founders,
+          isDraft: true,
+        });
+        let data = res?.data?.data;
+        let { founders: f, ...c } = data;
+        setCompanyData(c);
+        setFounders(f);
+
+        dispatch(showToast({ message: data?.message }));
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        let res = await createEntity({
+          ...companyData,
+          values: [companyData?.values],
+          founders: founders,
+          isDraft: true,
+        });
+        let data = res?.data?.data;
+        let { founders: f, ...c } = data;
+
+        setCompanyData(c);
+        setFounders(f);
+        dispatch(showToast({ message: data?.message }));
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+
+  const submit = async () => {
+    if (companyData?.id) {
+      try {
+        let res = await updateEntity(companyData?.id, {
+          ...companyData,
+          values: [companyData?.values],
+          founders: founders,
+          isDraft: false,
+        });
+        let data = res?.data?.data;
+        let { founders: f, ...c } = data;
+
+        setCompanyData(c);
+        setFounders(f);
+        dispatch(showToast({ message: data?.message }));
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        let res = await createEntity({
+          ...companyData,
+          values: [companyData?.values],
+          founders: founders,
+          isDraft: false,
+        });
+        let data = res?.data?.data;
+        let { founders: f, ...c } = data;
+
+        setCompanyData(c);
+        setFounders(f);
+        dispatch(showToast({ message: data?.message }));
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 
@@ -110,7 +189,13 @@ const SussForm = () => {
         name="Enter Your Startup Story"
         ctaComponent={
           <div className="flex gap-4 items-center">
-            <ChronosButton text="Save as Draft" secondary onClick={() => {}} />
+            <ChronosButton
+              text="Save as Draft"
+              secondary
+              onClick={() => {
+                saveAsDraft();
+              }}
+            />
             <ChronosButton
               text="Submit"
               primary
