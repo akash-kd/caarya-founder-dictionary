@@ -28,6 +28,8 @@ import {
 import { useDispatch } from "react-redux";
 import { showToast } from "redux/toaster";
 import ChronosButton from "components/Comman/Buttons";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 const tabs = [
   {
     label: "Overview",
@@ -62,6 +64,7 @@ const tabs = [
 ];
 
 const SussForm = () => {
+  const { id } = useParams();
   const dispatch = useDispatch();
   const [selectedTab, setSelectedTab] = useState("overview");
   const [companyData, setCompanyData] = useState({});
@@ -70,7 +73,7 @@ const SussForm = () => {
   const doSusCheck = async (type, field, value, alternateField) => {
     try {
       let res = await getSusFlag({ type, field, value });
-      let data = res?.data?.data;
+      let data = res?.data;
       let val = {
         [field]: {
           value: value,
@@ -82,10 +85,10 @@ const SussForm = () => {
       }
 
       if (type == "startup") {
-        setCompanyData({
-          ...companyData,
-          ...val,
-        });
+        let temp = { ...companyData };
+        temp = { ...temp, ...val };
+        setCompanyData(temp);
+        console.log(temp);
       }
 
       dispatch(showToast({ message: data?.message }));
@@ -94,18 +97,18 @@ const SussForm = () => {
     }
   };
 
-  // const getOne = async (id) => {
-  //   try {
-  //     let res = await getOneEntity(id);
-  //     let data = res?.data?.data;
-  //     let { founders: f, ...c } = data;
-  //     setCompanyData(c);
-  //     setFounders(f);
-  //     dispatch(showToast({ message: data?.message }));
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  const getOne = async () => {
+    try {
+      let res = await getOneEntity(id);
+      let data = res?.data?.data;
+      let { founders: f, ...c } = data;
+      setCompanyData(c);
+      setFounders(f);
+      dispatch(showToast({ message: data?.message }));
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   const saveAsDraft = async () => {
     if (companyData?.id) {
@@ -183,6 +186,10 @@ const SussForm = () => {
     }
   };
 
+  useEffect(() => {
+    if (id && id !== 0) getOne();
+  }, [id]);
+
   return (
     <div className="sticky-thc h-[90vh] lg:h-auto">
       <PageHeader
@@ -209,7 +216,6 @@ const SussForm = () => {
 
       <div className="flex flex-col lg:px-8 py-4 gap-2 bg-white relative">
         <div id="tabs" className="bg-white z-40">
-          {/* Add the toggle bar - Not Added Yet */}
           <Tabs
             tabs={tabs}
             selectedTab={selectedTab}

@@ -16,7 +16,7 @@ const privateRoutes = [
     tab: "Dashboard",
   },
   {
-    path: "/home/sus",
+    path: "/home/sus/:id",
     component: SussForm,
     name: "New Suss Form",
     tab: "Suss Form",

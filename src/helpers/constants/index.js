@@ -5,7 +5,7 @@ import StyleIcon from "@mui/icons-material/Style";
 const mobileBottomNav = [
   {
     name: "Sus Forms",
-    path: "/home/sus",
+    path: "/home/sus/0",
     icon: <StyleIcon size={20} />,
   },
   {
@@ -28,7 +28,7 @@ const laptopNav = [
   },
   {
     name: "Sus Forms",
-    path: "/home/sus",
+    path: "/home/sus/0",
     icon: <StyleIcon weight="fill" size={20} />,
   },
 

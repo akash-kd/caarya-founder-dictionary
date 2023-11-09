@@ -5,9 +5,6 @@ import { MdPeopleAlt } from "react-icons/md";
 import { FiActivity } from "react-icons/fi";
 
 const web = "/assets/svg/pages/digitalFootprint/fi_2600295.svg";
-const instagram = "/assets/svg/pages/digitalFootprint/instagram.svg";
-const linkedin = "/assets/svg/pages/digitalFootprint/linkedin.svg";
-const twitter = "/assets/svg/pages/digitalFootprint/twitter.svg";
 
 import CardTitle from "components/SusForm/Common/CardTitle";
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";

@@ -1,16 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FilePicker } from "react-file-picker";
 import { uploadFile, deleteFile } from "config/APIs/files";
 import { useDispatch } from "react-redux";
 import { showToast } from "redux/toaster";
+import { Trash } from "@phosphor-icons/react";
+import { RiUploadCloudLine } from "react-icons/ri";
 
 const ImageSelector = ({
   onSuccess,
   onError,
   onDelete,
   image,
-  showImage,
-  showName = true,
+  uploadElement = <></>,
   disabled,
 }) => {
   const dispatch = useDispatch();
@@ -72,63 +73,35 @@ const ImageSelector = ({
     <div>
       {uploaded ? (
         <>
-          <div className="flex flex-col items-start">
-            {showImage && (
+          <div className="flex max-w-[420px] md:min-w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
+            <div className="flex flex-col gap-2 sm:px-6 items-center">
               <img
-                src={selectedFile.url}
-                style={{ width: 100, borderRadius: 10 }}
+                src={image}
+                alt=""
+                className="w-32 h-32 rounded object-cover"
               />
-            )}
-
-            {showName && (
-              <div style={{ margin: 5 }}>
-                <a href={selectedFile.url} download={selectedFile.name}>
-                  {selectedFile.name || "Profile Pic"}
-                  {selectedFileSize &&
-                    `${Math.round(selectedFileSize / (1024 * 1024))} MB`}
-                </a>
-              </div>
-            )}
-            {!disabled && (
-              <>
-                {
-                  deleting ? (
+              {!disabled && (
+                <>
+                  {deleting ? (
                     <div className="red text-2xs font-inter">Deleting...</div>
                   ) : (
-                    //  showName ? (
-                    //   <div style={{ margin: 5 }}>
-                    //     <Button
-                    //       onClick={handleDelete}
-                    //       color="outline"
-                    //       className="capitalize font-medium text-xs rounded"
-                    //     >
-                    //       Delete
-                    //     </Button>
-                    //   </div>
-                    // ) : (
                     <div
                       onClick={handleDelete}
                       className="text-red-600 text-2xs"
                     >
-                      Delete Image
+                      <Trash size={16} />
                     </div>
-                  )
-                  // )
-                }
-              </>
-            )}
-          </div>
-          {selectedFileSize > 1048576 ? (
-            <div className="text-xs text-purple-300">
-              {"Warning:Image size is >1MB, try compressing it."}
+                  )}
+                </>
+              )}
             </div>
-          ) : (
-            ""
-          )}
+          </div>
         </>
       ) : uploading ? (
-        <div className="flex flex-row items-center">
-          <div>Uploading...</div>
+        <div className="w-full flex max-w-[420px] md:min-w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
+          <div className="flex flex-col gap-2 sm:px-6 items-center">
+            <div className="w-20 h-20 rounded-full bg-transparent border border-primary-magenta-dark border-t-0 animate-spin" />
+          </div>
         </div>
       ) : (
         <FilePicker
@@ -137,13 +110,17 @@ const ImageSelector = ({
           onError={handleFilePickerError}
           maxSize={6000}
         >
-          <button
-            color="outline"
-            className="capitalize font-normal text-xs rounded"
-            disabled={disabled}
-          >
-            Upload Image
-          </button>
+          <div className="flex max-w-[420px] md:min-w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
+            <div className="flex flex-col gap-2 sm:px-6 items-center">
+              <RiUploadCloudLine size="32" color="#CFCDC9" />
+              <div className="text-sm font-semibold font-inter text-neutral-300 text-enter">
+                Upload Picture
+              </div>
+              <div className="text-[10px] font-semibold font-inter text-neutral-300 text-center">
+                Supported formats: .JPG, .JPEG, .PNG
+              </div>
+            </div>
+          </div>
         </FilePicker>
       )}
     </div>

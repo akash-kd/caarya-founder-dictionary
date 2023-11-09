@@ -1,7 +1,19 @@
-import { Pencil, Timer, Trash } from "@phosphor-icons/react";
-import React from "react";
+import { Timer } from "@phosphor-icons/react";
+import moment from "moment";
 
-function Drafts() {
+function Drafts({ list, onDelete, onEdit, totalLength = 0, submissions }) {
+  const getPercentage = (item) => {
+    let allKeys = Object.keys(item);
+    let filledKeys = [];
+
+    Object.keys(item)?.map((key) => {
+      let v = item[key];
+      if (v) filledKeys.push(key);
+    });
+
+    return parseInt((filledKeys?.length * 100) / allKeys?.length);
+  };
+
   return (
     <div className="max-7xl mx-auto p-4 w-full flex flex-col space-y-10">
       <h1 className="text-primary-neutral-500 font-inter text-base font-light leading-6">
@@ -15,7 +27,12 @@ function Drafts() {
         <div className="grid grid-cols-3 gp-8 w-full lg:w-11/12">
           <div className="py-4 flex flex-col items-center">
             <h1 className="text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
-              00
+              {
+                list?.filter(
+                  (i) =>
+                    moment(i?.createdAt).unix >= moment().add(-7, "days").unix
+                )?.length
+              }
             </h1>
             <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
               New Drafts
@@ -37,12 +54,12 @@ function Drafts() {
           </div>
           <div className="py-4 flex flex-col items-center">
             <h1 className="flex flex-row items-baseline space-x-2 text-primary-magenta-medium font-inter text-2xl lg:text-[40px] font-semibold lg:leading-[60px] text-center">
-              <span>00</span>{" "}
+              <span>{submissions?.length || 0}</span>{" "}
               <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
                 /
               </span>
               <span className="text-primary-neutral-500 text-base font-inter font-light leading-4">
-                00
+                {totalLength}
               </span>
             </h1>
             <p className="text-primary-neutral-500 font-inter text-xs font-light left-5 text-center">
@@ -52,12 +69,12 @@ function Drafts() {
         </div>
       </div>
       <div className="py-2 lg:px-2 flex flex-col space-y-8">
-        {[1, 2, 3, 4]?.map((item) => {
+        {list?.map((item) => {
           return (
             <div className="flex flex-col lg:flex-row items-center space-y-5 lg:space-y-0 lg:space-x-10 justify-between">
               <div className="research-card relative lg:w-10/12 p-6 flex flex-col lg:flex-row items-stretch lg:space-x-8">
                 <img
-                  src="/assets/images/demo.png"
+                  src={item?.image?.url || "/assets/images/demo.png"}
                   alt=""
                   className="rounded-lg object-contain w-[120px] h-[120px] aspect-square"
                 />
@@ -65,10 +82,15 @@ function Drafts() {
                   <div className="flex flex-row items-start justify-between space-x-2">
                     <div className="flex flex-col items-start">
                       <h1 className="text-primary-neutral-800 font-poppins text-lg font-medium leading-7">
-                        Founder Name
+                        {item?.name}
                       </h1>
                       <h2 className="text-primary-neutral-800 font-inter text-xs font-light leading-7">
-                        Founder Name+2
+                        {item?.founders?.length > 0
+                          ? item?.founders[0]?.name
+                          : "No Founders"}{" "}
+                        {item?.founders?.length > 1
+                          ? `+${item?.founders?.length - 1}`
+                          : ""}
                       </h2>
                     </div>
                     <div className="flex flex-row items-stretch space-x-2 absolute top-6 right-6">
@@ -84,20 +106,31 @@ function Drafts() {
                   </div>
                   <div className="flex flex-row items-center justify-between space-x-2">
                     <div className="w-11/12 bg-primary-neutral-100 rounded-full h-2">
-                      <div className="bg-primary-magenta-lighter rounded-full h-2 w-1/2" />
+                      <div
+                        className="bg-primary-magenta-lighter rounded-full h-2"
+                        style={{ width: `${getPercentage(item)}%` }}
+                      />
                     </div>
                     <p className="text-black font-inter text-sm font-semibold leading-6">
-                      50%
+                      {getPercentage(item)}%
                     </p>
                   </div>
                   <div className="flex flex-row text-primary-neutral-400 font-inter text-xs font-light items-center justify-between space-x-2">
-                    <p>Created On • Oct 12, 2023</p>
-                    <p>Last Edited • 8h Ago</p>
+                    <p>Created On • {moment(item?.createdAt).format("ll")}</p>
+                    <p>
+                      Last Edited •{" "}
+                      {moment(item?.updatedAt).startOf("day").fromNow()}
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-row items-center space-x-8">
-                <div className="w-16 h-16 flex flex-row cursor-pointer items-center justify-center text-primary-neutral-500 bg-primary-neutral-50 rounded-full">
+                <div
+                  onClick={() => {
+                    onEdit(item?.id);
+                  }}
+                  className="w-16 h-16 flex flex-row cursor-pointer items-center justify-center text-primary-neutral-500 bg-primary-neutral-50 rounded-full"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -111,7 +144,12 @@ function Drafts() {
                     />
                   </svg>
                 </div>
-                <div className="w-16 h-16 flex flex-row cursor-pointer items-center justify-center text-primary-neutral-500 bg-primary-neutral-50 rounded-full">
+                <div
+                  onClick={() => {
+                    onDelete(item);
+                  }}
+                  className="w-16 h-16 flex flex-row cursor-pointer items-center justify-center text-primary-neutral-500 bg-primary-neutral-50 rounded-full"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

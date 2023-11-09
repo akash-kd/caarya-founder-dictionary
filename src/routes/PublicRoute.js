@@ -14,9 +14,9 @@ const publicRoutes = [
       localStorage.getItem("token") ? (
         checkAppAccess() ? (
           window.innerWidth < 1024 ? (
-            <Redirect to="/home/sus" />
+            <Redirect to="/home/sus/0" />
           ) : (
-            <Redirect to="/home/sus" />
+            <Redirect to="/home/sus/0" />
           )
         ) : (
           <Redirect to="/accessDenied" />
