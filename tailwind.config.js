@@ -11,6 +11,8 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         karla: ["Karla", "sans-serif"],
         lato: ["Lato", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        satoshi: ["Satoshi", "sans-serif"],
       },
       colors: {
         primary: {
