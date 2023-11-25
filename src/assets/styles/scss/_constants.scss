@@ -165,6 +165,23 @@ $red-colors: (
   700: $theme-red-700,
 );
 
+$theme-magenta-100: #f9e3fc;
+$theme-magenta-150: #f4c4f7;
+$theme-magenta-200: #f282f5;
+$theme-magenta-500: #c44eb9;
+$theme-magenta-550: #903795;
+$theme-magenta-600: #451451;
+$theme-magenta-700: #2a192d;
+$magenta-colors: (
+  100: $theme-magenta-100,
+  150: $theme-magenta-150,
+  200: $theme-magenta-200,
+  500: $theme-magenta-500,
+  550: $theme-magenta-550,
+  600: $theme-magenta-600,
+  700: $theme-magenta-700,
+);
+
 /*Borders*/
 $primary-border-radius: 8px;
 $secondary-border-radius: 10px;

@@ -31,7 +31,7 @@ function DateInputForObject({
             {required ? label + "*" : label}
           </label>
         )}
-        <div className="w-full grid place-items-center text-primary-gray-600 font-lato text-sm font-light leading-6 placeholder:text-gray-200 focus:outline-none focus:ring-transparent">
+        <div className="w-full grid place-items-center text-primary-gray-600 font-inter text-sm font-light leading-6 placeholder:text-gray-200 focus:outline-none focus:ring-transparent">
           <DateInput
             date={details[field] ?? new Date()}
             placeholder={label}

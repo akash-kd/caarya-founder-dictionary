@@ -1,8 +1,4 @@
-import React, { useEffect } from "react";
 import { Switch, BrowserRouter as Router } from "react-router-dom";
-import AppWrapper from "layout/AppWrapper";
-import PageHeader from "components/Layout/PageHeader";
-import SussForm from "pages/Suss Form";
 
 import { publicRoutes } from "routes/PublicRoute";
 import { privateRoutes } from "routes/PrivateRoute";
@@ -13,7 +9,7 @@ import AuthenticatedRedirects from "routes/AuthenticatedRedirects";
 function App() {
   return (
     <div>
-      <div className="block min-h-screen bg-gray-50 lg:bg-gray-50">
+      <div className="block min-h-screen bg-[#F0F3F4]">
         <Router>
           <Switch>
             {publicRoutes.map((route, idx) => (

@@ -36,7 +36,7 @@ function RadioInput({
                   option?.value == value
                     ? "bg-primary-green-lightest font-semibold border-primary-green-700 text-primary-green-700 "
                     : "bg-primary-gray-50 border-gray-200 text-primary-gray-400 font-light hover:bg-primary-green-lightest",
-                  "border rounded-full px-6 py-2 flex items-center justify-center text-sm font-lato sm:flex-1"
+                  "border rounded-full px-6 py-2 flex items-center justify-center text-sm font-inter sm:flex-1"
                 )
               }
             >

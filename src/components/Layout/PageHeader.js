@@ -1,33 +1,21 @@
 import { ArrowLeft } from "@phosphor-icons/react";
-import React, { useEffect, useState } from "react";
-import { useHistory, useRouteMatch } from "react-router-dom";
-import { privateRoutes } from "../../routes/PrivateRoute";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 function PageHeader({ name, ctaComponent = <></>, back, showMobile }) {
-  // const routes = useRouteMatch();
-  // const history = useHistory();
-  const [heading, setHeading] = useState("");
-  const [description, setDescription] = useState("");
-
-  // useEffect(() => {
-  //   let page = privateRoutes?.find((p) => p?.path === routes?.path);
-  //   console.log(page);
-  //   setHeading(page?.name);
-  //   setDescription(page?.description);
-  // }, []);
-
+  const history = useHistory();
   return (
     <div className="flex flex-row items-center justify-between px-6 py-4 bg-white border-b-2 border-neutral-200 mb-2">
       <h1
-        className={`text-sm lg:text-xl h-full flex flex-row items-center text-left font-semibold lg:font-medium font-karla tracking-tight text-primary-gray-800 lg:text-primary-green-dark`}
+        className={`text-sm lg:text-xl h-full flex flex-row items-center text-left font-semibold lg:font-medium font-poppins tracking-tight text-primary-magenta-dark`}
       >
         {back && (
           <ArrowLeft
             onClick={() => {
-              // history.goBack();
+              history.goBack();
             }}
             size={20}
-            className="text-primary-gray-800 mr-4"
+            className="text-primary-magenta-dark mr-4"
           />
         )}
         <p>{name}</p>

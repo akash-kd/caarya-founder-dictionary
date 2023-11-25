@@ -57,14 +57,14 @@ export default function StatusDropdown({
               </div>
               <div className={`relative ${horizontal ? "w-8/12" : "w-full"}`}>
                 <Listbox.Button className="input-dropdown-box relative w-full py-1 pl-3.5 pr-10 text-left cursor-default placeholder:text-primary-gray-350 focus:outline-none focus:ring-transparent focus:border-transparent">
-                  <span className="flex flex-row items-center space-x-2 truncate font-lato text-sm font-semibold text-primary-gray-600 inter font-normal text-xs leading-6 ">
+                  <span className="flex flex-row items-center space-x-2 truncate font-inter text-sm font-semibold text-primary-gray-600 inter font-normal text-xs leading-6 ">
                     {label == "Status" && (
-                      <span className="text-primary-gray-400 font-lato text-3xs lg:text-sm font-semibold">
+                      <span className="text-primary-gray-400 font-inter text-3xs lg:text-sm font-semibold">
                         Status:
                       </span>
                     )}
                     <span
-                      className={` font-lato text-3xs lg:text-sm font-semibold ${
+                      className={` font-inter text-3xs lg:text-sm font-semibold ${
                         colorList
                           ? colorList[list?.findIndex((e) => e?.value == value)]
                           : ""
@@ -101,7 +101,7 @@ export default function StatusDropdown({
                         className={({ active }) =>
                           classNames(
                             active ? "" : "text-primary-gray-600",
-                            "cursor-default select-none relative py-1 lg:py-2 pl-4 pr-9 font-lato font-normal text-3xs lg:text-xs leading-6"
+                            "cursor-default select-none relative py-1 lg:py-2 pl-4 pr-9 font-inter font-normal text-3xs lg:text-xs leading-6"
                           )
                         }
                         value={item?.value}
@@ -158,7 +158,7 @@ export default function StatusDropdown({
               onChange={(e) => {
                 setValue(e.target.value);
               }}
-              className="block truncate text-primary-gray-600 border-none outline-none font-lato font-normal text-xs w-full bg-transparent leading-6 "
+              className="block truncate text-primary-gray-600 border-none outline-none font-inter font-normal text-xs w-full bg-transparent leading-6 "
             >
               <option>
                 {list?.find((e) => e?.value == value)?.label ||

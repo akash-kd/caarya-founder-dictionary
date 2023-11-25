@@ -4,13 +4,14 @@ import { RiUploadCloudLine } from "react-icons/ri";
 import { BsCheckCircle } from "react-icons/bs";
 
 // SVG Icons
-const scroll = "assets/svg/pages/overview/fi_10237168.svg";
-const idea = "assets/svg/pages/Idea.svg";
-const web = "assets/svg/pages/overview/fi_10218756.svg";
-const about = "assets/svg/pages/overview/fi_10166120.svg";
+const scroll = "/assets/svg/pages/overview/fi_10237168.svg";
+const idea = "/assets/svg/pages/Idea.svg";
+const web = "/assets/svg/pages/overview/fi_10218756.svg";
+const about = "/assets/svg/pages/overview/fi_10166120.svg";
 
 import OnlinePresence from "./OnlinePresence";
 import CardTitle from "../Common/CardTitle";
+import ImageSelector from "components/Comman/Inputs/ImageSelector";
 
 const Overview = ({ companyData, setCompanyData }) => {
   return (
@@ -55,17 +56,25 @@ const Overview = ({ companyData, setCompanyData }) => {
               className="absolute top-2 right-2"
             />
             <div className="font-inter text-lg font-semibold">Company Logo</div>
-            <div className="flex max-w-[420px] md:min-w-[420px] py-8 px-20 flex-col gap-2 items-center justify-center bg-neutral-50 rounded-lg shadow-inner">
-              <div className="flex flex-col gap-2 sm:px-6 items-center">
-                <RiUploadCloudLine size="32" color="#CFCDC9" />
-                <div className="text-sm font-semibold font-inter text-neutral-300 text-enter">
-                  Upload Picture
-                </div>
-                <div className="text-[10px] font-semibold font-inter text-neutral-300 text-center">
-                  Supported formats: .JPG, .JPEG, .PNG
-                </div>
-              </div>
-            </div>
+            {console.log(companyData)}{" "}
+            <ImageSelector
+              onSuccess={(val) => {
+                console.log(val);
+                setCompanyData({
+                  ...companyData,
+                  image: val,
+                  imageId: val?.id,
+                });
+              }}
+              onDelete={() => {
+                setCompanyData({
+                  ...companyData,
+                  image: null,
+                  imageId: null,
+                });
+              }}
+              image={companyData?.image?.url}
+            />
           </div>
 
           <div className="flex flex-col flex-start justify-center sm:px-6 py-4 max-w-[488px] max-h-[138px] gap-4 rounded-tl-[40px] rounded-bl-[96px]">
@@ -116,7 +125,7 @@ const Overview = ({ companyData, setCompanyData }) => {
           <CardTitle
             img={web}
             title="Online Presence"
-            color="bg-accent-primary-50"
+            color="bg-primary-accent-50"
           />
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-20">
@@ -182,7 +191,7 @@ const Overview = ({ companyData, setCompanyData }) => {
           <CardTitle
             img={about}
             title="About Company"
-            color="bg-chronos-primary-50"
+            color="bg-primary-chronos-50"
           />
 
           <div className="flex flex-col sm:flex-row items-center sm:gap-20">

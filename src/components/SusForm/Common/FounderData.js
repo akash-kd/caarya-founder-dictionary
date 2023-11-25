@@ -1,8 +1,8 @@
 import React from "react";
 
-const cake = "assets/svg/pages/founderInfo/Cake.svg";
-const history = "assets/svg/pages/founderInfo/fi_11244276.svg";
-const history1 = "assets/svg/pages/founderInfo/1.svg";
+const cake = "/assets/svg/pages/founderInfo/Cake.svg";
+const history = "/assets/svg/pages/founderInfo/fi_11244276.svg";
+const history1 = "/assets/svg/pages/founderInfo/1.svg";
 
 import RadioCard from "components/SusForm/Common/SusCheckRadioCard";
 import InsightsCard from "components/SusForm/Common/InsightsCard";
@@ -73,7 +73,7 @@ const FounderData = ({ data, setData }) => {
         <CardTitle
           img={cake}
           title="Founder's Age"
-          color="bg-fusion-primary-30"
+          color="bg-primary-fusion-30"
         />
 
         <div className="flex flex-col flex-start gap-16">

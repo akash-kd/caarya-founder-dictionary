@@ -22,7 +22,7 @@ function TopBar() {
             className="h-6 w-6 object-fill"
             alt="logo"
           />
-          <h1 className="font-bold font-karla text-xl text-primary-primary-green-darkest">
+          <h1 className="font-bold font-poppins text-xl text-primary-primary-green-darkest">
             Founders Dictionary
           </h1>
         </div>

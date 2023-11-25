@@ -83,7 +83,7 @@ const AddOwnerModal = ({
           <div className="flex flex-row items-end justify-between p-5 rounded-t-20px">
             <div className="flex flex-col space-y-1">
               <h5
-                className="font-lato font-bold text-sm text-primary-gray-1000 flex flex-col items-start"
+                className="font-inter font-bold text-sm text-primary-gray-1000 flex flex-col items-start"
                 id="exampleModalLiveLabel"
               >
                 Add {type}
@@ -179,12 +179,12 @@ const AddOwnerModal = ({
                         </div>
                       )}
                       <div className="flex flex-col mt-2.5">
-                        <p className="font-lato text-sm font-normal text-primary-gray-600">
+                        <p className="font-inter text-sm font-normal text-primary-gray-600">
                           {item?.first_name}{" "}
                           {item?.middle_name ? item?.middle_name : ""}{" "}
                           {item?.last_name ? item?.last_name : ""}
                         </p>
-                        <p className="font-lato text-2xs font-normal text-primary-gray-350">
+                        <p className="font-inter text-2xs font-normal text-primary-gray-350">
                           {item?.designation?.role?.role_name}
                         </p>
                       </div>

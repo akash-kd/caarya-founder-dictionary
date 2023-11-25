@@ -1,69 +1,41 @@
-import {
-  Stack,
-  User,
-  Users,
-  GraduationCap,
-  LinkedinLogo,
-  StackSimple,
-} from "@phosphor-icons/react";
+import { MagnifyingGlass, Layout } from "@phosphor-icons/react";
 
-import StyleIcon from '@mui/icons-material/Style';
-
-import EventIcon from '@mui/icons-material/Event';
+import StyleIcon from "@mui/icons-material/Style";
 
 const mobileBottomNav = [
   {
-    name: "Tribe",
-    path: "/home/community",
-    image: "/assets/svg/tabbar/tribe.svg",
-    selectedImage: "/assets/svg/tabbar/selectedTribe.svg",
-  },
-
-  {
-    name: "Requests",
-    path: "/home/talents",
-
-    image: "/assets/svg/tabbar/requests.svg",
-    selectedImage: "/assets/svg/tabbar/selectedRequests.svg",
+    name: "Sus Forms",
+    path: "/home/sus/0",
+    icon: <StyleIcon size={20} />,
   },
   {
-    name: "FTP",
-    path: "/home/ftp",
+    name: "Dashboard",
+    path: "/dashboard",
     image: "/assets/caaryaLogos/logo.png",
     selectedImage: "/assets/caaryaLogos/logo.png",
   },
   {
-    name: "Drives",
-    path: "/home/drives",
-
-    image: "/assets/svg/tabbar/drives.svg",
-    selectedImage: "/assets/svg/tabbar/selectedDrives.svg",
-  },
-
-  {
-    name: "CGCs",
-    path: "/home/cgc",
-
-    image: "/assets/svg/tabbar/cgc.svg",
-    selectedImage: "/assets/svg/tabbar/selectedCgc.svg",
+    name: "Research Bank",
+    path: "/home/researchBank",
+    icon: <MagnifyingGlass size={20} />,
   },
 ];
 const laptopNav = [
   {
+    name: "Dashboard",
+    path: "/dashboard",
+    icon: <Layout size={20} />,
+  },
+  {
     name: "Sus Forms",
-    path: "/home/sus",
-    icon: <StyleIcon />,
+    path: "/home/sus/0",
+    icon: <StyleIcon weight="fill" size={20} />,
   },
 
   {
-    name: "Dictionary",
-    path: "/home/drives",
-    icon: <EventIcon />,
-  },
-  {
-    name: "Leads",
-    path: "/home/community/count",
-    icon: <EventIcon />,
+    name: "Research Bank",
+    path: "/home/researchBank",
+    icon: <MagnifyingGlass weight="fill" size={20} />,
   },
 ];
 

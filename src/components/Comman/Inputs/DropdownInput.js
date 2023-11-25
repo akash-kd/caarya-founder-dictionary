@@ -152,7 +152,7 @@ export default function DropdownInput({
               onChange={(e) => {
                 setValue(e.target.value);
               }}
-              className="block truncate text-primary-gray-600 border-none outline-none font-lato font-normal text-xs w-full bg-transparent leading-6 "
+              className="block truncate text-primary-gray-600 border-none outline-none font-inter font-normal text-xs w-full bg-transparent leading-6 "
             >
               <option>
                 {list?.find((e) => e?.value == value)?.label ||

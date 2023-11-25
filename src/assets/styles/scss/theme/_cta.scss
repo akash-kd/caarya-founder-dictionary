@@ -2,15 +2,15 @@
 
 .primary-cta {
   @include buttonFont($color: #fff);
-  background: linear-gradient(180deg, #2bb656 0%, #008b46 100%);
+  background: linear-gradient(180deg, #c44eb9 0%, #903795 100%);
   border-radius: $primary-border-radius;
 
   &:hover {
-    background-color: $theme-green-450;
+    background: linear-gradient(180deg, #c44eb9 0%, #903795 100%);
   }
 
   &:active {
-    background-color: $theme-green-450;
+    background: linear-gradient(180deg, #c44eb9 0%, #903795 100%);
   }
 
   &:disabled {
@@ -20,7 +20,7 @@
 }
 
 .tertiary-cta {
-  @include buttonFont($color: $theme-green-700, $weight: 600);
+  @include buttonFont($color: $theme-magenta-550, $weight: 600);
 
   &:hover {
     text-decoration: underline;
@@ -28,7 +28,7 @@
 
   &:active {
     text-decoration: underline;
-    color: $theme-green-500;
+    color: $theme-magenta-500;
   }
 }
 
@@ -46,17 +46,17 @@
 }
 
 .secondary-cta {
-  @include buttonFont($color: $theme-green-700);
+  @include buttonFont($color: $theme-magenta-500);
   border-radius: $primary-border-radius;
-  border: 1px solid $theme-green-700;
-  color: $theme-green-700;
+  border: 1px solid $theme-magenta-500;
+  color: $theme-magenta-500;
   font-weight: 600;
   &:hover {
-    color: $theme-green-450;
+    color: $theme-magenta-200;
   }
 
   &:active {
-    color: $theme-green-450;
+    color: $theme-magenta-200;
   }
 
   &:disabled {
