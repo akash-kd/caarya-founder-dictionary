@@ -39,19 +39,20 @@ const tabs = [
     value: "overview",
   },
   {
-    label: "Founder Info",
-    icon: founder,
-    selectedIcon: selectedFounder,
-    value: "founder",
-  },
-  {
     label: "Company Info",
     icon: company,
     selectedIcon: selectedCompany,
     value: "company",
   },
+
   {
-    label: "Success Story",
+    label: "Founder Profile",
+    icon: founder,
+    selectedIcon: selectedFounder,
+    value: "founder",
+  },
+  {
+    label: "Success Insights",
     icon: product,
     selectedIcon: selectedProduct,
     value: "success",

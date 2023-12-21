@@ -18,7 +18,7 @@ const SuccessStory = ({ companyData, setCompanyData, doSusCheck }) => {
       <div className="flex flex-end items-center gap-2 px-2 py-3">
         <img src={company} alt="scroll" className="h-8 w-8 mr-2" />
         <div className="flex grow text-primary-orange-500 text-xl font-light font-poppins items-center">
-          Success Story
+          Success Insights
         </div>
         <div className="flex flex-end gap-2 items-center">
           <BsCheckCircle color="#33A329" size="20px" />

@@ -16,7 +16,7 @@ const FounderInfo = ({ founderData, setFounderData }) => {
       <div className="flex flex-end items-center gap-2 px-2 py-3">
         <img src={founder} alt="scroll" className="h-8 w-8 mr-2" />
         <div className="flex grow text-primary-orange-500 text-xl font-light font-poppins items-center">
-          Founder Info
+          Founder Profile
         </div>
         <div className="flex flex-end gap-2 items-center">
           <BsCheckCircle color="#33A329" size="20px" />
