@@ -101,14 +101,14 @@ function Completed({ list, onEdit, totalLength = 0 }) {
                       <h1 className="text-primary-neutral-800 font-poppins text-lg font-medium leading-7">
                         {item?.name}
                       </h1>
-                      <h2 className="text-primary-neutral-800 font-inter text-xs font-light leading-7">
+                      {/* <h2 className="text-primary-neutral-800 font-inter text-xs font-light leading-7">
                         {item?.founders?.length > 0
                           ? item?.founders[0]?.name
                           : "No Founders"}{" "}
                         {item?.founders?.length > 1
                           ? `+${item?.founders?.length - 1}`
                           : ""}
-                      </h2>
+                      </h2> */}
                     </div>
                     <div
                       onClick={() => {
@@ -132,7 +132,7 @@ function Completed({ list, onEdit, totalLength = 0 }) {
                       </div>
                     </div>
                   </div>
-                  <div className="grid lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-3 gap-6">
                     {[
                       {
                         name: "Green Flags",
@@ -470,10 +470,11 @@ function Completed({ list, onEdit, totalLength = 0 }) {
                   </div>
                   <div className="flex flex-row text-primary-neutral-400 font-inter text-xs font-light items-center justify-between space-x-2">
                     <p>
-                      Submitted On • {moment(item?.submittedAt).format("ll")}
+                      Submitted On <br />
+                      {moment(item?.submittedAt).format("ll")}
                     </p>
                     <p>
-                      Last Edited •{" "}
+                      Last Edited <br />
                       {moment(item?.updatedAt).startOf("day").fromNow()}
                     </p>
                   </div>

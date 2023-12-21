@@ -30,6 +30,7 @@ import { showToast } from "redux/toaster";
 import ChronosButton from "components/Comman/Buttons";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import SuccessStory from "components/SusForm/SuccessStory";
 const tabs = [
   {
     label: "Overview",
@@ -50,17 +51,23 @@ const tabs = [
     value: "company",
   },
   {
+    label: "Success Story",
+    icon: product,
+    selectedIcon: selectedProduct,
+    value: "success",
+  },
+  {
     label: "Digital Footprint",
     icon: web,
     selectedIcon: selectedWeb,
     value: "footprint",
   },
-  {
-    label: "Product Info",
-    icon: product,
-    selectedIcon: selectedProduct,
-    value: "product",
-  },
+  // {
+  //   label: "Product Info",
+  //   icon: product,
+  //   selectedIcon: selectedProduct,
+  //   value: "product",
+  // },
 ];
 
 const SussForm = () => {
@@ -193,7 +200,7 @@ const SussForm = () => {
   return (
     <div className="sticky-thc h-[90vh] lg:h-auto">
       <PageHeader
-        name="Enter Your Startup Story"
+        name={`Enter Your ${companyData?.name}'s Story`}
         ctaComponent={
           <div className="flex gap-4 items-center">
             <ChronosButton
@@ -231,6 +238,15 @@ const SussForm = () => {
         )}
         {selectedTab === "company" && (
           <CompanyInfo
+            companyData={companyData}
+            setCompanyData={setCompanyData}
+            founderData={founders}
+            setFounderData={setFounders}
+            doSusCheck={doSusCheck}
+          />
+        )}
+        {selectedTab === "success" && (
+          <SuccessStory
             companyData={companyData}
             setCompanyData={setCompanyData}
             founderData={founders}

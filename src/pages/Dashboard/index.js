@@ -36,7 +36,7 @@ const Dashboard = () => {
             <Stats stats={data?.stats} />
           </div>
           <ValuesToUphold />
-          <YourTeam />
+          {/* <YourTeam /> */}
           <div className="lg:col-span-2 grid gap-6 lg:flex flex-row items-stretch">
             <YourActivity research={data?.research} />
             <IndustryDistribution industries={data?.industryTypes} />

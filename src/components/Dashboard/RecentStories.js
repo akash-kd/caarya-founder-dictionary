@@ -8,9 +8,10 @@ function RecentStories() {
       <CardTitle heading="Recent Stories" viewAll />
       <EmptyState
         image="/assets/images/empty/stories.svg"
-        text="No Leads to Show"
+        text="No Stories to Show"
         subText="Startup stories recently modified by you appear here"
-        ctaText="Add New Lead"
+        ctaText="Add New Story"
+        ctaLink="/home/sus/0"
       />
     </div>
   );

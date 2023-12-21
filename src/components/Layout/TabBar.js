@@ -2,6 +2,7 @@ import { useHistory } from "react-router";
 import { mobileBottomNav } from "helpers/constants";
 
 import React from "react";
+import { Plus } from "@phosphor-icons/react";
 function TabBar() {
   const history = useHistory();
   return (
@@ -34,7 +35,11 @@ function TabBar() {
                         : "text-primary-neutral-800 font-normal"
                     }`}
                   >
-                    {item?.image ? (
+                    {idx === centerNavIdx ? (
+                      <div className="cursor-pointer w-10 h-10 -mt-2 flex flex-row items-center justify-center bg-primary-magenta-lightest text-primary-magenta-darker rounded-full">
+                        <Plus size={20} />
+                      </div>
+                    ) : item?.image ? (
                       <img
                         src={
                           window.location.pathname.includes(item?.path)

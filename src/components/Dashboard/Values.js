@@ -5,7 +5,7 @@ function ValuesToUphold() {
   return (
     <div className="space-y-4 bg-white rounded-2xl p-4">
       <CardTitle heading="Values to Uphold" />
-      <div className="px-4 flex flex-row flex-wrap justify-center items-stretch gap-8">
+      <div className="px-4 grid grid-cols-2 lg:flex flex-row flex-wrap justify-center items-stretch gap-8">
         {[
           {
             name: "Adaptability",
@@ -41,7 +41,7 @@ function ValuesToUphold() {
           return (
             <div
               style={{ color: item?.color }}
-              className="flex flex-col items-center space-y-2 max-w-[160px]"
+              className="flex flex-col items-center space-y-2 max-w-[160px] mx-auto"
             >
               <div
                 style={{ background: item?.bgColor }}

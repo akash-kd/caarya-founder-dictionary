@@ -1,23 +1,23 @@
-import { MagnifyingGlass, Layout } from "@phosphor-icons/react";
+import { MagnifyingGlass, Layout, Cards } from "@phosphor-icons/react";
 
 import StyleIcon from "@mui/icons-material/Style";
 
 const mobileBottomNav = [
   {
-    name: "Sus Forms",
-    path: "/home/sus/0",
-    icon: <StyleIcon size={20} />,
-  },
-  {
     name: "Dashboard",
     path: "/dashboard",
+    icon: <Cards size={20} />,
+  },
+  {
+    name: "Add",
+    path: "/home/sus/0",
     image: "/assets/caaryaLogos/logo.png",
     selectedImage: "/assets/caaryaLogos/logo.png",
   },
   {
     name: "Research Bank",
     path: "/home/researchBank",
-    icon: <MagnifyingGlass size={20} />,
+    icon: <StyleIcon size={20} />,
   },
 ];
 const laptopNav = [
