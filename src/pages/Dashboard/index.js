@@ -26,7 +26,7 @@ const Dashboard = () => {
   }, []);
   return (
     <div className="sticky-thc h-[90vh] lg:h-auto">
-      <PageHeader name="Dashboard" />
+      {/* <PageHeader name="Dashboard" /> */}
 
       <div className="bg-primary-neutral-50">
         <div className="grid lg:grid-cols-2 gap-6 p-2 max-w-7xl mx-auto">

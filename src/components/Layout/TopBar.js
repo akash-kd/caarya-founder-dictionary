@@ -1,11 +1,9 @@
-import { LogoutIcon, UserGroupIcon } from "@heroicons/react/outline";
-import { useHistory } from "react-router";
-
-import { HeartIcon } from "@heroicons/react/solid";
-import { HeartIcon as HeartIconOutlined } from "@heroicons/react/outline";
+import { LogoutIcon } from "@heroicons/react/outline";
+import { useSelector } from "react-redux";
+import { privateRoutes } from "routes/PrivateRoute";
 
 function TopBar() {
-  const history = useHistory();
+  const user = useSelector((state) => state?.user?.user);
   const onLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("role");
@@ -14,47 +12,36 @@ function TopBar() {
     window.location.href = window.location.origin + "/";
   };
   return (
-    <div className="fixed w-full top-0 right-0 left-0 px-5 py-2 top-nav flex flex-row items-center justify-between z-50 lg:hidden">
+    <div className="fixed w-full top-0 right-0 left-0 px-3 py-4 top-nav flex flex-row items-center justify-between z-50 lg:hidden">
       <a href="/">
-        <div className="flex flex-row items-center space-x-1">
+        <div className="flex flex-row items-center space-x-3">
           <img
             src="/assets/caaryaLogos/logo.png"
-            className="h-6 w-6 object-fill"
+            className="h-8 w-8 object-fill"
             alt="logo"
           />
-          <h1 className="font-bold font-poppins text-xl text-primary-primary-green-darkest">
-            Founders Dictionary
+          <div className="bg-white h-9 w-0.5" />
+          <h1 className="font-bold font-satoshi text-lg text-white">
+            {privateRoutes?.find((a) => a?.path == window?.location?.pathname)
+              ? privateRoutes?.find(
+                  (a) => a?.path == window?.location?.pathname
+                )?.name
+              : "Founders Dictionary"}
           </h1>
         </div>
       </a>
 
       <div className="flex flex-row items-center justify-between space-x-4">
-        {/* {window.location.pathname.includes("/home/wishlist") ? (
-          <HeartIcon
-            onClick={() => {
-              window.location.pathname.includes("/home/wishlist");
-              history.push("/home/wishlist");
-            }}
-            className="h-6 w-6 text-primary-green-dark"
-          />
-        ) : (
-          <HeartIconOutlined
-            onClick={() => {
-              window.location.pathname.includes("/home/wishlist");
-              history.push("/home/wishlist");
-            }}
-            className="h-6 w-6 text-primary-green-dark"
-          />
-        )} */}
-        {/* <UserGroupIcon
-          onClick={() => {}}
-          className="h-5 w-5 text-primary-green-darker"
-        /> */}
+        <img
+          src={user?.image?.url || ""}
+          alt=""
+          className="w-8 h-8 bg-primary-neutral-100 rounded-full"
+        />
         <LogoutIcon
           onClick={() => {
             onLogout();
           }}
-          className="h-6 w-6 text-primary-green-darker"
+          className="h-6 w-6 text-white"
         />
       </div>
     </div>

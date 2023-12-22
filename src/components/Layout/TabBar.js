@@ -1,17 +1,16 @@
 import { useHistory } from "react-router";
 import { mobileBottomNav } from "helpers/constants";
-
 import React from "react";
-import { Plus } from "@phosphor-icons/react";
+
 function TabBar() {
   const history = useHistory();
   return (
     <div>
       <div
-        className={`w-full fixed z-30 bottom-0 right-0 tapbar left-0 lg:hidden transform transition-all ease-in-out duration-300 font-poppins`}
+        className={`w-full tapbar fixed z-30 bottom-0 right-0 tapbar left-0 lg:hidden transform transition-all ease-in-out duration-300 font-poppins`}
       >
         <div className=" w-full bottom-0 p-2  max-w-sm mx-auto">
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-5 gap-2">
             {mobileBottomNav.map((item, idx) => {
               const centerNavIdx = Math.floor(mobileBottomNav.length / 2);
 
@@ -36,8 +35,25 @@ function TabBar() {
                     }`}
                   >
                     {idx === centerNavIdx ? (
-                      <div className="cursor-pointer w-10 h-10 -mt-2 flex flex-row items-center justify-center bg-primary-magenta-lightest text-primary-magenta-darker rounded-full">
-                        <Plus size={20} />
+                      <div
+                        style={{
+                          background:
+                            "linear-gradient(92deg, #F282F5 0%, #903795 100%), #FFF",
+                        }}
+                        className="cursor-pointer w-12 h-12 -mt-3 flex flex-row items-center justify-center text-white rounded-full"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="20"
+                          viewBox="0 0 19 20"
+                          fill="none"
+                        >
+                          <path
+                            d="M8.16797 8.66797V0.667969H10.8346V8.66797H18.8346V11.3346H10.8346V19.3346H8.16797V11.3346H0.167969V8.66797H8.16797Z"
+                            fill="white"
+                          />
+                        </svg>
                       </div>
                     ) : item?.image ? (
                       <img

@@ -6,18 +6,32 @@ const mobileBottomNav = [
   {
     name: "Dashboard",
     path: "/dashboard",
-    icon: <Cards size={20} />,
+    image: "/assets/svg/tabbar/dashboard.png",
+    selectedImage: "/assets/svg/tabbar/selectedDashboard.png",
+  },
+  {
+    name: "Stories",
+    path: "/story",
+    image: "/assets/svg/tabbar/story.png",
+    selectedImage: "/assets/svg/tabbar/selectedStory.png",
   },
   {
     name: "Add",
     path: "/home/sus/0",
-    image: "/assets/caaryaLogos/logo.png",
-    selectedImage: "/assets/caaryaLogos/logo.png",
+    image: "/assets/svg/tabbar/dashboard.png",
+    selectedImage: "/assets/svg/tabbar/dashboard.png",
   },
   {
-    name: "Research Bank",
+    name: "Draft",
     path: "/home/researchBank",
-    icon: <StyleIcon size={20} />,
+    image: "/assets/svg/tabbar/draft.png",
+    selectedImage: "/assets/svg/tabbar/selectedDraft.png",
+  },
+  {
+    name: "Requests",
+    path: "/home/researchBank",
+    image: "/assets/svg/tabbar/requests.png",
+    selectedImage: "/assets/svg/tabbar/selectedRequests.png",
   },
 ];
 const laptopNav = [

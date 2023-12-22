@@ -73,7 +73,7 @@ const ResearchBank = () => {
         }
       />
       <div className="sticky-thc h-[90vh] lg:h-auto">
-        <PageHeader
+        {/* <PageHeader
           name="Research Bank"
           ctaComponent={
             <div className="flex gap-4 items-center">
@@ -86,7 +86,7 @@ const ResearchBank = () => {
               />
             </div>
           }
-        />
+        /> */}
 
         <div className="flex flex-col space-y-5 bg-white relative">
           <div id="tabs" className="bg-white z-40">
