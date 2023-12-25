@@ -1,6 +1,6 @@
-function BottomNav({ onPrevious, onNext }) {
+function BottomNav({ onPrevious, onNext, padding }) {
   return (
-    <div className="px-4">
+    <div className={padding ? "px-4" : ""}>
       <div className="py-2 flex gap-10 justify-between">
         <button onClick={onPrevious}>Previous</button>
         <button

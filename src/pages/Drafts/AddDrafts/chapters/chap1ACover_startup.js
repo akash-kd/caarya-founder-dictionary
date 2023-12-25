@@ -1,16 +1,18 @@
 import BottomNav from "../copmonents/bottom_nav";
-import { useState, useRef, useContext} from "react";
+import { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import StageContext from "../context/stage";
+import RecordContext from "../context/record";
 
 function Chapter1ACover_Startup() {
-  const [name, setName] = useState();
-  const [file, setFile] = useState();
+  const [stage, setStage] = useContext(StageContext);
+  const [record, setRecord] = useContext(RecordContext);
+
+  const [name, setName] = useState(record?.name);
+  const [file, setFile] = useState(record?.img);
   const fileRef = useRef();
   const [error, SetError] = useState({ name: undefined, img: undefined });
   const history = useHistory();
-
-  const [stage, setStage] = useContext(StageContext);
 
   const onNameChange = (e) => {
     setName(e.target.value);
@@ -29,13 +31,14 @@ function Chapter1ACover_Startup() {
   };
 
   const onNext = () => {
-    console.log(error,name,name?.length);
+    console.log(error, name, name?.length);
     if (name === undefined || name?.length === 0) {
       SetError({ ...error, name: "* name cannot be empty" });
     } else if (!file) {
       SetError({ ...error, img: "* select an image" });
     } else {
-      setStage((stage) => stage +1);
+      setRecord({ ...record, name, img: file });
+      setStage((stage) => stage + 1);
     }
   };
 
@@ -100,6 +103,7 @@ function Chapter1ACover_Startup() {
           )}
 
           <input
+            value={name}
             onChange={onNameChange}
             type="text"
             placeholder="Add Startup Name Here"

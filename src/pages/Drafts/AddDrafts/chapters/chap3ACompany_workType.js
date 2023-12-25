@@ -1,4 +1,4 @@
-import { useState, useContext} from "react";
+import { useState, useContext } from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -6,25 +6,43 @@ import DraftLayout from "../layout/draftLayout";
 import TextAreaInput from "../copmonents/textarea_input";
 
 import StageContext from "../context/stage";
+import RecordContext from "../context/record";
 
-function Chapter4_WorkType() {
-  const [workType, setWorkType] = useState();
+function Chapter3A_WorkType() {
+  const [record, setRecord] = useContext(RecordContext);
+  const [stage, setStage] = useContext(StageContext);
+  const [data, setData] = useState(record?.workType);
+  const [error, setError] = useState();
+
   const onWorkTypeSelected = (option, index) => {
-    setWorkType(option);
+    setData({ ...data, workType: index });
   };
 
-  const value = useContext(StageContext);
-  console.log(value)
+  const onNext = () => {
+    if (!data?.workType) {
+      setError({ ...error, workType: "* select a work type" });
+    } else if (!data?.city || data?.city?.length === 0) {
+      setError({ ...error, city: "* select a work type" });
+    } else {
+      setRecord({ ...record, workType: data });
+      setStage((prev) => prev + 1);
+    }
+  };
 
-
+  console.log(data);
   return (
     <DraftLayout
       heading="Where Work Happens"
       subheading="Identify the company’s work location"
       info="Information on how this is relevant"
+      onNext={onNext}
+      onPrevious={() => {
+        setStage((prev) => prev - 1);
+      }}
     >
       <main className="my-10 flex flex-col gap-10">
         <OptionsInput
+          value={data?.workType}
           options={[
             {
               name: "Remote Work",
@@ -40,15 +58,25 @@ function Chapter4_WorkType() {
             },
           ]}
           onChange={onWorkTypeSelected}
+          error={error?.workType}
         />
-        {workType?.name ? (
+        {data?.workType ? (
           <div className="flex flex-col gap-10">
             <TextInput
+              value={data?.city}
+              onChange={(e) => {
+                setData({ ...data, city: e.target.value });
+              }}
+              error={error?.city}
               label="Cite Your Source"
               placeholder="Add source link here"
               required
             />
             <TextAreaInput
+              value={data?.insights}
+              onChange={(e) => {
+                setData({ ...data, insights: e.target.value });
+              }}
               label="Researcher Insights"
               placeholder=" eg., the founder’s exact age"
               pluspoint
@@ -62,4 +90,4 @@ function Chapter4_WorkType() {
   );
 }
 
-export default Chapter4_WorkType;
+export default Chapter3A_WorkType;

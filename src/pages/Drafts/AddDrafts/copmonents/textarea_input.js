@@ -1,6 +1,8 @@
 function TextAreaInput({
   label,
   placeholder,
+  value,
+  onChange,
   required = false,
   pluspoint = false,
 }) {
@@ -22,6 +24,8 @@ function TextAreaInput({
         </p>
       </div>
       <textarea
+        value={value}
+        onChange={onChange}
         type=""
         placeholder={placeholder}
         className="font-lato font-light text-xl w-full p-4 border-[1px] border-neutral-300 bg-gray-50 rounded outline-none placeholder:text-neutral-300 placeholder:font-light"

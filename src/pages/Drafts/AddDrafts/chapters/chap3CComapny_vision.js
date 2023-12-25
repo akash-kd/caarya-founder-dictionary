@@ -8,18 +8,18 @@ import TextAreaInput from "../copmonents/textarea_input";
 import StageContext from "../context/stage";
 import RecordContext from "../context/record";
 
-function Chapter3A_Mission() {
+function Chapter3C_Vision() {
   const [stage, setStage] = useContext(StageContext);
   const [record, setRecord] = useContext(RecordContext);
-  const [mission, setMission] = useState(record?.mission);
+  const [vision, setVision] = useState(record?.vision);
 
   return (
     <DraftLayout
       heading="The Mission"
-      subheading="State the company’s Mission Statement"
+      subheading="State the company’s Vison Statement"
       info="Information on where to find this"
       onNext={() => {
-        setRecord({ ...record, mission });
+        setRecord({ ...record, vision });
         setStage((prev) => prev + 1);
       }}
       onPrevious={() => {
@@ -28,14 +28,14 @@ function Chapter3A_Mission() {
     >
       <main className="my-10 flex flex-col gap-10">
         <TextAreaInput
-          value={mission}
+          value={vision}
           label="Mission Statement"
-          placeholder="Company mission statement comes here"
-          onChange={(e) => setMission(e.target.value)}
+          placeholder="Company vision statement comes here"
+          onChange={(e) => setVision(e.target.value)}
         />
       </main>
     </DraftLayout>
   );
 }
 
-export default Chapter3A_Mission;
+export default Chapter3C_Vision;
