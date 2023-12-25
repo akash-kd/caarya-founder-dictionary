@@ -1,0 +1,57 @@
+/*Theme Colors*/
+/*Borders*/
+.top-nav {
+  background: linear-gradient(154deg, #a193f2 7.06%, #c44eb9 88.02%), #fff;
+  /* Shadow-md */
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.top-nav .nav-text {
+  background: linear-gradient(154deg, #6775f5 7.06%, #f282f5 88.02%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tapbar {
+  background: #fff;
+  box-shadow: 0px -4px 6px -4px rgba(0, 0, 0, 0.1), 0px 2px 15px -3px rgba(0, 0, 0, 0.1), 0px 0px 16px 0px rgba(0, 0, 0, 0.05);
+}
+
+.side-nav {
+  border-right: 1px solid var(--neutral-200, #e7e6e5);
+  background: linear-gradient(177deg, #fdf2ff 0%, #fff2f9 100%);
+  max-width: 224px;
+  width: 100%;
+}
+
+.menuitem {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #363430;
+  border-right: 5px solid transparent;
+  padding: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+.menuitem:hover {
+  background: rgba(48, 23, 9, 0.1);
+  background: #fff;
+  border-radius: 16px 0px 0px 16px;
+}
+.menuitem.active {
+  font-weight: 600;
+  background: #fff;
+  border-radius: 16px 0px 0px 16px;
+}
+
+.grad {
+  background: linear-gradient(93deg, #f7f4d4 0%, rgba(247, 247, 255, 0) 40%);
+  border-left: 4px solid var(--fusion-300, #ffd844);
+}
+
+@media screen and (min-width: 764px) {
+  .grad {
+    background: linear-gradient(93deg, #f7f4d4 0%, rgba(247, 247, 255, 0) 100%);
+    border-radius: 40px 0px 0px 96px;
+  }
+}/*# sourceMappingURL=appWrapper.css.map */

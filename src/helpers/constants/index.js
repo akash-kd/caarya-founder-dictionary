@@ -23,7 +23,7 @@ const mobileBottomNav = [
   },
   {
     name: "Draft",
-    path: "/home/researchBank",
+    path: "/home/drafts",
     image: "/assets/svg/tabbar/draft.png",
     selectedImage: "/assets/svg/tabbar/selectedDraft.png",
   },

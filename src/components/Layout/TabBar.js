@@ -1,4 +1,4 @@
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { mobileBottomNav } from "helpers/constants";
 import React from "react";
 
@@ -18,7 +18,14 @@ function TabBar() {
                 <div
                   key={idx}
                   onClick={() => {
-                    history.push(item?.path);
+                    if (
+                      idx === centerNavIdx &&
+                      window.location.pathname === "/home/drafts"
+                    ) {
+                      history.push("/home/drafts/add");
+                    } else {
+                      history.push(item?.path);
+                    }
                   }}
                   className="relative"
                 >
