@@ -19,7 +19,7 @@ function Chapter3A_WorkType() {
   };
 
   const onNext = () => {
-    if (!data?.workType) {
+    if (data?.workType === undefined) {
       setError({ ...error, workType: "* select a work type" });
     } else if (!data?.city || data?.city?.length === 0) {
       setError({ ...error, city: "* select a work type" });
@@ -60,7 +60,7 @@ function Chapter3A_WorkType() {
           onChange={onWorkTypeSelected}
           error={error?.workType}
         />
-        {data?.workType ? (
+        {data?.workType >= 0 ? (
           <div className="flex flex-col gap-10">
             <TextInput
               value={data?.city}

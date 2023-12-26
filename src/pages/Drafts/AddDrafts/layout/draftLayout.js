@@ -21,7 +21,7 @@ function DraftLayout({
         <TitleBar heading={heading} subheading={subheading} info={info} />
         {children}
       </main>
-      <BottomNav onPrevious={onPrevious} onNext={onNext} />
+      <BottomNav onPrevious={onPrevious} onNext={onNext} padding />
     </div>
   );
 }
