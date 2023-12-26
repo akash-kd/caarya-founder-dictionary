@@ -64,6 +64,10 @@ module.exports = {
           },
         },
 
+        experience: {
+          300: "#F2F4F5",
+        },
+
         caarya: {
           blue: {
             30: "#F5FBFF",
