@@ -8,23 +8,23 @@ import TextAreaInput from "../copmonents/textarea_input";
 import StageContext from "../context/stage";
 import RecordContext from "../context/ViablityRecord";
 
-function Chapter4A_Operation() {
+function Chapter4B_Funding() {
   const [record, setRecord] = useContext(RecordContext);
   const [stage, setStage] = useContext(StageContext);
   const [data, setData] = useState(record);
   const [error, setError] = useState();
 
-  const onOperationSelected = (option, index) => {
-    setData({ ...data, operation: index });
+  const onFundingSelected = (option, index) => {
+    setData({ ...data, funding: index });
   };
 
   const onNext = () => {
-    if (data?.operation === undefined) {
-      setError({ ...error, operation: "* select a work type" });
+    if (data?.funding === undefined) {
+      setError({ ...error, funding: "* select a work type" });
     } else if (!data?.city || data?.city?.length === 0) {
       setError({ ...error, city: "* select a work type" });
     } else {
-      setRecord({ ...record, operation: data });
+      setRecord({ ...record, funding: data });
       setStage((prev) => prev + 1);
     }
   };
@@ -32,8 +32,8 @@ function Chapter4A_Operation() {
   console.log(data);
   return (
     <DraftLayout
-      heading="Years of Operation"
-      subheading="Identify the company’s age"
+      heading="Funding"
+      subheading="Identify the funding status of the company"
       info="Information on how this is relevant"
       onNext={onNext}
       onPrevious={() => {
@@ -42,25 +42,25 @@ function Chapter4A_Operation() {
     >
       <main className="my-10 flex flex-col gap-10">
         <OptionsInput
-          value={data?.operation}
+          value={data?.funding}
           options={[
             {
-              name: "0-5 Years Old",
+              name: "Bootstrapped / Pre-Seed",
               img: "/assets/svg/pages/drafts/icons/remote.svg",
             },
             {
-              name: "6-10 Years Old",
+              name: "Seed Funding",
               img: "/assets/svg/pages/drafts/icons/hybrid.svg",
             },
             {
-              name: "10+ Years Old",
+              name: "Series A, B, C",
               img: "/assets/svg/pages/drafts/icons/onsite.svg",
             },
           ]}
-          onChange={onOperationSelected}
-          error={error?.operation}
+          onChange={onFundingSelected}
+          error={error?.funding}
         />
-        {data?.operation >= 0 ? (
+        {data?.funding >= 0 ? (
           <div className="flex flex-col gap-10">
             <TextInput
               value={data?.city}
@@ -90,4 +90,4 @@ function Chapter4A_Operation() {
   );
 }
 
-export default Chapter4A_Operation;
+export default Chapter4B_Funding;

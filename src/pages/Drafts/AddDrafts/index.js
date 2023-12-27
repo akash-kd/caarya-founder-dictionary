@@ -25,6 +25,8 @@ import ViablityRecordContext, {
   ViablityRecordProvider,
 } from "./context/ViablityRecord";
 import Chapter4A_Operation from "./chapters/chap4AViabilty_operation";
+import Chapter4B_Funding from "./chapters/chap4BViabilty_funding";
+import Chapter4C_Emp from "./chapters/chap4CViabilty_emp";
 
 const Chapters = () => {
   const [stage, setStage] = useContext(StageContext);
@@ -42,9 +44,9 @@ const Chapters = () => {
   if (stage === 8) return <Chapter3C_Vision />;
   if (stage === 9) return <Chapter_Congrats />;
   if (stage === 10) return <Chapter4A_Operation />;
+  if (stage === 11) return <Chapter4B_Funding />;
+  if (stage === 12) return <Chapter4C_Emp />;
 
-
-  
   return <Chapter_Congrats />;
 };
 
