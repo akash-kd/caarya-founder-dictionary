@@ -6,17 +6,14 @@ import DraftLayout from "../layout/draftLayout";
 import TextAreaInput from "../copmonents/textarea_input";
 
 import StageContext from "../context/stage";
-import RecordContext from "../context/record";
+import FounderRecordContext from "../context/FounderRecord";
 
 function Chapter2AFounder_Top() {
-  const [record, setRecord] = useContext(RecordContext);
+  const [record, setRecord] = useContext(FounderRecordContext);
   const [founder, setFounder] = useState();
   const [stage, setStage] = useContext(StageContext);
-  const [workType, setWorkType] = useState(record?.founder);
-  const onWorkTypeSelected = (option, index) => {
-    setWorkType(option);
-  };
-  
+
+
   return (
     <DraftLayout
       heading="Who’s at the top?"

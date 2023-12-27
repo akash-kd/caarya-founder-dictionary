@@ -6,25 +6,25 @@ import DraftLayout from "../layout/draftLayout";
 import TextAreaInput from "../copmonents/textarea_input";
 
 import StageContext from "../context/stage";
-import RecordContext from "../context/CompanyRecord";
+import RecordContext from "../context/ViablityRecord";
 
-function Chapter3A_WorkType() {
+function Chapter4A_Operation() {
   const [record, setRecord] = useContext(RecordContext);
   const [stage, setStage] = useContext(StageContext);
-  const [data, setData] = useState(record?.workType);
+  const [data, setData] = useState(record?.operation);
   const [error, setError] = useState();
 
-  const onWorkTypeSelected = (option, index) => {
-    setData({ ...data, workType: index });
+  const onOperationSelected = (option, index) => {
+    setData({ ...data, operation: index });
   };
 
   const onNext = () => {
-    if (data?.workType === undefined) {
-      setError({ ...error, workType: "* select a work type" });
+    if (data?.operation === undefined) {
+      setError({ ...error, operation: "* select a work type" });
     } else if (!data?.city || data?.city?.length === 0) {
       setError({ ...error, city: "* select a work type" });
     } else {
-      setRecord({ ...record, workType: data });
+      setRecord({ ...record, operation: data });
       setStage((prev) => prev + 1);
     }
   };
@@ -32,8 +32,8 @@ function Chapter3A_WorkType() {
   console.log(data);
   return (
     <DraftLayout
-      heading="Where Work Happens"
-      subheading="Identify the company’s work location"
+      heading="Years of Operation"
+      subheading="Identify the company’s age"
       info="Information on how this is relevant"
       onNext={onNext}
       onPrevious={() => {
@@ -42,25 +42,25 @@ function Chapter3A_WorkType() {
     >
       <main className="my-10 flex flex-col gap-10">
         <OptionsInput
-          value={data?.workType}
+          value={data?.operation}
           options={[
             {
-              name: "Remote Work",
+              name: "0-5 Years Old",
               img: "/assets/svg/pages/drafts/icons/remote.svg",
             },
             {
-              name: "Hybrid Work",
+              name: "6-10 Years Old",
               img: "/assets/svg/pages/drafts/icons/hybrid.svg",
             },
             {
-              name: "On-Site Work",
+              name: "10+ Years Old",
               img: "/assets/svg/pages/drafts/icons/onsite.svg",
             },
           ]}
-          onChange={onWorkTypeSelected}
-          error={error?.workType}
+          onChange={onOperationSelected}
+          error={error?.operation}
         />
-        {data?.workType >= 0 ? (
+        {data?.operation >= 0 ? (
           <div className="flex flex-col gap-10">
             <TextInput
               value={data?.city}
@@ -90,4 +90,4 @@ function Chapter3A_WorkType() {
   );
 }
 
-export default Chapter3A_WorkType;
+export default Chapter4A_Operation;

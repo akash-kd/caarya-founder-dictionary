@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const StageContext = createContext();
 
 export function StageProvider({ children }) {
-  const [stage, setStage] = useState(0);
+  const [stage, setStage] = useState(10);
   return (
     <StageContext.Provider value={[stage, setStage]}>
       {children}

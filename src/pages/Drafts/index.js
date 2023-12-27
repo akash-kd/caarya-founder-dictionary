@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 import covers from "helpers/constants/drafts";
 
+import { useHistory } from "react-router-dom";
+
 function Card({ record }) {
+  const history = useHistory();
+  const navigate = () => {
+    history.push("/home/drafts/chapterflow");
+  };
+
   return (
-    <div className="w-full rounded-2xl p-4 gap-4 bg-white shadow-md">
+    <div
+      onClick={navigate}
+      className="w-full rounded-2xl p-4 gap-4 bg-white shadow-md cursor-pointer"
+    >
       <div className="flex gap-4">
         <img
           className="w-16 h-16"
@@ -92,9 +102,7 @@ const Drafts = () => {
   const [record, setRecord] = useState();
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("record"));
-    console.log("Record Stored Data", data);
 
-    console.log(covers[data.sector]);
     setRecord(data);
   }, []);
 
@@ -132,33 +140,11 @@ const Drafts = () => {
           <div className="flex flex-col h-full w-full">
             {/* All Record Come Here */}
             <Card record={record} />
-
           </div>
         </div>
       </div>
     </>
   );
 };
-
-// Export const Frame = () => {
-//   Return (
-//     <div className="flex flex-col h-[100px] items-start px-[60px] py-0 relative">
-//       <div className="flex items-start relative flex-1 self-stretch w-full grow">
-//         <div className="ml-[-4.00px] rounded-[0px_0px_16px_0px] border-r-8 [border-right-style:solid] border-b-8 [border-bottom-style:solid] opacity-0 relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] border-neutral-100" />
-//         <div className="rounded-[0px_0px_0px_16px] border-b-8 [border-bottom-style:solid] border-l-8 [border-left-style:solid] opacity-0 relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] border-neutral-100" />
-//         <div className="rounded-[0px_0px_0px_16px] border-b-8 [border-bottom-style:solid] border-l-8 [border-left-style:solid] relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] border-neutral-100" />
-//         <div className="mr-[-4.00px] rounded-[0px_0px_0px_16px] border-b-8 [border-bottom-style:solid] border-l-8 [border-left-style:solid] opacity-0 relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] border-neutral-100" />
-//       </div>
-//       <div className="flex items-start relative flex-1 self-stretch w-full grow">
-//         <div className="relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] ml-[-4.00px] rounded-[16px_0px_0px_0px] border-t-8 [border-top-style:solid] border-l-8 [border-left-style:solid] border-neutral-100 opacity-0" />
-//         <div className="relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] rounded-[16px_0px_0px_0px] border-t-8 [border-top-style:solid] border-l-8 [border-left-style:solid] border-neutral-100 opacity-0" />
-//         <div className="relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] rounded-[0px_16px_0px_0px] border-t-8 [border-top-style:solid] border-r-8 [border-right-style:solid] border-neutral-100 opacity-0" />
-//         <div className="mr-[-4.00px] rounded-[0px_16px_0px_0px] border-t-8 [border-top-style:solid] border-r-8 [border-right-style:solid] relative flex-1 self-stretch grow mt-[-4.00px] mb-[-4.00px] border-neutral-100" />
-//       </div>
-//     </div>
-//   );
-// };
-
-
 
 export default Drafts;

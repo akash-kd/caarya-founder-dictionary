@@ -1,84 +1,28 @@
-import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-
-export default function Chap2({ lock }) {
-  const [percent, setPercent] = useState({ percent: 0, stroke: 300 });
-  const history = useHistory();
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("founder-record"));
-    console.log(data);
-
-    if (data?.founder && data?.founder?.length > 0)
-      setPercent({ percent: 100, stroke: 0 });
-  }, []);
-
-  const navigate = () => {
-    history.push("/home/drafts/add");
-  };
+export default function Chap5({ lock }) {
+  console.log(lock);
   if (lock) {
     return (
-      <div className="flex w-full justify-end items-center px-5">
-        <div className="flex gap-4 px-4">
-          <img src="/assets/svg/pages/drafts/chap/chap_lock2.svg" />
-          <div className="flex flex-col font-lato text-neutral-500">
-            <h1 className="font-semibold">Chapter 1</h1>
-            <h2 className="text-xs">The Founders</h2>
-          </div>
-        </div>
-
+      <div className="flex w-full justify-start items-center px-5">
         <img
           className="h-[114px] w-[114px]"
           src="/assets/svg/pages/drafts/chaplock.svg"
         />
+        <div className="flex gap-4 px-4">
+          <div className="flex flex-col font-lato text-neutral-500">
+            <h1 className="font-semibold">Chapter 5</h1>
+            <h2 className="text-xs">Digital Footprint</h2>
+          </div>
+          <img src="/assets/svg/pages/drafts/chap/chap_lock3.svg" />
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="flex gap-4 w-full justify-end items-center px-5">
-      <div className="justify-center items-stretch flex flex-col">
-        <div className="justify-between items-stretch flex gap-4 px-5">
-          <div className="justify-center flex grow basis-[0%] flex-col items-start">
-            <div className="font-lato text-primary-magenta-medium text-xl font-semibold leading-8 tracking-wider whitespace-nowrap">
-              Chapter 1
-            </div>
-            <div className="text-zinc-800 text-base font-semibold leading-6 tracking-wider self-stretch whitespace-nowrap">
-              The Founders
-            </div>
-          </div>
-          <div className="font-lato text-neutral-500 text-base font-light leading-6 tracking-wider self-center my-auto">
-            {" "}
-            ({percent.percent}%)
-          </div>
-        </div>
-        <div className="items-stretch flex gap-2 mt-4 px-5 self-end">
-          <div className="items-center bg-neutral-50 flex aspect-square flex-col justify-center h-8 flex-1 px-1 rounded-[128px]">
-            <img
-              loading="lazy"
-              src="/assets/svg/pages/drafts/activepoint.svg"
-              className="aspect-square object-contain object-center w-full overflow-hidden"
-            />
-          </div>
-          <div className="items-center bg-neutral-50 flex aspect-square flex-col justify-center h-8 flex-1 px-1 rounded-[128px]">
-            <img
-              loading="lazy"
-              src="/assets/svg/pages/drafts/disablepoint.svg"
-              className="aspect-square object-contain object-center w-full overflow-hidden"
-            />
-          </div>
-          <div className="items-center bg-neutral-50 flex aspect-square flex-col justify-center h-8 flex-1 px-1 rounded-[128px]">
-            <img
-              loading="lazy"
-              src="/assets/svg/pages/drafts/disablepoint.svg"
-              className="aspect-square object-contain object-center w-full overflow-hidden"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="flex gap-4 w-full justify-start items-center px-5">
       <svg
-        width="108"
-        height="108"
+        width="114"
+        height="114"
         viewBox="0 0 114 114"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -122,14 +66,10 @@ export default function Chap2({ lock }) {
           stroke="#FDF2FF"
           stroke-width="13"
         />
-
-        {/* Ring */}
         <path
           d="M92.3554 21.6448C101.475 30.7648 106.718 43.0561 106.989 55.9507C107.26 68.8454 102.537 81.3459 93.8081 90.8405C85.079 100.335 73.0185 106.089 60.1466 106.901C47.2746 107.713 34.5869 103.519 24.7343 95.196C14.8817 86.873 8.62635 75.0648 7.27519 62.2382C5.92404 49.4117 9.5816 36.5592 17.4837 26.3659C25.3858 16.1727 36.9212 9.42724 49.6797 7.53895C62.4383 5.65067 75.433 8.7656 85.9489 16.233"
           stroke="url(#paint1_linear_57_137)"
           stroke-width="13"
-          strokeDasharray="300"
-          strokeDashoffset={percent.stroke}
         />
         <g filter="url(#filter0_dd_57_137)">
           <rect
@@ -238,6 +178,45 @@ export default function Chap2({ lock }) {
           </clipPath>
         </defs>
       </svg>
+
+      <div className="justify-center items-stretch flex flex-col">
+        <div className="justify-between items-stretch flex gap-4 px-5">
+          <div className="justify-center flex grow basis-[0%] flex-col items-start">
+            <div className="font-lato text-primary-magenta-medium text-xl font-semibold leading-8 tracking-wider whitespace-nowrap">
+              Chapter 5
+            </div>
+            <div className="text-zinc-800 text-base font-semibold leading-6 tracking-wider self-stretch whitespace-nowrap">
+              Digital Footprint
+            </div>
+          </div>
+          <div className="font-lato text-neutral-500 text-base font-light leading-6 tracking-wider self-center my-auto">
+            {" "}
+            (15%)
+          </div>
+        </div>
+        <div className="items-stretch flex gap-2 mt-4 px-5 self-start">
+          <div className="items-center bg-neutral-50 flex aspect-square flex-col justify-center h-8 flex-1 px-1 rounded-[128px]">
+            <img
+              src="/assets/svg/pages/drafts/activepoint.svg"
+              className="aspect-square object-contain object-center w-full overflow-hidden"
+            />
+          </div>
+          <div className="items-center bg-neutral-50 flex aspect-square flex-col justify-center h-8 flex-1 px-1 rounded-[128px]">
+            <img
+              loading="lazy"
+              src="/assets/svg/pages/drafts/disablepoint.svg"
+              className="aspect-square object-contain object-center w-full overflow-hidden"
+            />
+          </div>
+          <div className="items-center bg-neutral-50 flex aspect-square flex-col justify-center h-8 flex-1 px-1 rounded-[128px]">
+            <img
+              loading="lazy"
+              src="/assets/svg/pages/drafts/disablepoint.svg"
+              className="aspect-square object-contain object-center w-full overflow-hidden"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

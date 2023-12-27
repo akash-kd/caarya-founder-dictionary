@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import Covers from "../../../../helpers/constants/drafts";
 import DraftLayout from "../layout/draftLayout";
 import StageContext from "../context/stage";
-import RecordContext from "../context/record";
+import RecordContext from "../context/CoverRecord";
 
 function Chapter1BCover_StartupSector() {
   const [record, setRecord] = useContext(RecordContext);

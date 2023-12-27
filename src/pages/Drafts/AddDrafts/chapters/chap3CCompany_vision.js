@@ -6,7 +6,7 @@ import DraftLayout from "../layout/draftLayout";
 import TextAreaInput from "../copmonents/textarea_input";
 
 import StageContext from "../context/stage";
-import RecordContext from "../context/record";
+import RecordContext from "../context/CompanyRecord";
 
 function Chapter3C_Vision() {
   const [stage, setStage] = useContext(StageContext);
@@ -15,7 +15,7 @@ function Chapter3C_Vision() {
 
   return (
     <DraftLayout
-      heading="The Mission"
+      heading="The Vision"
       subheading="State the company’s Vison Statement"
       info="Information on where to find this"
       onNext={() => {
@@ -29,7 +29,7 @@ function Chapter3C_Vision() {
       <main className="my-10 flex flex-col gap-10">
         <TextAreaInput
           value={vision}
-          label="Mission Statement"
+          label="Vision Statement"
           placeholder="Company vision statement comes here"
           onChange={(e) => setVision(e.target.value)}
         />

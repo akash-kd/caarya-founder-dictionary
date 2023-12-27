@@ -6,7 +6,7 @@ export function RecordProvider({ children }) {
   const [record, setRecord] = useState({});
 
   useEffect(() => {
-    localStorage.setItem("record", JSON.stringify(record));
+    localStorage.setItem("cover-record", JSON.stringify(record));
   }, [record]);
 
   return (

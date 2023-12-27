@@ -6,20 +6,20 @@ import DraftLayout from "../layout/draftLayout";
 import TextAreaInput from "../copmonents/textarea_input";
 
 import StageContext from "../context/stage";
-import RecordContext from "../context/record";
+import RecordContext from "../context/CompanyRecord";
 
-function Chapter3A_Mission() {
+function Chapter3D_Idea() {
   const [stage, setStage] = useContext(StageContext);
   const [record, setRecord] = useContext(RecordContext);
-  const [mission, setMission] = useState(record?.mission);
+  const [idea, setIdea] = useState(record?.vision);
 
   return (
     <DraftLayout
-      heading="The Mission"
-      subheading="State the company’s Mission Statement"
+      heading="The Idea"
+      subheading="Give a brief description of what the company does."
       info="Information on where to find this"
       onNext={() => {
-        setRecord({ ...record, mission });
+        setRecord({ ...record, idea });
         setStage((prev) => prev + 1);
       }}
       onPrevious={() => {
@@ -28,14 +28,14 @@ function Chapter3A_Mission() {
     >
       <main className="my-10 flex flex-col gap-10">
         <TextAreaInput
-          value={mission}
-          label="Mission Statement"
-          placeholder="Company mission statement comes here"
-          onChange={(e) => setMission(e.target.value)}
+          value={idea}
+          label="Idea Description"
+          placeholder="Company vision statement comes here"
+          onChange={(e) => setIdea(e.target.value)}
         />
       </main>
     </DraftLayout>
   );
 }
 
-export default Chapter3A_Mission;
+export default Chapter3D_Idea;

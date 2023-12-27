@@ -2,7 +2,7 @@ import BottomNav from "../copmonents/bottom_nav";
 import { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import StageContext from "../context/stage";
-import RecordContext from "../context/record";
+import RecordContext from "../context/CoverRecord";
 
 function Chapter1ACover_Startup() {
   const [stage, setStage] = useContext(StageContext);

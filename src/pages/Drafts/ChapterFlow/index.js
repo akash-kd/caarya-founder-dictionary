@@ -1,9 +1,12 @@
+import { useEffect, useState } from "react";
 import { Flow1 } from "./Flow/flow1";
 import { FlowLR } from "./Flow/flowLR";
 import { FlowRL } from "./Flow/flowRL";
 import Chap1 from "./Rings/chap1";
 import Chap2 from "./Rings/chap2";
 import Chap3 from "./Rings/chap3";
+import Chap4 from "./Rings/chap4";
+import Chap5 from "./Rings/chap5";
 
 function TopBar() {
   return (
@@ -50,15 +53,34 @@ function TopBar() {
 }
 
 function ChapterFlow() {
+  const [chap2Lock, setChap2Lock] = useState(true);
+  const [chap3Lock, setChap3Lock] = useState(true);
+  const [chap4Lock, setChap4Lock] = useState(true);
+  const [chap5Lock, setChap5Lock] = useState(true);
+
+  useEffect(() => {
+    const chap1 = JSON.parse(localStorage.getItem("cover-record"));
+    const chap2 = JSON.parse(localStorage.getItem("founder-record"));
+    const chap3 = JSON.parse(localStorage.getItem("company-record"));
+    const chap4 = JSON.parse(localStorage.getItem("viablity-record"));
+    const chap5 = JSON.parse(localStorage.getItem("digital-footprint-record"));
+
+    if (chap1?.sector && chap1?.sector >= 0) setChap2Lock(false);
+  });
+
   return (
     <div className="sticky-thc h-[85vh] lg:h-auto bg-white overflow-y-scroll">
       <TopBar />
       <div className="py-8 pb-20 flex flex-col gap-2">
         <Chap1 />
         <Flow1 />
-        <Chap2 lock/>
+        <Chap2 lock={chap2Lock} />
         <FlowLR />
-        <Chap3 lock/>
+        <Chap3 lock={chap3Lock} />
+        <FlowRL />
+        <Chap4 lock={chap4Lock} />
+        <FlowLR />
+        <Chap5 lock={chap5Lock} />
       </div>
     </div>
   );

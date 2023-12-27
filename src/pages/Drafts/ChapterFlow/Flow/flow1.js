@@ -1,4 +1,4 @@
-export const Flow1 = ({ padding }) => {
+export const Flow1 = ({ padding, active}) => {
   return (
     <div
       className={`grid grid-cols-4 grid-rows-2 h-[100px] items-start ${

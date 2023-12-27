@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Chap2({ lock }) {
+export default function Chap4({ lock }) {
   const [percent, setPercent] = useState({ percent: 0, stroke: 300 });
   const history = useHistory();
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("founder-record"));
-    console.log(data);
+    // const data = JSON.parse(localStorage.getItem("founder-record"));
+    // console.log(data);
 
-    if (data?.founder && data?.founder?.length > 0)
-      setPercent({ percent: 100, stroke: 0 });
+    // if (data?.founder && data?.founder?.length > 0)
+    //   setPercent({ percent: 100, stroke: 0 });
   }, []);
 
   const navigate = () => {
@@ -22,8 +22,8 @@ export default function Chap2({ lock }) {
         <div className="flex gap-4 px-4">
           <img src="/assets/svg/pages/drafts/chap/chap_lock2.svg" />
           <div className="flex flex-col font-lato text-neutral-500">
-            <h1 className="font-semibold">Chapter 1</h1>
-            <h2 className="text-xs">The Founders</h2>
+            <h1 className="font-semibold">Chapter 4</h1>
+            <h2 className="text-xs">The Viablity</h2>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function Chap2({ lock }) {
               Chapter 1
             </div>
             <div className="text-zinc-800 text-base font-semibold leading-6 tracking-wider self-stretch whitespace-nowrap">
-              The Founders
+              The Viablity
             </div>
           </div>
           <div className="font-lato text-neutral-500 text-base font-light leading-6 tracking-wider self-center my-auto">
@@ -77,8 +77,8 @@ export default function Chap2({ lock }) {
         </div>
       </div>
       <svg
-        width="108"
-        height="108"
+        width="114"
+        height="114"
         viewBox="0 0 114 114"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -122,14 +122,10 @@ export default function Chap2({ lock }) {
           stroke="#FDF2FF"
           stroke-width="13"
         />
-
-        {/* Ring */}
         <path
           d="M92.3554 21.6448C101.475 30.7648 106.718 43.0561 106.989 55.9507C107.26 68.8454 102.537 81.3459 93.8081 90.8405C85.079 100.335 73.0185 106.089 60.1466 106.901C47.2746 107.713 34.5869 103.519 24.7343 95.196C14.8817 86.873 8.62635 75.0648 7.27519 62.2382C5.92404 49.4117 9.5816 36.5592 17.4837 26.3659C25.3858 16.1727 36.9212 9.42724 49.6797 7.53895C62.4383 5.65067 75.433 8.7656 85.9489 16.233"
           stroke="url(#paint1_linear_57_137)"
           stroke-width="13"
-          strokeDasharray="300"
-          strokeDashoffset={percent.stroke}
         />
         <g filter="url(#filter0_dd_57_137)">
           <rect
