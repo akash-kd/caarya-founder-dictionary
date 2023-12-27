@@ -28,10 +28,10 @@ const mobileBottomNav = [
     selectedImage: "/assets/svg/tabbar/selectedDraft.png",
   },
   {
-    name: "Requests",
-    path: "/home/researchBank",
-    image: "/assets/svg/tabbar/requests.png",
-    selectedImage: "/assets/svg/tabbar/selectedRequests.png",
+    name: "Bank",
+    path: "/home/bank",
+    image: "/assets/svg/tabbar/bank.png",
+    selectedImage: "/assets/svg/tabbar/selectedBank.png",
   },
 ];
 const laptopNav = [

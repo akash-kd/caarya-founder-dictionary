@@ -17,7 +17,7 @@ function TopBar() {
         <div className="flex flex-row items-center space-x-3">
           <img
             src="/assets/caaryaLogos/logo.png"
-            className="h-8 w-8 object-fill"
+            className="h-8 w-8 object-cover"
             alt="logo"
           />
           <div className="bg-white h-9 w-0.5" />
@@ -33,7 +33,7 @@ function TopBar() {
 
       <div className="flex flex-row items-center justify-between space-x-4">
         <img
-          src={user?.image?.url || ""}
+          src={user?.image?.url}
           alt=""
           className="w-8 h-8 bg-primary-neutral-100 rounded-full"
         />

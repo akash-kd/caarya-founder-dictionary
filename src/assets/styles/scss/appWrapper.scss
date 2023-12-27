@@ -59,3 +59,12 @@
     border-radius: 40px 0px 0px 96px;
   }
 }
+
+.gradient-bg {
+  background: radial-gradient(
+      201.74% 141.42% at 100% 100%,
+      #451451 0%,
+      #282724 100%
+    ),
+    radial-gradient(119.88% 111.8% at 100% 100%, #404040 0%, #2e2e2e 100%);
+}

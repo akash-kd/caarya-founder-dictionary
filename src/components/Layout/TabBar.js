@@ -1,4 +1,4 @@
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { mobileBottomNav } from "helpers/constants";
 import React from "react";
 
@@ -73,7 +73,7 @@ function TabBar() {
                       React.cloneElement(item?.icon, {})
                     )}
                     {!item?.hideTitle && (
-                      <p className={`text-2xs inter mt-1 text-center  `}>
+                      <p className={`text-2xs font-lato mt-1 text-center  `}>
                         {item.name}
                       </p>
                     )}

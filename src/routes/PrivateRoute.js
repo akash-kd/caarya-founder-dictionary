@@ -4,6 +4,7 @@ import { checkAppAccess } from "helpers/utils/accessCheck";
 import SussForm from "pages/Suss Form";
 import ResearchBank from "pages/ResearchBank";
 import Dashboard from "pages/Dashboard";
+import NexusBank from "pages/NexusBank";
 
 // Authenticated Paths
 
@@ -21,6 +22,13 @@ const privateRoutes = [
     name: "New Suss Form",
     tab: "Suss Form",
   },
+  {
+    path: "/home/bank",
+    component: NexusBank,
+    name: "Nexus Bank",
+    tab: "Nexus Bank",
+  },
+
   {
     path: "/home/researchBank",
     component: ResearchBank,
