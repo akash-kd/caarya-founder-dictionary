@@ -12,6 +12,14 @@ import Chapter3B_Mission from "./chapters/chap3BCompany_mission";
 import Chapter3C_Vision from "./chapters/chap3CCompany_vision";
 import Chapter3D_Idea from "./chapters/chap3DCompany_idea";
 
+import Chapter4A_Operation from "./chapters/chap4AViabilty_operation";
+import Chapter4B_Funding from "./chapters/chap4BViabilty_funding";
+import Chapter4C_Emp from "./chapters/chap4CViabilty_emp";
+
+import Chapter5A_Website from "./chapters/chap5ADigital_website";
+import Chapter5B_Social from "./chapters/chap5BDigital_social";
+import Chapter5C_Linkedin from "./chapters/chap5CDigital_linkedin";
+
 import StageContext, { StageProvider } from "./context/stage";
 import RecordContext, { RecordProvider } from "./context/CoverRecord";
 
@@ -24,30 +32,37 @@ import CompanyRecordContext, {
 import ViablityRecordContext, {
   ViablityRecordProvider,
 } from "./context/ViablityRecord";
-import Chapter4A_Operation from "./chapters/chap4AViabilty_operation";
-import Chapter4B_Funding from "./chapters/chap4BViabilty_funding";
-import Chapter4C_Emp from "./chapters/chap4CViabilty_emp";
+import DigitalFootprint from "components/SusForm/DigitalFootprint";
+import { DigitalRecordProvider } from "./context/DigitalFootprintRecord";
 
 const Chapters = () => {
   const [stage, setStage] = useContext(StageContext);
-  const [record, setRecord] = useContext(RecordContext);
-  console.log("Record:", record);
-  console.log("Stage:", stage);
+  
+  // Chapter 1 ---
   if (stage === 0) return <Chapter1ACover_Startup />;
   if (stage === 1) return <Chapter1BCover_StartupSector />;
   if (stage === 2) return <Chapter_Congrats />;
   if (stage === 3) return <Chapter2A_StartupFounder />;
   if (stage === 4) return <Chapter_Congrats />;
+
+  // Chapter 2 -----
   if (stage === 5) return <Chapter3D_Idea />;
   if (stage === 6) return <Chapter3A_WorkType />;
   if (stage === 7) return <Chapter3B_Mission />;
   if (stage === 8) return <Chapter3C_Vision />;
   if (stage === 9) return <Chapter_Congrats />;
+  // Chater 4 ------
   if (stage === 10) return <Chapter4A_Operation />;
   if (stage === 11) return <Chapter4B_Funding />;
   if (stage === 12) return <Chapter4C_Emp />;
+  if (stage === 13) return <Chapter_Congrats />;
 
-  return <Chapter_Congrats />;
+  // Chapter 5 -----
+  if (stage === 14) return <Chapter5A_Website />;
+  if (stage === 15) return <Chapter5B_Social />;
+  if (stage === 16) return <Chapter5C_Linkedin />;
+
+  return <Chapter_Congrats />
 };
 
 const AddDrafts = () => {
@@ -57,7 +72,9 @@ const AddDrafts = () => {
         <FounderRecordProvider>
           <CompanyRecordProvider>
             <ViablityRecordProvider>
-              <Chapters />
+              <DigitalRecordProvider>
+                <Chapters />
+              </DigitalRecordProvider>
             </ViablityRecordProvider>
           </CompanyRecordProvider>
         </FounderRecordProvider>

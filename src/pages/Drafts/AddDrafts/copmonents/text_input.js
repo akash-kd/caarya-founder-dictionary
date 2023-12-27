@@ -1,6 +1,6 @@
 function TextInput({ label, placeholder,value, required = false, onChange, error }) {
   return (
-    <div>
+    <div className="w-full">
       <div className="flex w-full justify-between items-center mb-3">
         <h3 className="font-lato font-semibold text-sm text-neutral-500">
           {label} {required === true ? "*" : ""}
