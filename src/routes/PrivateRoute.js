@@ -5,6 +5,7 @@ import SussForm from "pages/Suss Form";
 import ResearchBank from "pages/ResearchBank";
 import Dashboard from "pages/Dashboard";
 import Drafts from "pages/Drafts";
+import ChapterFlow from "pages/Drafts/ChapterFlow";
 import AddDrafts from "pages/Drafts/AddDrafts";
 // Authenticated Paths
 
@@ -35,12 +36,17 @@ const privateRoutes = [
     tab: "Drafts",
   },
   {
+    path: "/home/drafts/chapterflow",
+    component: ChapterFlow,
+    name: "Drafts",
+    tab: "Drafts",
+  },
+  {
     path: "/home/drafts",
     component: Drafts,
     name: "Drafts",
     tab: "Drafts",
   },
-
   {
     path: "/",
     exact: true,

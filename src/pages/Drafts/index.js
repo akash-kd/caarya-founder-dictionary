@@ -132,7 +132,7 @@ const Drafts = () => {
           <div className="flex flex-col h-full w-full">
             {/* All Record Come Here */}
             <Card record={record} />
-            <Frame />
+
           </div>
         </div>
       </div>
@@ -159,69 +159,6 @@ const Drafts = () => {
 //   );
 // };
 
-export function Frame() {
-  return (
-    <div className="flex flex-col w-full justify-center items-center gap-2">
-      <div>
-        <svg
-          width="114"
-          height="114"
-          viewBox="0 0 114 114"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect x="21" y="21" width="72" height="72" rx="36" fill="#FDF2FF" />
-          <rect
-            x="21"
-            y="21"
-            width="72"
-            height="72"
-            rx="36"
-            fill="url(#paint0_linear_56_108)"
-          />
-          <circle cx="57" cy="57" r="50" stroke="#FDF2FF" strokeWidth="13" />
-          <path
-            d="M92.3555 21.6448C101.475 30.7648 106.718 43.0561 106.989 55.9507C107.26 68.8454 102.537 81.3459 93.8082 90.8405C85.079 100.335 73.0186 106.089 60.1467 106.901C47.2747 107.713 34.587 103.519 24.7344 95.196C14.8818 86.873 8.62643 75.0648 7.27527 62.2382C5.92412 49.4117 9.58168 36.5592 17.4838 26.3659C25.3859 16.1727 36.9213 9.42724 49.6798 7.53895C62.4383 5.65067 75.433 8.7656 85.949 16.233"
-            stroke="url(#paint1_linear_56_108)"
-            strokeWidth="13"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear_56_108"
-              x1="21"
-              y1="21"
-              x2="100.641"
-              y2="83.2189"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#A193F2" />
-              <stop offset="1" stopColor="#C44EB9" />
-            </linearGradient>
-            <linearGradient
-              id="paint1_linear_56_108"
-              x1="7"
-              y1="7"
-              x2="117.613"
-              y2="93.4153"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#A193F2" />
-              <stop offset="1" stopColor="#C44EB9" />
-            </linearGradient>
-          </defs>
-        </svg>
 
-        <img
-          src="/assets/svg/pages/drafts/chap/chapt1.svg"
-          className="absolute top-[-52%] left-[33%]"
-        />
-      </div>
-      <div>
-        <h1 className="font-lato text-xl font-semibold ">Cover</h1>
-        <h3>(50 %)</h3>
-      </div>
-    </div>
-  );
-}
 
 export default Drafts;
