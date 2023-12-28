@@ -14,7 +14,7 @@ export default function Chap2({ lock }) {
   }, []);
 
   const navigate = () => {
-    history.push("/home/drafts/add");
+    history.push("/home/drafts/add/2");
   };
   if (lock) {
     return (
@@ -22,7 +22,7 @@ export default function Chap2({ lock }) {
         <div className="flex gap-4 px-4">
           <img src="/assets/svg/pages/drafts/chap/chap_lock2.svg" />
           <div className="flex flex-col font-lato text-neutral-500">
-            <h1 className="font-semibold">Chapter 1</h1>
+            <h1 className="font-semibold">Chapter 2</h1>
             <h2 className="text-xs">The Founders</h2>
           </div>
         </div>
@@ -36,12 +36,12 @@ export default function Chap2({ lock }) {
   }
 
   return (
-    <div className="flex gap-4 w-full justify-end items-center px-5">
+    <div onClick={navigate} className="flex gap-4 w-full justify-end items-center px-5">
       <div className="justify-center items-stretch flex flex-col">
         <div className="justify-between items-stretch flex gap-4 px-5">
           <div className="justify-center flex grow basis-[0%] flex-col items-start">
             <div className="font-lato text-primary-magenta-medium text-xl font-semibold leading-8 tracking-wider whitespace-nowrap">
-              Chapter 1
+              Chapter 2
             </div>
             <div className="text-zinc-800 text-base font-semibold leading-6 tracking-wider self-stretch whitespace-nowrap">
               The Founders

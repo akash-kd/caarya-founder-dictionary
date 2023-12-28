@@ -3,6 +3,7 @@ import { useState, useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import StageContext from "../context/stage";
 import RecordContext from "../context/CoverRecord";
+import { isObjectEmpty } from "helpers/utils/object";
 
 function Chapter1ACover_Startup() {
   const [stage, setStage] = useContext(StageContext);
@@ -72,7 +73,7 @@ function Chapter1ACover_Startup() {
         {/* Upload Form  */}
         <div className="my-8 py-10 px-2 w-full h-max">
           <div className="flex gap-4 justify-start items-center w-full">
-            {file ? (
+            {isObjectEmpty(file) === false ? (
               <img
                 className="w-[72px] h-[72px]"
                 src={URL.createObjectURL(file)}

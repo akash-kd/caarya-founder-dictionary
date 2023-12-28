@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import Chapter_Congrats from "./chapters/chap_congrats";
 
@@ -34,18 +35,29 @@ import ViablityRecordContext, {
 } from "./context/ViablityRecord";
 import DigitalFootprint from "components/SusForm/DigitalFootprint";
 import { DigitalRecordProvider } from "./context/DigitalFootprintRecord";
+import Chapter4D_Rev from "./chapters/chap4DViabilty_rev";
 
 const Chapters = () => {
   const [stage, setStage] = useContext(StageContext);
-  
+  const { chap } = useParams();
+  useEffect(() => {
+    if (chap === "1") setStage(0);
+    else if (chap === "2") setStage(3);
+    else if (chap === "3") setStage(5);
+    else if (chap === "4") setStage(10);
+    else if (chap === "5") setStage(15);
+  }, []);
+
   // Chapter 1 ---
   if (stage === 0) return <Chapter1ACover_Startup />;
   if (stage === 1) return <Chapter1BCover_StartupSector />;
   if (stage === 2) return <Chapter_Congrats />;
+
+  // Chapter 2
   if (stage === 3) return <Chapter2A_StartupFounder />;
   if (stage === 4) return <Chapter_Congrats />;
 
-  // Chapter 2 -----
+  // Chapter 3 -----
   if (stage === 5) return <Chapter3D_Idea />;
   if (stage === 6) return <Chapter3A_WorkType />;
   if (stage === 7) return <Chapter3B_Mission />;
@@ -55,14 +67,15 @@ const Chapters = () => {
   if (stage === 10) return <Chapter4A_Operation />;
   if (stage === 11) return <Chapter4B_Funding />;
   if (stage === 12) return <Chapter4C_Emp />;
-  if (stage === 13) return <Chapter_Congrats />;
+  if (stage === 13) return <Chapter4D_Rev />;
+  if (stage === 14) return <Chapter_Congrats />;
 
   // Chapter 5 -----
-  if (stage === 14) return <Chapter5A_Website />;
-  if (stage === 15) return <Chapter5B_Social />;
-  if (stage === 16) return <Chapter5C_Linkedin />;
+  if (stage === 15) return <Chapter5A_Website />;
+  if (stage === 16) return <Chapter5B_Social />;
+  if (stage === 17) return <Chapter5C_Linkedin />;
 
-  return <Chapter_Congrats />
+  return <Chapter_Congrats />;
 };
 
 const AddDrafts = () => {

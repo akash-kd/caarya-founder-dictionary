@@ -11,7 +11,7 @@ import RecordContext from "../context/ViablityRecord";
 function Chapter4D_Rev() {
   const [record, setRecord] = useContext(RecordContext);
   const [stage, setStage] = useContext(StageContext);
-  const [data, setData] = useState(record);
+  const [data, setData] = useState(record?.rev);
   const [error, setError] = useState();
 
   const onRevSelected = (option, index) => {
@@ -20,21 +20,21 @@ function Chapter4D_Rev() {
 
   const onNext = () => {
     if (data?.rev === undefined) {
-      setError({ ...error, rev: "* select a employee type" });
+      setError({ ...error, rev: "* select a revenue type" });
     } else if (!data?.city || data?.city?.length === 0) {
-      setError({ ...error, city: "* select a work type" });
+      setError({ ...error, city: "* enter your source" });
     } else {
-      setRecord({ ...record, emp: data });
+      setRecord({ ...record, rev: data });
       setStage((prev) => prev + 1);
     }
   };
 
-  console.log(data);
   return (
     <DraftLayout
-      heading="Employees"
-      subheading="Identify the no. of people employed by the company"
+      heading="Revenue"
+      subheading="Discover the total revenue of the company till date"
       info="Information on how this is relevant"
+      chapName="Viablity"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);
@@ -45,20 +45,20 @@ function Chapter4D_Rev() {
           value={data?.rev}
           options={[
             {
-              name: "1-10 Employees",
+              name: "₹ 0-5 Cr.",
               img: "/assets/svg/pages/drafts/icons/remote.svg",
             },
             {
-              name: "11-30 Employees",
+              name: "₹ 6-10 Cr.",
               img: "/assets/svg/pages/drafts/icons/hybrid.svg",
             },
             {
-              name: "30+ Employees",
+              name: "+ ₹ 10 Cr.",
               img: "/assets/svg/pages/drafts/icons/onsite.svg",
             },
           ]}
           onChange={onRevSelected}
-          error={error?.emp}
+          error={error?.rev}
         />
         {data?.rev >= 0 ? (
           <div className="flex flex-col gap-10">

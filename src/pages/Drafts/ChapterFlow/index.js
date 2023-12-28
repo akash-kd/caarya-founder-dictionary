@@ -66,6 +66,9 @@ function ChapterFlow() {
     const chap5 = JSON.parse(localStorage.getItem("digital-footprint-record"));
 
     if (chap1?.sector && chap1?.sector >= 0) setChap2Lock(false);
+    if (chap2?.founder) setChap3Lock(false);
+    if (chap3?.vision) setChap4Lock(false);
+    if (chap4?.rev?.city) setChap5Lock(false);
   });
 
   return (

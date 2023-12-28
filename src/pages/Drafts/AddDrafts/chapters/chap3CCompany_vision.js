@@ -18,6 +18,7 @@ function Chapter3C_Vision() {
       heading="The Vision"
       subheading="State the company’s Vison Statement"
       info="Information on where to find this"
+      chapName="Company"
       onNext={() => {
         setRecord({ ...record, vision });
         setStage((prev) => prev + 1);

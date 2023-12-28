@@ -1,13 +1,50 @@
 import React, { useEffect, useState } from "react";
 import covers from "helpers/constants/drafts";
+import { isObjectEmpty } from "helpers/utils/object";
 
 import { useHistory } from "react-router-dom";
 
 function Card({ record }) {
   const history = useHistory();
+  const chap1 = JSON.parse(localStorage.getItem("cover-record"));
+  const chap2 = JSON.parse(localStorage.getItem("founder-record"));
+  const chap3 = JSON.parse(localStorage.getItem("company-record"));
+  const chap4 = JSON.parse(localStorage.getItem("viablity-record"));
+  const chap5 = JSON.parse(localStorage.getItem("digital-record"));
+
+  let num = 1;
+  if (chap2?.founder) num = num + 1;
+  if (chap3?.vision) num = num + 1;
+  if (chap4?.rev?.city) num = num + 1;
+  if (chap5?.linkedin_number) num = num + 1;
+
   const navigate = () => {
     history.push("/home/drafts/chapterflow");
   };
+
+  const complete = (
+    <div className="flex items-center flex-1 grow justify-center relative">
+      <div className="bg-primary-magenta-medium rounded-[8px_0px_0px_8px] relative flex-1 grow h-[2px]" />
+      <div className="bg-primary-magenta-medium relative w-[8px] h-[8px] rounded-[4px]" />
+      <div className="bg-primary-magenta-medium relative flex-1 grow h-[2px]" />
+    </div>
+  );
+
+  const ongoing = (
+    <div className="flex items-center flex-1 grow justify-center relative">
+      <div className="bg-primary-magenta-medium relative flex-1 grow h-[2px]" />
+      <div className="border border-solid border-primary-magenta-medium relative w-[8px] h-[8px] rounded-[4px]" />
+      <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
+    </div>
+  );
+
+  const diabled = (
+    <div className="flex items-center flex-1 grow justify-center relative">
+      <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
+      <div className="relative w-[8px] h-[8px] bg-neutral-200 rounded-[4px]" />
+      <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
+    </div>
+  );
 
   return (
     <div
@@ -31,31 +68,19 @@ function Card({ record }) {
 
       <div className="flex items-center gap-[16px] relative">
         <div className="flex items-start flex-1 grow justify-center relative">
-          <div className="flex items-center flex-1 grow justify-center relative">
-            <div className="bg-primary-magenta-medium rounded-[8px_0px_0px_8px] relative flex-1 grow h-[2px]" />
-            <div className="bg-primary-magenta-medium relative w-[8px] h-[8px] rounded-[4px]" />
-            <div className="bg-primary-magenta-medium relative flex-1 grow h-[2px]" />
-          </div>
-          <div className="flex items-center flex-1 grow justify-center relative">
-            <div className="bg-primary-magenta-medium relative flex-1 grow h-[2px]" />
-            <div className="border border-solid border-primary-magenta-medium relative w-[8px] h-[8px] rounded-[4px]" />
-            <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
-          </div>
-          <div className="flex items-center flex-1 grow justify-center relative">
-            <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
-            <div className="relative w-[8px] h-[8px] bg-neutral-200 rounded-[4px]" />
-            <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
-          </div>
-          <div className="flex items-center flex-1 grow justify-center relative">
-            <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
-            <div className="relative w-[8px] h-[8px] bg-neutral-200 rounded-[4px]" />
-            <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
-          </div>
-          <div className="flex items-center flex-1 grow justify-center relative">
-            <div className="relative flex-1 grow h-[2px] bg-neutral-200" />
-            <div className="relative w-[8px] h-[8px] bg-neutral-200 rounded-[4px]" />
-            <div className="bg-neutral-200 rounded-[0px_8px_8px_0px] relative flex-1 grow h-[2px]" />
-          </div>
+          {chap1?.sector >= 0 ? complete : ongoing}
+          {isObjectEmpty(chap2) ? diabled : chap2?.founder ? complete : ongoing}
+          {isObjectEmpty(chap3) ? diabled : chap3?.vision ? complete : ongoing}
+          {isObjectEmpty(chap4)
+            ? diabled
+            : chap4?.rev?.city
+            ? complete
+            : ongoing}
+          {isObjectEmpty(chap5)
+            ? diabled
+            : chap5?.linkedin_number
+            ? complete
+            : ongoing}
         </div>
         <div className="inline-flex flex-col items-center p-[8px] flex-[0_0_auto] rounded-[192px] justify-center relative">
           <div className="relative w-[18px] h-[18px]">
@@ -65,7 +90,7 @@ function Card({ record }) {
             />
           </div>
           <div className="relative w-fit font-lato font-semibold text-neutral-500 text-[12px] text-center tracking-[0.60px] leading-[18px] whitespace-nowrap">
-            1/5
+            {num}/5
           </div>
         </div>
       </div>
@@ -101,10 +126,16 @@ function Card({ record }) {
 const Drafts = () => {
   const [record, setRecord] = useState();
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("record"));
+    const data = JSON.parse(localStorage.getItem("cover-record"));
 
     setRecord(data);
   }, []);
+
+  const chap1 = JSON.parse(localStorage.getItem("cover-record"));
+  const chap2 = JSON.parse(localStorage.getItem("founder-record"));
+  const chap3 = JSON.parse(localStorage.getItem("company-record"));
+  const chap4 = JSON.parse(localStorage.getItem("viablity-record"));
+  const chap5 = JSON.parse(localStorage.getItem("digital-record"));
 
   return (
     <>
@@ -139,7 +170,7 @@ const Drafts = () => {
           {/*------- Main body ------- */}
           <div className="flex flex-col h-full w-full">
             {/* All Record Come Here */}
-            <Card record={record} />
+            {chap1 ? <Card record={record} /> : <></>}
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import RecordContext from "../context/ViablityRecord";
 function Chapter4B_Funding() {
   const [record, setRecord] = useContext(RecordContext);
   const [stage, setStage] = useContext(StageContext);
-  const [data, setData] = useState(record);
+  const [data, setData] = useState(record?.funding);
   const [error, setError] = useState();
 
   const onFundingSelected = (option, index) => {
@@ -20,9 +20,9 @@ function Chapter4B_Funding() {
 
   const onNext = () => {
     if (data?.funding === undefined) {
-      setError({ ...error, funding: "* select a work type" });
+      setError({ ...error, funding: "* select a funding type" });
     } else if (!data?.city || data?.city?.length === 0) {
-      setError({ ...error, city: "* select a work type" });
+      setError({ ...error, city: "* enter your source" });
     } else {
       setRecord({ ...record, funding: data });
       setStage((prev) => prev + 1);
@@ -35,6 +35,7 @@ function Chapter4B_Funding() {
       heading="Funding"
       subheading="Identify the funding status of the company"
       info="Information on how this is relevant"
+      chapName="Viablity"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);

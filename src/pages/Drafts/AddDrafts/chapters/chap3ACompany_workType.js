@@ -35,6 +35,7 @@ function Chapter3A_WorkType() {
       heading="Where Work Happens"
       subheading="Identify the company’s work location"
       info="Information on how this is relevant"
+      chapName="Company"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);

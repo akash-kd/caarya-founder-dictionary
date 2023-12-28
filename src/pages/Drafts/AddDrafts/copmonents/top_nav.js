@@ -1,9 +1,13 @@
+import { useHistory } from "react-router-dom";
+
 function TopNav({
   onBack,
   startupName = "Love Clip",
   chaperName = "Cover",
   percentage = 50,
 }) {
+
+  const history = useHistory
   return (
     <>
       <div className="py-4 px-4 flex justify-between items-center">
@@ -13,7 +17,10 @@ function TopNav({
             className="w-6 h-6 cursor-pointer"
             src="/assets/svg/pages/drafts/icons/back.svg"
           />
-          <div className="flex items-center gap-2 ml-4 font-lato  text-neutral-800 text-sm">
+          <div
+            onClick={() => history.push("/home/drafts/chapterflow")}
+            className="flex items-center gap-2 ml-4 font-lato  text-neutral-800 text-sm"
+          >
             <img className="w-8 h-8 bg-black rounded-lg" />
             <h2 className="font-semibold ">{startupName}</h2>
             <h2 className="font-semibold">/</h2>

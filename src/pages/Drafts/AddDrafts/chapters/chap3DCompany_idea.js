@@ -18,6 +18,7 @@ function Chapter3D_Idea() {
       heading="The Idea"
       subheading="Give a brief description of what the company does."
       info="Information on where to find this"
+      chapName="Company"
       onNext={() => {
         setRecord({ ...record, idea });
         setStage((prev) => prev + 1);

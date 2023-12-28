@@ -18,6 +18,7 @@ function Chapter3A_Mission() {
       heading="The Mission"
       subheading="State the company’s Mission Statement"
       info="Information on where to find this"
+      chapName="Company"
       onNext={() => {
         setRecord({ ...record, mission });
         setStage((prev) => prev + 1);

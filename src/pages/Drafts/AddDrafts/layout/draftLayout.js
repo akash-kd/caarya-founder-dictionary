@@ -7,13 +7,14 @@ function DraftLayout({
   children,
   heading,
   subheading,
+  chapName,
   info,
   onPrevious,
   onNext,
 }) {
   return (
     <div className="sticky-thc flex flex-col bg-white justify-between h-full lg:h-auto">
-      <TopNav />
+      <TopNav onBack={onPrevious} chaperName={chapName} />
 
       {/* Main Body --------- */}
       <main className="flex flex-col gap-4 before:bg-blue-300 p-4 w-full h-full overflow-y-scroll">

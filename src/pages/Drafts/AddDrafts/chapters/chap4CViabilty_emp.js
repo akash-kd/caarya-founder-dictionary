@@ -11,7 +11,7 @@ import RecordContext from "../context/ViablityRecord";
 function Chapter4C_Emp() {
   const [record, setRecord] = useContext(RecordContext);
   const [stage, setStage] = useContext(StageContext);
-  const [data, setData] = useState(record);
+  const [data, setData] = useState(record?.emp);
   const [error, setError] = useState();
 
   const onEmpSelected = (option, index) => {
@@ -22,7 +22,7 @@ function Chapter4C_Emp() {
     if (data?.emp === undefined) {
       setError({ ...error, emp: "* select a employee type" });
     } else if (!data?.city || data?.city?.length === 0) {
-      setError({ ...error, city: "* select a work type" });
+      setError({ ...error, city: "* enter your source" });
     } else {
       setRecord({ ...record, emp: data });
       setStage((prev) => prev + 1);
@@ -35,6 +35,7 @@ function Chapter4C_Emp() {
       heading="Employees"
       subheading="Identify the no. of people employed by the company"
       info="Information on how this is relevant"
+      chapName="Viablity"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);

@@ -12,7 +12,7 @@ function TopBar() {
     window.location.href = window.location.origin + "/";
   };
   return (
-    <div className="fixed w-full top-0 right-0 left-0 px-3 py-4 top-nav flex flex-row items-center justify-between z-50 lg:hidden">
+    <div className="sticky w-full top-0 right-0 left-0 px-3 py-4 top-nav flex flex-row items-center justify-between z-50 lg:hidden">
       <a href="/">
         <div className="flex flex-row items-center space-x-3">
           <img

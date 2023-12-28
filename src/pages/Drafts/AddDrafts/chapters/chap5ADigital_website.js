@@ -33,6 +33,7 @@ function Chapter5A_Website() {
       heading="Web Representation"
       subheading="Discover the company’s website"
       info="Information on where to find this"
+      chapName="Digital Footprint"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);

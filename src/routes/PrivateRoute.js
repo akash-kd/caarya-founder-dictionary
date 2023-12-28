@@ -30,6 +30,12 @@ const privateRoutes = [
     tab: "Research Bank",
   },
   {
+    path: "/home/drafts/add/:chap",
+    component: AddDrafts,
+    name: "Drafts",
+    tab: "Drafts",
+  },
+  {
     path: "/home/drafts/add",
     component: AddDrafts,
     name: "Drafts",

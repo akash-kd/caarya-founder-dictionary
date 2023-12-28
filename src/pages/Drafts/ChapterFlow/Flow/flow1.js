@@ -7,13 +7,13 @@ export const Flow1 = ({ padding, active}) => {
     >
       <div className="flex flex-1 w-full h-full mt-[4px]"></div>
       <div className="flex flex-1 w-full h-full mt-[4px]"></div>
-      <div className="rounded-bl-2xl flex flex-1 w-full h-full border-l-8 border-b-8 border-red-800 mt-[4px]"></div>
+      <div className="rounded-bl-2xl flex flex-1 w-full h-full border-l-8 border-b-8 border-neutral-100 mt-[4px]"></div>
       <div className="flex flex-1 w-full h-full mt-[4px]"></div>
 
       <div className="rounded-tl-2xl flex flex-1 w-full h-full mt-[-4px]"></div>
       <div className="flex flex-1 w-full h-full mt-[-4px]"></div>
       <div className="flex flex-1 w-full h-full mt-[-4px]"></div>
-      <div className="rounded-tr-2xl flex flex-1 w-full h-full mt-[-4px] border-r-8 border-t-8 border-red-800"></div>
+      <div className="rounded-tr-2xl flex flex-1 w-full h-full mt-[-4px] border-r-8 border-t-8 border-neutral-100"></div>
     </div>
   );
 };

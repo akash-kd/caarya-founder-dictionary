@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { isObjectEmpty } from "helpers/utils/object";
 
 export default function Chap4({ lock }) {
   const [percent, setPercent] = useState({ percent: 0, stroke: 300 });
   const history = useHistory();
 
   useEffect(() => {
-    // const data = JSON.parse(localStorage.getItem("founder-record"));
-    // console.log(data);
+    const data = JSON.parse(localStorage.getItem("viablity-record"));
+    console.log("SSS", isObjectEmpty(data?.workType));
 
-    // if (data?.founder && data?.founder?.length > 0)
-    //   setPercent({ percent: 100, stroke: 0 });
+    if (isObjectEmpty(data?.rev) === false)
+      setPercent({ percent: 100, stroke: 0 });
+    else if (isObjectEmpty(data?.emp) === false)
+      setPercent({ percent: 75, stroke: 75 });
+    else if (isObjectEmpty(data?.funding) === false)
+      setPercent({ percent: 50, stroke: 150 });
+    else if (isObjectEmpty(data?.operation) === false)
+      setPercent({ percent: 20, stroke: 225 });
   }, []);
 
   const navigate = () => {
-    history.push("/home/drafts/add");
+    history.push("/home/drafts/add/4");
   };
   if (lock) {
     return (
@@ -36,12 +43,15 @@ export default function Chap4({ lock }) {
   }
 
   return (
-    <div className="flex gap-4 w-full justify-end items-center px-5">
+    <div
+      onClick={navigate}
+      className="flex gap-4 w-full justify-end items-center px-5"
+    >
       <div className="justify-center items-stretch flex flex-col">
         <div className="justify-between items-stretch flex gap-4 px-5">
           <div className="justify-center flex grow basis-[0%] flex-col items-start">
             <div className="font-lato text-primary-magenta-medium text-xl font-semibold leading-8 tracking-wider whitespace-nowrap">
-              Chapter 1
+              Chapter 4
             </div>
             <div className="text-zinc-800 text-base font-semibold leading-6 tracking-wider self-stretch whitespace-nowrap">
               The Viablity
@@ -93,7 +103,7 @@ export default function Chap4({ lock }) {
           rx="36"
           fill="url(#paint0_linear_57_137)"
         />
-        <g clip-path="url(#clip0_57_137)">
+        <g clipPath="url(#clip0_57_137)">
           <path
             d="M57.0037 59.7889C57.0037 59.7889 57.0034 59.7889 57.0037 59.7889C55.5051 59.7898 54.2848 61.0089 54.2848 62.5077C54.2848 63.8603 56.4116 67.2538 56.6538 67.636C56.8159 67.8921 57.1905 67.8928 57.3536 67.636C57.5959 67.2534 59.7198 63.8599 59.7198 62.5077C59.7198 61.0084 58.5015 59.7889 57.0037 59.7889ZM57.0033 60.6172C57.4747 60.6174 57.858 61.0016 57.858 61.4735C57.858 61.7594 57.4587 62.589 57.0025 63.3781C56.5462 62.5894 56.1466 61.7599 56.1466 61.4735C56.1466 61.0003 56.532 60.6172 57.0033 60.6172ZM57.0033 66.6249C56.1612 65.2239 55.1132 63.2395 55.1132 62.5078C55.1132 62.1942 55.1973 61.9027 55.333 61.6421C55.4625 62.4866 56.4449 64.0717 56.653 64.3999C56.8152 64.656 57.1897 64.6567 57.3528 64.3999C57.5609 64.0717 58.5427 62.4861 58.6718 61.6415C58.8074 61.9023 58.8914 62.1939 58.8914 62.5077C58.8914 63.2395 57.845 65.2238 57.0033 66.6249Z"
             fill="white"
@@ -115,17 +125,13 @@ export default function Chap4({ lock }) {
             fill="white"
           />
         </g>
-        <circle
-          cx="56.9999"
-          cy="57"
-          r="50"
-          stroke="#FDF2FF"
-          stroke-width="13"
-        />
+        <circle cx="56.9999" cy="57" r="50" stroke="#FDF2FF" strokeWidth="13" />
         <path
           d="M92.3554 21.6448C101.475 30.7648 106.718 43.0561 106.989 55.9507C107.26 68.8454 102.537 81.3459 93.8081 90.8405C85.079 100.335 73.0185 106.089 60.1466 106.901C47.2746 107.713 34.5869 103.519 24.7343 95.196C14.8817 86.873 8.62635 75.0648 7.27519 62.2382C5.92404 49.4117 9.5816 36.5592 17.4837 26.3659C25.3858 16.1727 36.9212 9.42724 49.6797 7.53895C62.4383 5.65067 75.433 8.7656 85.9489 16.233"
           stroke="url(#paint1_linear_57_137)"
-          stroke-width="13"
+          strokeWidth="13"
+          strokeDasharray="300"
+          strokeDashoffset={percent.stroke}
         />
         <g filter="url(#filter0_dd_57_137)">
           <rect
@@ -135,7 +141,7 @@ export default function Chap4({ lock }) {
             height="32"
             rx="16"
             fill="#FAFAFA"
-            shape-rendering="crispEdges"
+            shapeRendering="crispEdges"
           />
           <path
             d="M90.1 11.7C90.1466 11.6379 90.207 11.5875 90.2764 11.5528C90.3458 11.5181 90.4224 11.5 90.5 11.5H99.5C99.5776 11.5 99.6542 11.5181 99.7236 11.5528C99.793 11.5875 99.8534 11.6379 99.9 11.7L102.876 15.674C103.025 15.859 103.032 16.124 102.886 16.318L95.4 26.3C95.3534 26.3621 95.293 26.4125 95.2236 26.4472C95.1542 26.4819 95.0776 26.5 95 26.5C94.9224 26.5 94.8458 26.4819 94.7764 26.4472C94.707 26.4125 94.6466 26.3621 94.6 26.3L87.1 16.3C87.0351 16.2135 87 16.1082 87 16C87 15.8918 87.0351 15.7865 87.1 15.7L90.1 11.7ZM101.486 15.485L99.68 13.075L98.904 15.488L101.486 15.485ZM97.853 15.489L98.814 12.5H91.186L92.149 15.495L97.853 15.489ZM92.47 16.495L95 24.366L97.532 16.49L92.47 16.495ZM91.099 15.496L90.319 13.074L88.501 15.499L91.099 15.496ZM88.499 16.5L93.612 23.317L91.42 16.497L88.5 16.5H88.499ZM96.388 23.317L101.511 16.487L98.583 16.489L96.388 23.317Z"
@@ -150,9 +156,9 @@ export default function Chap4({ lock }) {
             width="38"
             height="38"
             filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           >
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
             <feColorMatrix
               in="SourceAlpha"
               type="matrix"
@@ -210,8 +216,8 @@ export default function Chap4({ lock }) {
             y2="83.2189"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#A193F2" />
-            <stop offset="1" stop-color="#C44EB9" />
+            <stop stopColor="#A193F2" />
+            <stop offset="1" stopColor="#C44EB9" />
           </linearGradient>
           <linearGradient
             id="paint1_linear_57_137"
@@ -221,8 +227,8 @@ export default function Chap4({ lock }) {
             y2="93.4153"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#A193F2" />
-            <stop offset="1" stop-color="#C44EB9" />
+            <stop stopColor="#A193F2" />
+            <stop offset="1" stopColor="#C44EB9" />
           </linearGradient>
           <clipPath id="clip0_57_137">
             <rect

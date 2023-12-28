@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+  
 
 export default function Chap1() {
-  const [percent, setPercent] = useState({ percent: 0, stroke: 0 });
+  const [percent, setPercent] = useState({ percent: 0, stroke: 300 });
   const history = useHistory();
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("cover-record"));
-    console.log(data);
+    console.log(data?.sector >= 0);
 
-    if (data?.sector && data?.sector >= 0)
+    if (data?.sector >= 0)
       setPercent({ percent: 100, stroke: 0 });
     else if (data?.name) setPercent({ percent: 50, stroke: 180 });
   }, []);
 
   const navigate = () => {
-    history.push("/home/drafts/add");
+    history.push("/home/drafts/add/1");
   };
 
   return (

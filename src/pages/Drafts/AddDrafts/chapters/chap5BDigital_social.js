@@ -36,6 +36,7 @@ function Chapter5B_Social() {
       heading="Social Presence"
       subheading="Assess the company’s Instagram footprint"
       info="Information on where to find this"
+      chapName="Digital Footprint"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);

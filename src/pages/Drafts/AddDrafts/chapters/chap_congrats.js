@@ -11,7 +11,7 @@ function Chapter_Congrats() {
   return (
     <div className="sticky-thc flex flex-col bg-white justify-between h-full lg:h-auto">
       <div>
-        <TopNav />
+        <TopNav onBack={() => setStage((prev) => prev - 1)} />
         <div className="p-4">
           <Status />
         </div>

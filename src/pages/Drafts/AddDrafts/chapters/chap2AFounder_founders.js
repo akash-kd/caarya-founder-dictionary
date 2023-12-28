@@ -19,6 +19,7 @@ function Chapter2AFounder_Top() {
       heading="Who’s at the top?"
       subheading="Identify the founder(s) of this startup"
       info="Information on how this is relevant"
+      chapName="Founder"
       onNext={() => {
         setRecord({ ...record, founder });
         setStage((state) => state + 1);

@@ -2,3 +2,7 @@
   background: linear-gradient(154deg, #a193f2 7.06%, #c44eb9 88.02%),
     linear-gradient(180deg, #f282f5 0%, #c44eb9 100%);
 }
+
+.height-app-container {
+  height: calc(100vh - 68px);
+}

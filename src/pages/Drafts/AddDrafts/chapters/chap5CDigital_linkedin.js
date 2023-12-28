@@ -36,6 +36,7 @@ function Chapter5C_Linkedin() {
       heading="Professional Network Presence"
       subheading="Assess the company’s LinkedIn footprint"
       info="Information on where to find this"
+      chapName="Digital Footprint"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);

@@ -11,7 +11,7 @@ import RecordContext from "../context/ViablityRecord";
 function Chapter4A_Operation() {
   const [record, setRecord] = useContext(RecordContext);
   const [stage, setStage] = useContext(StageContext);
-  const [data, setData] = useState(record);
+  const [data, setData] = useState(record?.operation);
   const [error, setError] = useState();
 
   const onOperationSelected = (option, index) => {
@@ -20,9 +20,9 @@ function Chapter4A_Operation() {
 
   const onNext = () => {
     if (data?.operation === undefined) {
-      setError({ ...error, operation: "* select a work type" });
+      setError({ ...error, operation: "* select a operations type" });
     } else if (!data?.city || data?.city?.length === 0) {
-      setError({ ...error, city: "* select a work type" });
+      setError({ ...error, city: "* enter your source" });
     } else {
       setRecord({ ...record, operation: data });
       setStage((prev) => prev + 1);
@@ -35,6 +35,7 @@ function Chapter4A_Operation() {
       heading="Years of Operation"
       subheading="Identify the company’s age"
       info="Information on how this is relevant"
+      chapName="Viablity"
       onNext={onNext}
       onPrevious={() => {
         setStage((prev) => prev - 1);
