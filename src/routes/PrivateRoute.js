@@ -5,6 +5,7 @@ import SussForm from "pages/Suss Form";
 import ResearchBank from "pages/ResearchBank";
 import Dashboard from "pages/Dashboard";
 import NexusBank from "pages/NexusBank";
+import StartUp from "pages/NexusBank/Startup";
 
 // Authenticated Paths
 
@@ -25,17 +26,21 @@ const privateRoutes = [
   {
     path: "/home/bank",
     component: NexusBank,
-    name: "Nexus Bank",
+    name: "Drafts",
     tab: "Nexus Bank",
   },
-
+  {
+    path: "/home/startup/:id",
+    component: StartUp,
+    name: "Drafts",
+    tab: "Nexus Bank",
+  },
   {
     path: "/home/researchBank",
     component: ResearchBank,
     name: "Research Bank",
     tab: "Research Bank",
   },
-
   {
     path: "/",
     exact: true,
