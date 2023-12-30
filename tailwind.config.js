@@ -4,7 +4,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-      fontSize: { "3xs": "8px", "2xs": "10px" },
+      fontSize: { "3xs": "8px", "2xs": "10px", "2.5xl": "28px" },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         inter: ["Inter", "sans-serif"],
