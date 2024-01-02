@@ -4,6 +4,9 @@ import { checkAppAccess } from "helpers/utils/accessCheck";
 import SussForm from "pages/Suss Form";
 import ResearchBank from "pages/ResearchBank";
 import Dashboard from "pages/Dashboard";
+import Drafts from "pages/Drafts";
+import ChapterFlow from "pages/Drafts/ChapterFlow";
+import AddDrafts from "pages/Drafts/AddDrafts";
 import NexusBank from "pages/NexusBank";
 import StartUp from "pages/NexusBank/Startup";
 
@@ -41,6 +44,7 @@ const privateRoutes = [
     name: "Research Bank",
     tab: "Research Bank",
   },
+
   {
     path: "/",
     exact: true,

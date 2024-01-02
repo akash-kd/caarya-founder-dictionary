@@ -6,6 +6,21 @@ function TabBar() {
   const history = useHistory();
   return (
     <div>
+      {window.location.pathname === "/home/drafts" ? (
+        <div className="w-full flex justify-end px-2">
+          <button
+            onClick={() => {
+              history.push("/home/drafts/add");
+            }}
+            className="flex continue-button relative top-[-72px] px-6 py-[18px] text-white text-xs font-semibold gap-2 rounded-2xl shadow-md"
+          >
+            <img src="/assets/svg/pages/drafts/icons/add.svg" />
+            <h2>Add Story</h2>
+          </button>
+        </div>
+      ) : (
+        <></>
+      )}
       <div
         className={`w-full tapbar fixed z-30 bottom-0 right-0 tapbar left-0 lg:hidden transform transition-all ease-in-out duration-300 font-poppins`}
       >
@@ -18,7 +33,14 @@ function TabBar() {
                 <div
                   key={idx}
                   onClick={() => {
-                    history.push(item?.path);
+                    if (
+                      idx === centerNavIdx &&
+                      window.location.pathname === "/home/drafts"
+                    ) {
+                      history.push("/home/drafts/add");
+                    } else {
+                      history.push(item?.path);
+                    }
                   }}
                   className="relative"
                 >

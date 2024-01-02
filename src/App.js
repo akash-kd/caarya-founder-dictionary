@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <div className="block min-h-screen bg-[#F0F3F4]">
-        <Router>
+        <Router forceRefresh={true}>
           <Switch>
             {publicRoutes.map((route, idx) => (
               <NonAuthMiddleware

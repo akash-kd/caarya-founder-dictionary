@@ -3,15 +3,12 @@
 @tailwind utilities;
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
- "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
- sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
- monospace; }
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 .gradient-symmetry {
   background-color: #147a4b;
@@ -155,9 +152,7 @@ label {
 
 .otp-login-container body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
- "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
- sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -264,6 +259,12 @@ label {
   border: 1px solid var(--neutral-100, #f3f2f2);
   background: #fff;
   box-shadow: 0px 4px 6px -1px rgba(195, 206, 244, 0.6), 0px 2px 4px -2px #c3cef4; }
+
+.continue-button {
+  background: linear-gradient(154deg, #a193f2 7.06%, #c44eb9 88.02%), linear-gradient(180deg, #f282f5 0%, #c44eb9 100%); }
+
+.height-app-container {
+  height: calc(100vh - 68px); }
 
 /*Theme Colors*/
 /*Borders*/
