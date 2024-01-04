@@ -12,10 +12,13 @@ function TabBar() {
             onClick={() => {
               history.push("/home/drafts/add");
             }}
-            className="flex continue-button relative top-[-72px] px-6 py-[18px] text-white text-xs font-semibold gap-2 rounded-2xl shadow-md"
+            className="flex justify-center items-center continue-button relative top-[-72px] px-6 py-[18px] text-white text-xs font-semibold gap-2 rounded-2xl shadow-md"
           >
-            <img src="/assets/svg/pages/drafts/icons/add.svg" />
-            <h2>Add Story</h2>
+            <img
+              className="h-4 w-4"
+              src="/assets/svg/pages/drafts/icons/add.svg"
+            />
+            <h2 className="text-sm font-bold font-inter underline">New Story</h2>
           </button>
         </div>
       ) : (

@@ -44,6 +44,24 @@ const privateRoutes = [
     name: "Research Bank",
     tab: "Research Bank",
   },
+  {
+    path: "/home/drafts/chapterflow",
+    component: ChapterFlow,
+    name: "Drafts",
+    tab: "Drafts",
+  },
+  {
+    path: "/home/drafts/add",
+    component: AddDrafts,
+    name: "Drafts",
+    tab: "Drafts",
+  },
+  {
+    path: "/home/drafts",
+    component: Drafts,
+    name: "Drafts",
+    tab: "Drafts",
+  },
 
   {
     path: "/",

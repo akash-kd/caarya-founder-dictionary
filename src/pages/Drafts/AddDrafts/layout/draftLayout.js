@@ -11,6 +11,7 @@ function DraftLayout({
   info,
   onPrevious,
   onNext,
+  bottomDisabled,
 }) {
   return (
     <div className="sticky-thc flex flex-col bg-white justify-between h-full lg:h-auto">
@@ -22,7 +23,12 @@ function DraftLayout({
         <TitleBar heading={heading} subheading={subheading} info={info} />
         {children}
       </main>
-      <BottomNav onPrevious={onPrevious} onNext={onNext} padding />
+      <BottomNav
+        disabled={bottomDisabled}
+        onPrevious={onPrevious}
+        onNext={onNext}
+        padding
+      />
     </div>
   );
 }

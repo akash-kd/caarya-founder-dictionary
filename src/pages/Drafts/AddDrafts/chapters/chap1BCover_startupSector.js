@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import Covers from "../../../../helpers/constants/drafts";
 import DraftLayout from "../layout/draftLayout";
@@ -10,6 +10,12 @@ function Chapter1BCover_StartupSector() {
   const [error, setError] = useState();
   const [stage, setStage] = useContext(StageContext);
   const [selected, setSelected] = useState(record?.sector);
+
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (!selected) setDisabled(true);
+    else setDisabled(false);
+  }, [selected]);
   return (
     <DraftLayout
       heading="Some Title Here"
@@ -27,6 +33,7 @@ function Chapter1BCover_StartupSector() {
       onPrevious={() => {
         setStage((stage) => stage - 1);
       }}
+      bottomDisabled={disabled}
     >
       <div>
         <p className="text-red-500 font-lato font-semibold text-xs my-2">
@@ -53,7 +60,7 @@ function Chapter1BCover_StartupSector() {
                   className="h-12 w-12 stroke-primary-magenta-medium"
                 />
                 <p
-                  className={`font-lato font-semibold text-sm ${
+                  className={`font-lato font-semibold text-sm leading-[150%] tracking-[0.7px] text-center ${
                     selected === index
                       ? "text-primary-magenta-medium"
                       : "text-neutral-500"

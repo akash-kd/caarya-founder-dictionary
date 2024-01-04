@@ -6,8 +6,7 @@ function TopNav({
   chaperName = "Cover",
   percentage = 50,
 }) {
-
-  const history = useHistory
+  const history = useHistory;
   return (
     <>
       <div className="py-4 px-4 flex justify-between items-center">
@@ -24,7 +23,9 @@ function TopNav({
             <img className="w-8 h-8 bg-black rounded-lg" />
             <h2 className="font-semibold ">{startupName}</h2>
             <h2 className="font-semibold">/</h2>
-            <h2 className="font-light">{chaperName}</h2>
+            <h2 className="text-zinc-800 text-sm font-light font-lato leading-[21px] tracking-tight">
+              {chaperName}
+            </h2>
           </div>
         </div>
         <div className="font-satoshi font-medium text-sm text-neutral-800">

@@ -266,6 +266,11 @@ label {
 .height-app-container {
   height: calc(100vh - 68px); }
 
+.title-gradient {
+  background: linear-gradient(154deg, #a193f2 7.06%, #c44eb9 88.02%), linear-gradient(180deg, #f282f5 0%, #c44eb9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 /*Theme Colors*/
 /*Borders*/
 /*Theme Colors*/

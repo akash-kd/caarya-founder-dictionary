@@ -1,5 +1,5 @@
 import BottomNav from "../copmonents/bottom_nav";
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import StageContext from "../context/stage";
 import RecordContext from "../context/CoverRecord";
@@ -11,9 +11,15 @@ function Chapter1ACover_Startup() {
 
   const [name, setName] = useState(record?.name);
   const [file, setFile] = useState(record?.img);
+  
   const fileRef = useRef();
   const [error, SetError] = useState({ name: undefined, img: undefined });
   const history = useHistory();
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (name === undefined || name?.length === 0 || !file) setDisabled(true);
+    else setDisabled(false);
+  }, [name, file]);
 
   const onNameChange = (e) => {
     setName(e.target.value);
@@ -57,7 +63,7 @@ function Chapter1ACover_Startup() {
         {/* Upper - Title && Upload Form */}
 
         <div className="flex w-full justify-between items-center my-4">
-          <h1 className="font-satoshi font-bold text-primary-magenta-medium text-[28px] leading-[42px]">
+          <h1 className="title-gradient font-satoshi font-bold text-primary-magenta-medium text-[28px] leading-[42px]">
             Seek Your First <br /> Startup
           </h1>
 
@@ -75,7 +81,7 @@ function Chapter1ACover_Startup() {
           <div className="flex gap-4 justify-start items-center w-full">
             {isObjectEmpty(file) === false ? (
               <img
-                className="w-[72px] h-[72px]"
+                className="w-[72px] h-[72px] rounded-lg"
                 src={URL.createObjectURL(file)}
               ></img>
             ) : (
@@ -86,7 +92,7 @@ function Chapter1ACover_Startup() {
               className="flex gap-2 p-3 text-primary-magenta-medium font-lato font-bold leading-7"
             >
               <img src="/assets/svg/pages/drafts/icons/upload.svg" />
-              Upload
+              Upload an Image
             </button>
             <input
               ref={fileRef}
@@ -120,7 +126,7 @@ function Chapter1ACover_Startup() {
         </div>
       </div>
 
-      <BottomNav onPrevious={onBack} onNext={onNext} />
+      <BottomNav onPrevious={onBack} onNext={onNext} disabled={disabled} />
     </div>
   );
 }

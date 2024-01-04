@@ -28,7 +28,7 @@ function TextAreaInput({
         onChange={onChange}
         type=""
         placeholder={placeholder}
-        className="font-lato font-light text-xl w-full p-4 border-[1px] border-neutral-300 bg-gray-50 rounded outline-none placeholder:text-neutral-300 placeholder:font-light"
+        className="h-[120px] text-black text-sm font-light font-lato leading-[150%] tracking-tightfont-lato w-full p-4 border-[1px] border-neutral-300 bg-gray-50 rounded outline-none placeholder:text-neutral-300 placeholder:font-light"
       />
     </div>
   );

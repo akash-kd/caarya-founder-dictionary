@@ -16,6 +16,7 @@ import Chapter3D_Idea from "./chapters/chap3DCompany_idea";
 import Chapter4A_Operation from "./chapters/chap4AViabilty_operation";
 import Chapter4B_Funding from "./chapters/chap4BViabilty_funding";
 import Chapter4C_Emp from "./chapters/chap4CViabilty_emp";
+import Chapter4D_Rev from "./chapters/chap4DViabilty_rev";
 
 import Chapter5A_Website from "./chapters/chap5ADigital_website";
 import Chapter5B_Social from "./chapters/chap5BDigital_social";
@@ -35,7 +36,6 @@ import ViablityRecordContext, {
 } from "./context/ViablityRecord";
 import DigitalFootprint from "components/SusForm/DigitalFootprint";
 import { DigitalRecordProvider } from "./context/DigitalFootprintRecord";
-import Chapter4D_Rev from "./chapters/chap4DViabilty_rev";
 
 const Chapters = () => {
   const [stage, setStage] = useContext(StageContext);
@@ -51,31 +51,35 @@ const Chapters = () => {
   // Chapter 1 ---
   if (stage === 0) return <Chapter1ACover_Startup />;
   if (stage === 1) return <Chapter1BCover_StartupSector />;
-  if (stage === 2) return <Chapter_Congrats />;
+  if (stage === 2)
+    return <Chapter_Congrats onMakeChangeClick={() => setStage(0)} />;
 
   // Chapter 2
   if (stage === 3) return <Chapter2A_StartupFounder />;
-  if (stage === 4) return <Chapter_Congrats />;
+  if (stage === 4)
+    return <Chapter_Congrats onMakeChangeClick={() => setStage(3)} />;
 
   // Chapter 3 -----
   if (stage === 5) return <Chapter3D_Idea />;
   if (stage === 6) return <Chapter3A_WorkType />;
   if (stage === 7) return <Chapter3B_Mission />;
   if (stage === 8) return <Chapter3C_Vision />;
-  if (stage === 9) return <Chapter_Congrats />;
+  if (stage === 9)
+    return <Chapter_Congrats onMakeChangeClick={() => setStage(5)} />;
   // Chater 4 ------
   if (stage === 10) return <Chapter4A_Operation />;
   if (stage === 11) return <Chapter4B_Funding />;
   if (stage === 12) return <Chapter4C_Emp />;
   if (stage === 13) return <Chapter4D_Rev />;
-  if (stage === 14) return <Chapter_Congrats />;
+  if (stage === 14)
+    return <Chapter_Congrats onMakeChangeClick={() => setStage(10)} />;
 
   // Chapter 5 -----
   if (stage === 15) return <Chapter5A_Website />;
   if (stage === 16) return <Chapter5B_Social />;
   if (stage === 17) return <Chapter5C_Linkedin />;
 
-  return <Chapter_Congrats />;
+  return <Chapter_Congrats onMakeChangeClick={() => setStage(15)} />;
 };
 
 const AddDrafts = () => {

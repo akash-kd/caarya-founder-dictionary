@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect} from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -17,6 +17,13 @@ function Chapter5B_Social() {
   const [website, setWebsite] = useState(record?.social);
   const [number, setNumber] = useState(record?.social_number);
   const [opt, setOpt] = useState();
+
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (!website || website?.length === 0 || !number || number?.length === 0)
+      setDisabled(true);
+    else setDisabled(false);
+  }, [website]);
 
   const onNext = () => {
     if (opt) {

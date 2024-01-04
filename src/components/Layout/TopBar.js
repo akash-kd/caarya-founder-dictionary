@@ -20,7 +20,7 @@ function TopBar() {
             className="h-8 w-8 object-cover"
             alt="logo"
           />
-          <div className="bg-white h-9 w-0.5" />
+          <div className="bg-white h-8 w-0.5" />
           <h1 className="font-bold font-satoshi text-lg text-white">
             {privateRoutes?.find((a) => a?.path == window?.location?.pathname)
               ? privateRoutes?.find(

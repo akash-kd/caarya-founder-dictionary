@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -14,6 +14,13 @@ function Chapter3A_WorkType() {
   const [data, setData] = useState(record?.workType);
   const [error, setError] = useState();
 
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (data?.workType === undefined || !data?.city || data?.city?.length === 0)
+      setDisabled(true);
+    else setDisabled(false);
+  }, [data]);
+
   const onWorkTypeSelected = (option, index) => {
     setData({ ...data, workType: index });
   };
@@ -22,14 +29,13 @@ function Chapter3A_WorkType() {
     if (data?.workType === undefined) {
       setError({ ...error, workType: "* select a work type" });
     } else if (!data?.city || data?.city?.length === 0) {
-      setError({ ...error, city: "* select a work type" });
+      setError({ ...error, city: "* type your source" });
     } else {
       setRecord({ ...record, workType: data });
       setStage((prev) => prev + 1);
     }
   };
 
-  console.log(data);
   return (
     <DraftLayout
       heading="Where Work Happens"
@@ -40,6 +46,7 @@ function Chapter3A_WorkType() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+      bottomDisabled={disabled}
     >
       <main className="my-10 flex flex-col gap-10">
         <OptionsInput

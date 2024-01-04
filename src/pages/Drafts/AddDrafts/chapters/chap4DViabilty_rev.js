@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -13,6 +13,13 @@ function Chapter4D_Rev() {
   const [stage, setStage] = useContext(StageContext);
   const [data, setData] = useState(record?.rev);
   const [error, setError] = useState();
+
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (data?.rev === undefined || !data?.city || data?.city?.length === 0)
+      setDisabled(true);
+    else setDisabled(false);
+  }, [data]);
 
   const onRevSelected = (option, index) => {
     setData({ ...data, rev: index });
@@ -39,6 +46,7 @@ function Chapter4D_Rev() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+      bottomDisabled={disabled}
     >
       <main className="my-10 flex flex-col gap-10">
         <OptionsInput

@@ -26,12 +26,13 @@ function Chapter3D_Idea() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+
     >
       <main className="my-10 flex flex-col gap-10">
         <TextAreaInput
           value={idea}
-          label="Idea Description"
-          placeholder="Company vision statement comes here"
+          label="Company Description"
+          placeholder="Start typing...."
           onChange={(e) => setIdea(e.target.value)}
         />
       </main>

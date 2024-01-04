@@ -10,8 +10,13 @@ function OptionsInput({ options, value, onChange, error }) {
           return (
             <div
               onClick={() => {
-                setSelected(index);
-                onChange(option, index);
+                if (selected === index) {
+                  setSelected(undefined);
+                  onChange(undefined, undefined);
+                } else {
+                  setSelected(index);
+                  onChange(option, index);
+                }
               }}
               className={`${
                 selected === index

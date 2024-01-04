@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -13,6 +13,11 @@ function Chapter2AFounder_Top() {
   const [founder, setFounder] = useState();
   const [stage, setStage] = useContext(StageContext);
 
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (!founder) setDisabled(true);
+    else setDisabled(false);
+  }, [founder]);
 
   return (
     <DraftLayout
@@ -25,6 +30,7 @@ function Chapter2AFounder_Top() {
         setStage((state) => state + 1);
       }}
       onPrevious={() => setStage((state) => state - 1)}
+      bottomDisabled={disabled}
     >
       <TextInput
         value={record?.founder}

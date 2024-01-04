@@ -5,7 +5,7 @@ import TopNav from "../copmonents/top_nav";
 import Status from "../copmonents/status";
 import StageContext from "../context/stage";
 
-function Chapter_Congrats() {
+function Chapter_Congrats({ onMakeChangeClick }) {
   const [stage, setStage] = useContext(StageContext);
 
   return (
@@ -30,7 +30,10 @@ function Chapter_Congrats() {
           You earned the badge ‘_____’ for <br />
           completing the story cover!
         </h3>
-        <button className="mt-8 font-lato font-semibold text-sm underline text-primary-magenta-medium">
+        <button
+          onClick={onMakeChangeClick}
+          className="mt-8 font-lato font-semibold text-sm underline text-primary-magenta-medium"
+        >
           Make Changes
         </button>
       </main>

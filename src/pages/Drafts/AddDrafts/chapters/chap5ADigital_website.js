@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -16,6 +16,12 @@ function Chapter5A_Website() {
   const [error, setError] = useState();
   const [website, setWebsite] = useState(record?.website);
   const [opt, setOpt] = useState();
+
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (!website || website?.length === 0) setDisabled(true);
+    else setDisabled(false);
+  }, [website]);
 
   const onNext = () => {
     if (opt) {
@@ -38,6 +44,7 @@ function Chapter5A_Website() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+      bottomDisabled={disabled}
     >
       <main className="my-10 flex flex-col gap-10 items-center w-full">
         <TextInput

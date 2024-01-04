@@ -1,4 +1,11 @@
-function TextInput({ label, placeholder,value, required = false, onChange, error }) {
+function TextInput({
+  label,
+  placeholder,
+  value,
+  required = false,
+  onChange,
+  error,
+}) {
   return (
     <div className="w-full">
       <div className="flex w-full justify-between items-center mb-3">
@@ -14,7 +21,7 @@ function TextInput({ label, placeholder,value, required = false, onChange, error
         onChange={onChange}
         type="text"
         placeholder={placeholder}
-        className="font-lato font-semibold text-xl w-full border-0 border-b-2 border-neutral-200 placeholder:text-neutral-300"
+        className="font-lato font-semibold text-lg w-full border-0 border-b-2 border-neutral-200 leading-[27px] tracking-tight placeholder:text-neutral-300"
       />
       <p className="text-red-500 font-lato font-semibold text-xs my-2">
         {error}

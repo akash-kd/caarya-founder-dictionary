@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect} from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -13,6 +13,17 @@ function Chapter4A_Operation() {
   const [stage, setStage] = useContext(StageContext);
   const [data, setData] = useState(record?.operation);
   const [error, setError] = useState();
+  const [disabled, setDisabled] = useState(true);
+  
+  useEffect(() => {
+    if (
+      data?.operation === undefined ||
+      !data?.city ||
+      data?.city?.length === 0
+    )
+      setDisabled(true);
+    else setDisabled(false);
+  }, [data]);
 
   const onOperationSelected = (option, index) => {
     setData({ ...data, operation: index });
@@ -29,7 +40,7 @@ function Chapter4A_Operation() {
     }
   };
 
-  console.log(data);
+  
   return (
     <DraftLayout
       heading="Years of Operation"
@@ -40,6 +51,7 @@ function Chapter4A_Operation() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+      bottomDisabled={disabled}
     >
       <main className="my-10 flex flex-col gap-10">
         <OptionsInput

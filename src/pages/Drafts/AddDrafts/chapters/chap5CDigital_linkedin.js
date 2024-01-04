@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import OptionsInput from "../copmonents/option_input";
 import TextInput from "../copmonents/text_input";
@@ -17,6 +17,13 @@ function Chapter5C_Linkedin() {
   const [website, setWebsite] = useState(record?.linkedin);
   const [number, setNumber] = useState(record?.linkedin_number);
   const [opt, setOpt] = useState();
+
+  const [disabled, setDisabled] = useState(true);
+  useEffect(() => {
+    if (!website || website?.length === 0 || !number || number?.length === 0)
+      setDisabled(true);
+    else setDisabled(false);
+  }, [website]);
 
   const onNext = () => {
     if (opt) {
@@ -41,6 +48,7 @@ function Chapter5C_Linkedin() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+      bottomDisabled={disabled}
     >
       <main className="my-10 flex flex-col gap-10 items-center w-full">
         <TextInput

@@ -1,7 +1,7 @@
 export default function TitleBar({heading, subheading, info}) {
   return (
     <>
-      <h1 className="font-satoshi font-bold text-xl leading-7 text-primary-magenta-dark">
+      <h1 className="title-gradient font-satoshi font-bold text-xl leading-7 text-primary-magenta-dark">
         {heading}
       </h1>
       <h2 className="font-satoshi font-normal text-xl leading-7">
