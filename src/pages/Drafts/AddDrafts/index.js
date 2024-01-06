@@ -48,38 +48,90 @@ const Chapters = () => {
     else if (chap === "5") setStage(15);
   }, []);
 
-  // Chapter 1 ---
-  if (stage === 0) return <Chapter1ACover_Startup />;
-  if (stage === 1) return <Chapter1BCover_StartupSector />;
-  if (stage === 2)
-    return <Chapter_Congrats onMakeChangeClick={() => setStage(0)} />;
+  switch (stage) {
+    // Chapter 1
+    case 0:
+      return <Chapter1ACover_Startup />;
+    case 1:
+      return <Chapter1BCover_StartupSector />;
+    case 2:
+      return <Chapter_Congrats onMakeChangeClick={() => setStage(0)} />;
 
-  // Chapter 2
-  if (stage === 3) return <Chapter2A_StartupFounder />;
-  if (stage === 4)
-    return <Chapter_Congrats onMakeChangeClick={() => setStage(3)} />;
+    // Chapter 2
+    case 3:
+      return <Chapter2A_StartupFounder />;
+    case 4:
+      return <Chapter_Congrats onMakeChangeClick={() => setStage(3)} />;
 
-  // Chapter 3 -----
-  if (stage === 5) return <Chapter3D_Idea />;
-  if (stage === 6) return <Chapter3A_WorkType />;
-  if (stage === 7) return <Chapter3B_Mission />;
-  if (stage === 8) return <Chapter3C_Vision />;
-  if (stage === 9)
-    return <Chapter_Congrats onMakeChangeClick={() => setStage(5)} />;
-  // Chater 4 ------
-  if (stage === 10) return <Chapter4A_Operation />;
-  if (stage === 11) return <Chapter4B_Funding />;
-  if (stage === 12) return <Chapter4C_Emp />;
-  if (stage === 13) return <Chapter4D_Rev />;
-  if (stage === 14)
-    return <Chapter_Congrats onMakeChangeClick={() => setStage(10)} />;
+    // Chapter 3.
+    case 5:
+      return <Chapter3D_Idea />;
+    case 6:
+      return <Chapter3A_WorkType />;
+    case 7:
+      return <Chapter3B_Mission />;
+    case 8:
+      return <Chapter3C_Vision />;
+    case 9:
+      return <Chapter_Congrats onMakeChangeClick={() => setStage(5)} />;
 
-  // Chapter 5 -----
-  if (stage === 15) return <Chapter5A_Website />;
-  if (stage === 16) return <Chapter5B_Social />;
-  if (stage === 17) return <Chapter5C_Linkedin />;
+    // Chapter 4
+    case 10:
+      return <Chapter4A_Operation />;
+    case 11:
+      return <Chapter4B_Funding />;
+    case 12:
+      return <Chapter4C_Emp />;
+    case 13:
+      return <Chapter4D_Rev />;
+    case 14:
+      return <Chapter_Congrats onMakeChangeClick={() => setStage(10)} />;
 
-  return <Chapter_Congrats onMakeChangeClick={() => setStage(15)} />;
+    // Chapter 5
+    case 15:
+      return <Chapter5A_Website />;
+    case 16:
+      return <Chapter5B_Social />;
+    case 17:
+      return <Chapter5C_Linkedin />;
+
+    default:
+      return <Chapter_Congrats onMakeChangeClick={() => setStage(15)} />;
+  }
+
+  // // Chapter 1 ---
+  // if (stage === 0) return <Chapter1ACover_Startup />;
+  // if (stage === 1) return <Chapter1BCover_StartupSector />;
+  // if (stage === 2)
+  //   return <Chapter_Congrats onMakeChangeClick={() => setStage(0)} />;
+
+  // // Chapter 2
+  // if (stage === 3) return <Chapter2A_StartupFounder />;
+  // if (stage === 4)
+  //   return <Chapter_Congrats onMakeChangeClick={() => setStage(3)} />;
+
+  // // Chapter 3 -----
+  // if (stage === 5) return <Chapter3D_Idea />;
+  // if (stage === 6) return <Chapter3A_WorkType />;
+  // if (stage === 7) return <Chapter3B_Mission />;
+  // if (stage === 8) return <Chapter3C_Vision />;
+  // if (stage === 9)
+  //   return <Chapter_Congrats onMakeChangeClick={() => setStage(5)} />;
+
+  // // Chater 4 ------
+  // if (stage === 10) return <Chapter4A_Operation />;
+  // if (stage === 11) return <Chapter4B_Funding />;
+  // if (stage === 12) return <Chapter4C_Emp />;
+  // if (stage === 13) return <Chapter4D_Rev />;
+  // if (stage === 14)
+  //   return <Chapter_Congrats onMakeChangeClick={() => setStage(10)} />;
+
+  // // Chapter 5 -----
+  // if (stage === 15) return <Chapter5A_Website />;
+  // if (stage === 16) return <Chapter5B_Social />;
+  // if (stage === 17) return <Chapter5C_Linkedin />;
+
+  // return <Chapter_Congrats onMakeChangeClick={() => setStage(15)} />;
 };
 
 const AddDrafts = () => {
