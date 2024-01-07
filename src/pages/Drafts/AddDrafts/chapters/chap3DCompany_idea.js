@@ -26,7 +26,7 @@ function Chapter3D_Idea() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
-
+      bottomDisabled={false}
     >
       <main className="my-10 flex flex-col gap-10">
         <TextAreaInput

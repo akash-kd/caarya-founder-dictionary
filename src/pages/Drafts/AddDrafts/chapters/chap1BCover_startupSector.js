@@ -4,11 +4,12 @@ import Covers from "../../../../helpers/constants/drafts";
 import DraftLayout from "../layout/draftLayout";
 import StageContext from "../context/stage";
 import RecordContext from "../context/CoverRecord";
+import { updateEntity } from "config/APIs/startup";
 
 function Chapter1BCover_StartupSector() {
   const [record, setRecord] = useContext(RecordContext);
   const [error, setError] = useState();
-  const [stage, setStage] = useContext(StageContext);
+  const [stage, setStage, draftId, setDraftId] = useContext(StageContext);
   const [selected, setSelected] = useState(record?.sector);
 
   const [disabled, setDisabled] = useState(true);
@@ -23,6 +24,9 @@ function Chapter1BCover_StartupSector() {
       info="Some tip on how to identify startup industry"
       onNext={() => {
         if (selected >= 0) {
+          updateEntity(draftId, {
+            industry: selected,
+          });
           setRecord({
             ...record,
             sector: selected,

@@ -26,6 +26,7 @@ function Chapter3C_Vision() {
       onPrevious={() => {
         setStage((prev) => prev - 1);
       }}
+      bottomDisabled={false}
     >
       <main className="my-10 flex flex-col gap-10">
         <TextAreaInput

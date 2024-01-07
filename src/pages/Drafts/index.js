@@ -3,6 +3,7 @@ import covers from "helpers/constants/drafts";
 import { isObjectEmpty } from "helpers/utils/object";
 
 import { useHistory } from "react-router-dom";
+import { getAllEntity } from "config/APIs/startup";
 
 function Card({ record }) {
   const history = useHistory();
@@ -124,11 +125,13 @@ function Card({ record }) {
 }
 
 const Drafts = () => {
-  const [record, setRecord] = useState();
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("cover-record"));
+    const fetchAllRecord = async () => {
+      const data = await getAllEntity();
+      console.log(data);
+    };
 
-    setRecord(data);
+    fetchAllRecord();
   }, []);
 
   const chap1 = JSON.parse(localStorage.getItem("cover-record"));
@@ -170,7 +173,7 @@ const Drafts = () => {
           {/*------- Main body ------- */}
           <div className="flex flex-col h-full w-full">
             {/* All Record Come Here */}
-            {chap1 ? <Card record={record} /> : <></>}
+            {/* {chap1 ? <Card record={record} /> : <></>} */}
           </div>
         </div>
       </div>

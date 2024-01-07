@@ -7,10 +7,11 @@ import TextAreaInput from "../copmonents/textarea_input";
 
 import StageContext from "../context/stage";
 import RecordContext from "../context/CompanyRecord";
+import { updateEntity } from "config/APIs/startup";
 
 function Chapter3A_WorkType() {
   const [record, setRecord] = useContext(RecordContext);
-  const [stage, setStage] = useContext(StageContext);
+  const [stage, setStage, draftId, setDraftId] = useContext(StageContext);
   const [data, setData] = useState(record?.workType);
   const [error, setError] = useState();
 
@@ -31,6 +32,7 @@ function Chapter3A_WorkType() {
     } else if (!data?.city || data?.city?.length === 0) {
       setError({ ...error, city: "* type your source" });
     } else {
+      updateEntity(draftId, { workLocationType: data.workType });
       setRecord({ ...record, workType: data });
       setStage((prev) => prev + 1);
     }

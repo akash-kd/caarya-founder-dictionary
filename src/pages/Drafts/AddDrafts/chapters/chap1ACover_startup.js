@@ -5,13 +5,15 @@ import StageContext from "../context/stage";
 import RecordContext from "../context/CoverRecord";
 import { isObjectEmpty } from "helpers/utils/object";
 
+import { createEntity } from "config/APIs/startup";
+
 function Chapter1ACover_Startup() {
-  const [stage, setStage] = useContext(StageContext);
+  const [stage, setStage, draftId, setDraftId] = useContext(StageContext);
   const [record, setRecord] = useContext(RecordContext);
 
   const [name, setName] = useState(record?.name);
   const [file, setFile] = useState(record?.img);
-  
+
   const fileRef = useRef();
   const [error, SetError] = useState({ name: undefined, img: undefined });
   const history = useHistory();
@@ -37,6 +39,14 @@ function Chapter1ACover_Startup() {
     setStage((stage) => stage - 1);
   };
 
+  const createDraft = async () => {
+    const data = await createEntity({
+      name: name,
+      image: file,
+    });
+    setDraftId(data.data.data.id);
+  };
+
   const onNext = () => {
     console.log(error, name, name?.length);
     if (name === undefined || name?.length === 0) {
@@ -44,6 +54,7 @@ function Chapter1ACover_Startup() {
     } else if (!file) {
       SetError({ ...error, img: "* select an image" });
     } else {
+      createDraft();
       setRecord({ ...record, name, img: file });
       setStage((stage) => stage + 1);
     }
